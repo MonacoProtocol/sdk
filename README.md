@@ -1,7 +1,5 @@
 # Monaco Protocol SDK
 
-`The global, decentralized, open-sourced and permissonless protocol. Built on Solana.`
-
 Welcome to the Software Development Kit for the Monaco Protocol.
 
 Everything you should need to get up and running to develop against the protocol can be found in this repository. This is also the home of the developer community where you can find information about the latest updates, showcase what you've been building, and ask any questions if you're looking for some help. Head on over to [discussions](https://github.com/MonacoProtocol/sdk/discussions) to orientate yourself.
