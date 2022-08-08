@@ -1,4 +1,4 @@
-`The global, decentralised, open-sourced and permissonless protocol. Built on Solana.`
+`The global, decentralized, open-sourced and permissonless protocol. Built on Solana.`
 
 # Monaco Protocol SDK
 
@@ -8,7 +8,7 @@ Everything you should need to get up and running to develop against the protocol
 
 # The Monaco Protocol
 
-The Monaco Protocol is a decentralised liquidity network for exchange-based applications built on the Solana blockchain. It serves as crucial infrastructure upon which third-party front-end applications for wagering on binary outcome events can be built while accessing a shared liquidity pool.
+The Monaco Protocol is a decentralized liquidity network for exchange-based applications built on the Solana blockchain. It serves as crucial infrastructure upon which third-party front-end applications for wagering on binary outcome events can be built while accessing a shared liquidity pool.
 
 ## Why is the Monaco Protocol useful? 
 
