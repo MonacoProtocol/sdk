@@ -1,4 +1,4 @@
 # Table of contents
 
 * [Monaco Protocol SDK](README.md)
-  * [The Protocol](readme/the-protocol.md)
+  * [The Protocol](docs/the-protocol.md)
