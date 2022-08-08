@@ -1,5 +1,7 @@
 # The Protocol
 
+**The global, decentralized, open-sourced and permissonless protocol. Built on Solana.**
+
 ## The Monaco Protocol
 
 The Monaco Protocol is a decentralized liquidity network for exchange-based applications built on the Solana blockchain. It serves as crucial infrastructure upon which third-party front-end applications for wagering on binary outcome events can be built while accessing a shared liquidity pool.
