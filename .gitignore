@@ -1,0 +1,10 @@
+
+colorpicker/.anchor
+.DS_Store
+target
+**/*.rs.bk
+node_modules
+.idea
+tmp
+wallet.json
+__pycache__/
