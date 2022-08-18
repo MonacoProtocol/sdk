@@ -9,6 +9,7 @@
         "getBalances": "ts-node src/get_balances.ts",
         "getMarketsByStatus": "ts-node src/get_markets_by_status.ts",
         "getMarketsByEvent": "ts-node src/get_markets_by_event.ts",
+        "getMarketsByMintToken": "ts-node src/get_markets_by_mint_token.ts",
         "getMarketPrices": "ts-node src/get_market_prices.ts",
         "getMarketPosition": "ts-node src/get_market_position.ts",
         "getBetOrders": "ts-node src/get_bet_orders_by_status.ts",
