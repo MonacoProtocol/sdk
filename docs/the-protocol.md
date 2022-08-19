@@ -14,7 +14,7 @@ For any exchange-based mechanism, high throughput and low costs are the key pill
 
 ### Is the Protocol audited?
 
-We are currently in the process of an audit, we will release additional information on this once the the audit is complete.
+The protocol is currently in the process of an audit, additional information on this will be released once the the audit is complete.
 
 ### How do I contribute to the Protocol?
 
