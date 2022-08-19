@@ -1,5 +1,5 @@
 import { PublicKey } from "@solana/web3.js";
-import { createBetOrderUiStake } from "@betdexlabs/betdex-client";
+import { createBetOrderUiStake } from "@monacoprotocol/client";
 import { getProgram, logJson, log } from "./utils";
 
 async function placeBetOrder(marketPk: PublicKey){

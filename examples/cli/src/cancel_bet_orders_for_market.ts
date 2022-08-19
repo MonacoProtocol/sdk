@@ -1,4 +1,4 @@
-import { cancelBetOrdersForMarket } from "@betdexlabs/betdex-client";
+import { cancelBetOrdersForMarket } from "@monacoprotocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { getProgram, logJson, log } from "./utils";
 

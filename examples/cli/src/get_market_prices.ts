@@ -1,4 +1,4 @@
-import { getMarketPrices } from "@betdexlabs/betdex-client";
+import { getMarketPrices } from "@monacoprotocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { getProgram, logJson, log } from "./utils";
 

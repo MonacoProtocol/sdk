@@ -1,4 +1,4 @@
-import { getMarketPosition } from "@betdexlabs/betdex-client";
+import { getMarketPosition } from "@monacoprotocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { getProgram, logJson, log } from "./utils";
 import { AnchorProvider } from "@project-serum/anchor";
