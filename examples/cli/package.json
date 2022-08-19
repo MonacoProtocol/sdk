@@ -19,7 +19,7 @@
         "cancelBetOrders": "ts-node src/cancel_bet_orders_for_market.ts"
     },
     "dependencies": {
-        "@betdexlabs/betdex-client": "^1.1.1",
+        "@monacoprotocol/client": "^0.0.1",
         "@project-serum/anchor": "^0.25.0",
         "@solana/web3.js": "^1.53.0"
     }

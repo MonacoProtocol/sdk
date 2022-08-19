@@ -1,4 +1,4 @@
-import { getWalletTokenBalancesWithSol } from "@betdexlabs/betdex-client";
+import { getWalletTokenBalancesWithSol } from "@monacoprotocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { getProgram, logJson, log } from "./utils";
 

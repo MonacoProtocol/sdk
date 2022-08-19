@@ -1,4 +1,4 @@
-import { getMarketAccountsByStatusAndMintAccount, MarketStatus } from "@betdexlabs/betdex-client";
+import { getMarketAccountsByStatusAndMintAccount, MarketStatus } from "@monacoprotocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { getProgram, logJson, log } from "./utils";
 
