@@ -1,4 +1,4 @@
-import { getMarketAccountsByEvent } from "@monacoprotocol/client";
+import { getMarketAccountsByEvent } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { getProgram, logJson, log } from "./utils";
 

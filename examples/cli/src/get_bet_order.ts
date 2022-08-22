@@ -1,4 +1,4 @@
-import { getBetOrder } from "@monacoprotocol/client";
+import { getBetOrder } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { getProgram, logJson, log } from "./utils";
 
