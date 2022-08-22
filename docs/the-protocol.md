@@ -22,7 +22,7 @@ More information about this will be available soon.
 
 ### Have any applications built on the Monaco Protocol?
 
-There has, head on over to https://betdex.gitbook.io/betdex-beta/ to learn more about the BetDEX Exchange.
+There has, head on over to [https://betdex.gitbook.io/betdex-beta](https://betdex.gitbook.io/betdex-beta) to learn more about the BetDEX Exchange.
 
 ### What is the relationship between BetDEX Labs, Inc. and the Monaco Protocol?
 
