@@ -1,4 +1,4 @@
-import { getBetOrdersByStatusForProviderWallet, BetOrderStatus } from "@monacoprotocol/client";
+import { getBetOrdersByStatusForProviderWallet, BetOrderStatus } from "@monaco-protocol/client";
 import { getProgram, logJson, log } from "./utils";
 
 async function getBetOrders(status: BetOrderStatus){

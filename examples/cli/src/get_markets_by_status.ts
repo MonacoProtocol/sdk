@@ -1,4 +1,4 @@
-import { getMarketAccountsByStatus, MarketStatus } from "@monacoprotocol/client";
+import { getMarketAccountsByStatus, MarketStatus } from "@monaco-protocol/client";
 import { getProgram, logJson, log } from "./utils";
 
 async function getMarkets(status: MarketStatus){
