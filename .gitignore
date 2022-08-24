@@ -8,3 +8,13 @@ node_modules
 tmp
 wallet.json
 __pycache__/
+
+# testing
+**/coverage
+
+# next.js
+**/.next/
+**/out/
+
+# production
+**/build
