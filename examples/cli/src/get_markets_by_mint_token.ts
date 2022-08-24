@@ -13,6 +13,6 @@ async function getMarkets(marketStatus: MarketStatus, mintToken: PublicKey){
     }
 }
 
-const mintToken = new PublicKey("Qegj89Mzpx4foJJqkj6B4551aiGrgaV33Dtcm7WZ9kf")
+const mintToken = new PublicKey("Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH")
 const marketStatus = MarketStatus.Open
 getMarkets(marketStatus, mintToken)

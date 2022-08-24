@@ -13,5 +13,6 @@ async function getBalances(tokenMints: PublicKey[]){
     }
 }
 
-const exampleTokenMint = new PublicKey("Qegj89Mzpx4foJJqkj6B4551aiGrgaV33Dtcm7WZ9kf")
-getBalances([exampleTokenMint])
+const exampleTokenMint1 = new PublicKey("Qegj89Mzpx4foJJqkj6B4551aiGrgaV33Dtcm7WZ9kf")
+const exampleTokenMint2 = new PublicKey("Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH")
+getBalances([exampleTokenMint1, exampleTokenMint2])
