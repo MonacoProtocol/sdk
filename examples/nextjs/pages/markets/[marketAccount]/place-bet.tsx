@@ -68,6 +68,7 @@ const PlaceBet = () => {
             const mintInfo = await getMintInfo(program, marketTokenPk);
             const stakeInteger = new BN(stake * 10 ** mintInfo.data.decimals);
             const createBetOrderResposne = await createBetOrder(program, marketAccount, marketOutcomeIndex, backing === "back", odds, new BN(stakeInteger));
+            console.log(JSON.stringify(createBetOrderResposne, null, 2));
         } catch (e) {
             console.error(e);
         }
