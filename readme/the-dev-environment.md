@@ -23,6 +23,8 @@ You can request an airdrop through the DevHub:
 
 * [Airdrop Request](https://github.com/MonacoProtocol/sdk/discussions/8)
 
+The protocol is built in such a way that, once admin-functionality is available, markets can be created to use any token so that you may create your own test token through the recommended, [strata protocol](https://app.strataprotocol.com/launchpad/manual/new).
+
 ### DevNet Solana
 
 To pay for transactions and account creation, you will need SOL in your development wallet.&#x20;
