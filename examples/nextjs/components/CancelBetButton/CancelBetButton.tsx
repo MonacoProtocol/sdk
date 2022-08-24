@@ -19,7 +19,7 @@ export const CancelBetButton = ({
 
     const onClick = async() => {
         try {
-            await cancelBetOrder(betOrderPk, program);
+            await cancelBetOrder(program, betOrderPk);
         } catch (e) {
             console.error(e)
         }
