@@ -17,5 +17,5 @@ async function placeBetOrder(marketPk: PublicKey){
     }
 }
 
-const marketPk = new PublicKey("4R6w8Q52jjnXdJB26K9ML9zUSzthscP3EWhvNZ2WyiAS")
+const marketPk = new PublicKey("GRqgvcN2aW1FvAyDzaKyQqrzzVoD54nEAy7scPX1XZAY")
 placeBetOrder(marketPk)
