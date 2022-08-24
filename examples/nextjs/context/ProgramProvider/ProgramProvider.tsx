@@ -1,7 +1,7 @@
 import { AnchorProvider, Program } from "@project-serum/anchor";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { Connection, PublicKey } from "@solana/web3.js";
-import { ReactNode, useEffect, useReducer, useState } from "react";
+import { ReactNode, useEffect, useMemo, useReducer, useState } from "react";
 import { ProgramActionTypes, reducer } from "./reducer";
 import { ProgramContext, initalState } from "./state";
 
@@ -25,7 +25,7 @@ export const ProgramProvider = ({
         AnchorProvider.defaultOptions(),
       ));
     }
-  }, []);
+  }, [wallet.publicKey?.toString()]);
 
   const setProgram = async () => {
     try {
@@ -42,10 +42,10 @@ export const ProgramProvider = ({
   };
 
   useEffect(() => {
-    if (provider) {
+    if (provider && wallet?.publicKey?.toString()) {
       setProgram();
     }
-  }, [provider]);
+  }, [provider?.wallet?.publicKey?.toString()]);
 
   return (
     <ProgramContext.Provider value={program}>

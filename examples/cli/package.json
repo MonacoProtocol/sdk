@@ -14,6 +14,7 @@
         "getMarketPosition": "ts-node src/get_market_position.ts",
         "getBetOrders": "ts-node src/get_bet_orders_by_status.ts",
         "getBetOrder": "ts-node src/get_bet_order.ts",
+        "getMarketAccounts": "ts-node src/get_market_acounts.ts",
         "getMarketOutcomeAccounts": "ts-node src/get_market_outcome_accounts.ts",
         "placeBetOrder": "ts-node src/place_bet_order.ts",
         "cancelBetOrder": "ts-node src/cancel_bet_order.ts",

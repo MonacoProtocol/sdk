@@ -1,4 +1,4 @@
-import { createBetOrder, getMarket, MarketAccount, getMarketOutcomeAccounts, MarketOutcomeAccount, getMintInfo } from "@monaco-protocol/client";
+import { getMarket, MarketAccount, getMarketOutcomeAccounts, MarketOutcomeAccount, getMintInfo, findMarketPositionPda, createBetOrder } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -6,6 +6,7 @@ import { useProgram } from "../../../context/ProgramProvider";
 import { Box, Button, Card, Divider, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Select, TextField, Typography } from "@mui/material";
 import { BN } from "@project-serum/anchor";
 import { Page } from "../../../components/Page";
+import { useWallet } from "@solana/wallet-adapter-react";
 
 type FormData = {
     [marketOutcome: string]: {
@@ -18,6 +19,7 @@ type FormData = {
 const PlaceBet = () => {
     const program = useProgram();
     const { query } = useRouter();
+    const wallet = useWallet();
     const [market, setMarket] = useState<MarketAccount>();
     const [marketOutcomes, setMarketOucomes] = useState<MarketOutcomeAccount[]>();
     const [formData, setFormData] = useState<FormData>();
@@ -68,7 +70,7 @@ const PlaceBet = () => {
             const mintInfo = await getMintInfo(program, marketTokenPk);
             const stakeInteger = new BN(stake * 10 ** mintInfo.data.decimals);
             const createBetOrderResposne = await createBetOrder(program, marketAccount, marketOutcomeIndex, backing === "back", odds, new BN(stakeInteger));
-            console.log(JSON.stringify(createBetOrderResposne, null, 2));
+            console.log('createBetOrderResposne', createBetOrderResposne);
         } catch (e) {
             console.error(e);
         }
@@ -77,6 +79,21 @@ const PlaceBet = () => {
     useEffect(() => {
         getMarketData();
     }, []);
+
+    const t = async (walletPk: PublicKey) => {
+        try {
+            const res = await findMarketPositionPda(program, marketAccount, walletPk)
+            console.log(res)
+        } catch (e) {
+            console.error(e)
+        }
+    }
+    useEffect(() => {
+        if (!wallet.publicKey) {
+            return
+        }
+        t(wallet.publicKey)
+    }, [wallet.publicKey]);
 
     return (
         <Page
@@ -110,10 +127,10 @@ const PlaceBet = () => {
                             autoComplete="off"
                             noValidate
                             flexDirection="column"
-                            onSubmit={(e: any) => {
+                            onSubmit={async (e: any) => {
                                 e.preventDefault();
                                 const { backing, odds, stake } = formData[marketOutcome];
-                                placeBet(marketOutcome, marketOutcomeIndex);
+                                await placeBet(marketOutcome, marketOutcomeIndex);
                             }}
                         >
                             <Box sx={{ marginBottom: '1rem' }}>
