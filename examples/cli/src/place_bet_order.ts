@@ -7,7 +7,7 @@ async function placeBetOrder(marketPk: PublicKey){
     const marketOutcomeIndex = 0
     const backing = true
     const odds = 1.5
-    const stake = 10
+    const stake = 1
     const betOrder = await createBetOrderUiStake(program, marketPk, marketOutcomeIndex, backing, odds, stake)
     if (!betOrder.success){
         log(betOrder.errors)
