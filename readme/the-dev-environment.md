@@ -17,7 +17,7 @@ Currently there is no admin client to allow for developers to create their own m
 
 ### Test Token
 
-Markets will be created using the token [Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH](https://solscan.io/token/Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH?cluster=devnet) this is used on DevNet in place of a token such as USDT.&#x20;
+Markets are created using the token [Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH](https://solscan.io/token/Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH?cluster=devnet) this is used on DevNet in place of a token such as USDT.&#x20;
 
 You can request an airdrop through the DevHub:
 
