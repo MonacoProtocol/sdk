@@ -1,33 +1,73 @@
-import { createBetOrder, getMarket, MarketAccount, getMarketOutcomeAccounts, MarketOutcomeAccounts } from "@monacoprotocol/client";
+import { createBetOrder, getMarket, MarketAccount, getMarketOutcomeAccounts, MarketOutcomeAccount, getMintInfo } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useProgram } from "../../../context/ProgramProvider";
-import { Box, Button, Card, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextField } from "@mui/material";
+import { Box, Button, Card, Divider, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Select, TextField, Typography } from "@mui/material";
 import { BN } from "@project-serum/anchor";
+import { Page } from "../../../components/Page";
+
+type FormData = {
+    [marketOutcome: string]: {
+        backing: string;
+        odds: number;
+        stake: number;
+    }
+}
 
 const PlaceBet = () => {
     const program = useProgram();
     const { query } = useRouter();
     const [market, setMarket] = useState<MarketAccount>();
-    const [marketOutcomes, setMarketOucomes] = useState<MarketOutcomeAccounts>();
+    const [marketOutcomes, setMarketOucomes] = useState<MarketOutcomeAccount[]>();
+    const [formData, setFormData] = useState<FormData>();
+
+    const updateForm = (marketOutcome: string, dataPoint: string) => (e: React.ChangeEvent<{value: string}>) => {
+        setFormData(((state = {}) => ({
+            ...state,
+            [marketOutcome]: {
+                ...state[marketOutcome],
+                [dataPoint]: e.target.value
+            }
+        })));
+    }
 
     const marketAccount = new PublicKey(query.marketAccount as string)
 
     const getMarketData = async () => {
         try {
             const marketResponse = await getMarket(program, marketAccount);
+            marketResponse.data.account.mintAccount
             setMarket(marketResponse.data.account);
             const marketOutcomeAccountsResponse = await getMarketOutcomeAccounts(program, marketAccount, marketResponse.data.account.marketOutcomes);
-            setMarketOucomes(marketOutcomeAccountsResponse.data);
+            setMarketOucomes(marketOutcomeAccountsResponse.data.marketOutcomeAccounts);
+            const defaultFormState = marketResponse.data.account.marketOutcomes.reduce((formState, marketOutcome) => ({
+                ...formState,
+                [marketOutcome]: {
+                    backing: "back",
+                    odds: 1.5,
+                    stake: 0,
+                },
+            }), {})
+            setFormData(defaultFormState)
         } catch (e) {
             console.error(e);
         }
     }
 
-    const placeBet = async (...args: Parameters<typeof createBetOrder>) => {
+    const placeBet = async (marketOutcome: string, marketOutcomeIndex: number) => {
         try {
-            const createBetOrderResposne = await createBetOrder(...args);
+            if (!formData) {
+                throw "Form is empty";
+            }
+            if (!market) {
+                throw "Market is missing";
+            }
+            const { backing, odds, stake } = formData[marketOutcome];
+            const marketTokenPk = new PublicKey(market.mintAccount);
+            const mintInfo = await getMintInfo(program, marketTokenPk);
+            const stakeInteger = new BN(stake * 10 ** mintInfo.data.decimals);
+            const createBetOrderResposne = await createBetOrder(program, marketAccount, marketOutcomeIndex, backing === "back", odds, new BN(stakeInteger));
             console.log('createBetOrderResposne', createBetOrderResposne);
         } catch (e) {
             console.error(e);
@@ -35,16 +75,40 @@ const PlaceBet = () => {
     }
 
     useEffect(() => {
+        console.log(JSON.stringify(formData, null, 2));
+    }, [formData]);
+
+    useEffect(() => {
         getMarketData();
     }, []);
 
     return (
-        <>
-            {market?.marketOutcomes.map((marketOutcome, marketOutcomeIndex) =>
-                (<Box key={marketOutcome} marginBottom="1rem">
-                    <Card>
-                    <Box padding="2rem">
-                        <h2>{marketOutcome}</h2>
+        <Page
+            title="Place Bet Example"
+            description="Example of how to get the required data to construct a bet order and how to exexute it."
+        >
+            <Card sx={{
+                padding: '3rem 1rem',
+                display: 'flex',
+                justifyContent: 'space-around',
+                flexDirection: {
+                    xs: 'column',
+                    lg: 'row',
+                }
+            }}>
+
+            {formData && market?.marketOutcomes.map((marketOutcome, marketOutcomeIndex) =>
+                (
+                    <Card
+                        key={marketOutcome}
+                        elevation={3}
+                        sx={{ padding: "2rem", marginBottom: {
+                            xs: '1rem',
+                            lg: '0',
+                        } }}
+                    >
+                        <Typography variant="h5">{marketOutcome}</Typography>
+                        <Divider sx={{ margin: "0.2rem 0 1rem"}} light />
                         <Box
                             component="form"
                             autoComplete="off"
@@ -52,40 +116,62 @@ const PlaceBet = () => {
                             flexDirection="column"
                             onSubmit={(e: any) => {
                                 e.preventDefault();
-                                const backing = true;
-                                const odds = 0.1;
-                                const stake = new BN(1);
-                                console.log({marketAccount, marketOutcomeIndex, backing, odds, stake, program })
-                                placeBet(program, marketAccount, marketOutcomeIndex, backing, odds, stake);
+                                const { backing, odds, stake } = formData[marketOutcome];
+                                placeBet(marketOutcome, marketOutcomeIndex);
                             }}
                         >
-                            <Box marginBottom="1rem">
+                            <Box sx={{ marginBottom: '1rem' }}>
                                 <FormControl>
                                     <FormLabel id="bet-type">Backing</FormLabel>
                                     <RadioGroup
                                         aria-labelledby="bet-type-label"
                                         defaultValue="back"
                                         name="bet-type"
-                                        onChange={(e) => {
-                                            console.log(e.target.value);
-                                        }}
+                                        onChange={updateForm(marketOutcome, 'backing')}
+                                        value={formData[marketOutcome].backing}
                                     >
                                         <FormControlLabel value="back" control={<Radio />} label="Back" />
                                         <FormControlLabel value="lay" control={<Radio />} label="Lay" />
                                     </RadioGroup>
                                 </FormControl>
                             </Box>
-                            <Box marginBottom="1rem">
-                                <TextField type="number" label="stake" />
+                            <Box sx={{ marginBottom: '1rem' }}>
+                            <FormControl fullWidth>
+                                <InputLabel id="odds-ladder">Odds</InputLabel>
+                                <Select
+                                    labelId="odds-ladder-label"
+                                    id="odds-ladde-select"
+                                    label="Odds"
+                                    onChange={((e) => {
+                                        updateForm(marketOutcome, 'odds')(e as React.ChangeEvent<{value: string }>);
+                                    })}
+                                    value={formData[marketOutcome].odds}
+                                >
+                                    {marketOutcomes
+                                        ? marketOutcomes[marketOutcomeIndex].oddsLadder.map(odds => (
+                                            <MenuItem key={odds} value={odds}>{odds}</MenuItem>
+                                        ))
+                                        : null
+                                    }
+                                </Select>
+                                </FormControl>
                             </Box>
-                            <Button type="submit">PlaceBet</Button>
+                            <Box>
+                                <TextField
+                                    type="number"
+                                    label="stake"
+                                    sx={{ marginBottom: "1rem"}}
+                                    onChange={updateForm(marketOutcome, 'stake')}
+                                    value={formData[marketOutcome].stake}
+                                 />
+                            </Box>
+                            <Button type="submit" variant="contained" fullWidth>PlaceBet</Button>
                         </Box>
-                    </Box>
-                </Card>
-                </Box>
+                    </Card>
                 )
             )}
-        </>
+            </Card>
+        </Page>
     );
 
 }

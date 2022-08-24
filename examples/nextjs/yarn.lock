@@ -1112,10 +1112,10 @@
   resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-6.10.0.tgz#c012c1ecc1a0e53d50e6af381618dca5268461c1"
   integrity sha512-lLseUPEhSFUXYTKj6q7s2O3s2vW2ebgA11vMAlKodXGf5AFw4zUoEbTz9CoFOC9jS6xY4Qr8BmRnxP/odT4Uuw==
 
-"@monacoprotocol/client@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@monacoprotocol/client/-/client-0.0.1.tgz#3a3fbca978c7e57ea13e01c7381174e6b15fcb83"
-  integrity sha512-IKwQKy4yDBEqvpxy/0TVK3OWsbsqL8ru3cDKDed40YVc48ViWzZCjcEfHx4ytMNP7e5dY3m3awI4tZyEdxSp+Q==
+"@monaco-protocol/client@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@monaco-protocol/client/-/client-0.0.2.tgz#a2674d8c993156bf613ed8047a7d72de42705c32"
+  integrity sha512-KTdRC5HtFcpSQ5KsuU3oEuqb37cGtFBWeJjjkDRP7mwoLZYPrEwy2xBNT+dSDGNFdQFG02gpNlqqzEVr1vhaIQ==
   dependencies:
     "@project-serum/anchor" "~0.25.0"
     "@solana/spl-token" "^0.1.8"
@@ -1135,6 +1135,13 @@
     clsx "^1.2.1"
     prop-types "^15.8.1"
     react-is "^18.2.0"
+
+"@mui/icons-material@^5.8.4":
+  version "5.8.4"
+  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.8.4.tgz#3f2907c9f8f5ce4d754cb8fb4b68b5a1abf4d095"
+  integrity sha512-9Z/vyj2szvEhGWDvb+gG875bOGm8b8rlHBKOD1+nA3PcgC3fV6W1AU6pfOorPeBfH2X4mb9Boe97vHvaSndQvA==
+  dependencies:
+    "@babel/runtime" "^7.17.2"
 
 "@mui/lab@^5.0.0-alpha.94":
   version "5.0.0-alpha.94"
@@ -1667,6 +1674,13 @@
   dependencies:
     eventemitter3 "^4.0.0"
 
+"@solana/wallet-adapter-base@^0.9.15":
+  version "0.9.15"
+  resolved "https://registry.yarnpkg.com/@solana/wallet-adapter-base/-/wallet-adapter-base-0.9.15.tgz#3d88871226435432c69c788701ab21cec279de42"
+  integrity sha512-IZp02Egb4vOueBnPY3Hf2PRqsbBjLZyNOImq956J3OEtIRPSWbq+6TKMQ1OrSOI3g9mvccY7QjbtvJEwTQBY2w==
+  dependencies:
+    eventemitter3 "^4.0.0"
+
 "@solana/wallet-adapter-bitkeep@^0.3.8":
   version "0.3.8"
   resolved "https://registry.yarnpkg.com/@solana/wallet-adapter-bitkeep/-/wallet-adapter-bitkeep-0.3.8.tgz#6ca930196cc09e8a173a69be0c16d42ef126b82a"
@@ -1793,6 +1807,14 @@
   dependencies:
     "@solana/wallet-adapter-base" "^0.9.10"
 
+"@solana/wallet-adapter-material-ui@^0.16.13":
+  version "0.16.13"
+  resolved "https://registry.yarnpkg.com/@solana/wallet-adapter-material-ui/-/wallet-adapter-material-ui-0.16.13.tgz#0be0d56205288929192d3d888be506e477bbd731"
+  integrity sha512-rUKddZsyBBNLbXWLYkBHfrPxfirVWNPNt2blFcNc5BHJqqKHEyVLVU3+0Nwxk/xdpyVNMd2fqB6qv5lLx27XRw==
+  dependencies:
+    "@solana/wallet-adapter-base" "^0.9.15"
+    "@solana/wallet-adapter-react" "^0.15.17"
+
 "@solana/wallet-adapter-mathwallet@^0.9.7":
   version "0.9.7"
   resolved "https://registry.yarnpkg.com/@solana/wallet-adapter-mathwallet/-/wallet-adapter-mathwallet-0.9.7.tgz#0a69711b80b866db6519817cb7eeca6d3471623d"
@@ -1835,6 +1857,13 @@
   dependencies:
     "@solana/wallet-adapter-base" "^0.9.10"
     "@solana/wallet-adapter-react" "^0.15.9"
+
+"@solana/wallet-adapter-react@^0.15.17":
+  version "0.15.17"
+  resolved "https://registry.yarnpkg.com/@solana/wallet-adapter-react/-/wallet-adapter-react-0.15.17.tgz#d631b3214591a228a2c1d0cd6293c1fe8f7767e6"
+  integrity sha512-Jd2wMNntHySpeUVMreBSxi8bqWN79mF3N/ZyzCm5D7KTTfZftwFmZxbHcIL77ZUgBnp43NyAI97uh3qdroTC2Q==
+  dependencies:
+    "@solana/wallet-adapter-base" "^0.9.15"
 
 "@solana/wallet-adapter-react@^0.15.9":
   version "0.15.9"

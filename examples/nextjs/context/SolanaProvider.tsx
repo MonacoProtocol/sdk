@@ -37,8 +37,14 @@ export const SolanaProvider: FC<WalletProps> = ({ children }) => {
         <ConnectionProvider endpoint={endpoint}>
             <WalletProvider wallets={wallets} autoConnect>
                 <WalletModalProvider>
-                    <Box display="flex" flexDirection="row-reverse" width="100%">
-                        <WalletDisconnectButton />
+                    <Box sx={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        display: "flex",
+                        flexDirection: "row-reverse",
+                        width: "100%",
+                    }}>
                         <WalletMultiButton />
                     </Box>
                     {children}

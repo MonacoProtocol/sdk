@@ -14,12 +14,13 @@
         "getMarketPosition": "ts-node src/get_market_position.ts",
         "getBetOrders": "ts-node src/get_bet_orders_by_status.ts",
         "getBetOrder": "ts-node src/get_bet_order.ts",
+        "getMarketOutcomeAccounts": "ts-node src/get_market_outcome_accounts.ts",
         "placeBetOrder": "ts-node src/place_bet_order.ts",
         "cancelBetOrder": "ts-node src/cancel_bet_order.ts",
         "cancelBetOrders": "ts-node src/cancel_bet_orders_for_market.ts"
     },
     "dependencies": {
-        "@monacoprotocol/client": "^0.0.1",
+        "@monaco-protocol/client": "^0.0.2",
         "@project-serum/anchor": "^0.25.0",
         "@solana/web3.js": "^1.53.0"
     }

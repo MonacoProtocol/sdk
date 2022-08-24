@@ -3,7 +3,7 @@ import { SolanaProvider } from '../context/SolanaProvider';
 import { ProgramProvider } from '../context/ProgramProvider';
 
 import { CacheProvider } from '@emotion/react';
-import { ThemeProvider, CssBaseline, createTheme, Container } from '@mui/material';
+import { ThemeProvider, CssBaseline, createTheme } from '@mui/material';
 import createEmotionCache from '../utils/createEmotionCache';
 import defaultTheme from '../theme/default';
 
@@ -28,9 +28,7 @@ function MyApp({
         <CssBaseline />
         <SolanaProvider>
           <ProgramProvider>
-            <Container maxWidth="lg">
-              <Component {...pageProps} />
-            </Container>
+            <Component {...pageProps} />
           </ProgramProvider>
         </SolanaProvider>
       </ThemeProvider>

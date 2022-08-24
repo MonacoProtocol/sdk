@@ -1,6 +1,6 @@
 import { Button } from "@mui/material"
 import { LoadingButton } from "@mui/lab"
-import { cancelBetOrder } from "@monacoprotocol/client";
+import { cancelBetOrder } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { useProgram } from "../../context/ProgramProvider";
 import { useState } from "react";

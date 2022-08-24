@@ -1,10 +1,10 @@
-import { cancelBetOrdersForMarket } from "@monaco-protocol/client";
+import { getMarketOutcomeAccounts } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { getProgram, logJson, log } from "./utils";
 
-async function cancelBetOrders(marketPk: PublicKey){
+async function marketOutcomeAccounts(marketPk: PublicKey){
     const program = await getProgram()
-    const markets = await cancelBetOrdersForMarket(program, marketPk)
+    const markets = await getMarketOutcomeAccounts(program, marketPk, ['Rangers', 'Draw', 'PSV Eindhoven'])
     if (!markets.success){
         log(markets.errors)
     }
@@ -14,4 +14,4 @@ async function cancelBetOrders(marketPk: PublicKey){
 }
 
 const marketPk = new PublicKey("4R6w8Q52jjnXdJB26K9ML9zUSzthscP3EWhvNZ2WyiAS")
-cancelBetOrders(marketPk)
+marketOutcomeAccounts(marketPk)

@@ -1,4 +1,4 @@
-import { getWalletTokenBalancesWithSol } from "@monacoprotocol/client";
+import { getWalletTokenBalancesWithSol } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { getProgram, logJson, log } from "./utils";
 

@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Getting Started
 
-## Getting Started
+This is an example of using the monaco-protocal to create a webapp using NextJS. In order to place bets you will need the phantom wallet plugin installed in your choosen web browser. The app uses Material UI only as an example layout. 
 
-First, run the development server:
+## Configure your environment
+Set the required environment variables in your terminal instance.
+```
+export NEXT_PUBLIC_PROGRAM_ID=5Q2hKsxShaPxFqgVtQH3ErTkiBf8NGb99nmpaGw7FCrr
+export NEXT_PUBLIC_NODE=https://api.devnet.solana.com/
+```
 
-```bash
-npm run dev
-# or
+## Install dependancies
+
+using yarn:
+
+```
+yarn
+```
+
+using npm:
+
+```
+npm install
+```
+
+## Running the app
+Start the app in dev mode
+
+using yarn:
+
+```
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+using npm:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+npm run dev
+```
