@@ -2,7 +2,7 @@
 
 ## Summary
 
-* Development environment: [Solana DevNet Cluster](https://docs.solana.com/clusters#devnet)
+* Development environment: [Solana Devnet Cluster](https://docs.solana.com/clusters#devnet)
 * Deployed protocol addresses: [Protocol Addresses](https://github.com/MonacoProtocol/client/blob/main/types/protocol.ts)
 
 The primary protocol for development is listed as `DEVNET_STABLE` in the client. This is the most stable in-development version of the protocol. As the protocol evolves, more protocol deployments will be added for convenience, for example `DEV` and `RELEASE`
@@ -27,7 +27,7 @@ Currently there is no admin client to allow for developers to create their own m
 
 ### Test Token
 
-Markets are created to use the token [Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH](https://solscan.io/token/Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH?cluster=devnet) this is used on DevNet in place of a token such as USDT.&#x20;
+Markets are created to use the token [Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH](https://solscan.io/token/Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH?cluster=devnet) this is used on Devnet in place of a token such as USDT.&#x20;
 
 You can request an airdrop through the DevHub:
 
@@ -35,7 +35,7 @@ You can request an airdrop through the DevHub:
 
 The protocol is built in such a way that, once admin-functionality is available, markets can be created to use any token so that you may create your own test token through the recommended, [strata protocol](https://app.strataprotocol.com/launchpad/manual/new).
 
-### DevNet Solana
+### Devnet Solana
 
 To pay for transactions and account creation, you will need SOL in your development wallet.&#x20;
 

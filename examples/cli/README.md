@@ -1,10 +1,10 @@
 # Getting Started
 
-This repository contains a solana wallet keypair located in [/wallet/example.json](./wallet/example.json) in order to run the example scripts with minimal setup. Please be aware that this keypair is public and should never be used on `mainnet`. Never include a keypair in your own repository.
+This repository contains a solana wallet keypair located in [/wallet/example.json](./wallet/example.json) in order to run the example scripts with minimal setup. Please be aware that this keypair is public and should never be used on `Mainnet`. Never include a keypair in your own repository.
 
 The publicKey for this wallet is `5BZWY6XWPxuWFxs2jagkmUkCoBWmJ6c4YEArr83hYBWk`
 
-These examples make use of the [anchor](https://github.com/coral-xyz/anchor) provider set on your environment, please note that the `ANCHOR_PROVIDER_URL` in the example is the public solana RPC node for devnet. This node should be used sparingly and is subject to rate-limiting. If you are going to make multiple requests, please consider using your own node.
+These examples make use of the [anchor](https://github.com/coral-xyz/anchor) provider set on your environment, please note that the `ANCHOR_PROVIDER_URL` in the example is the public solana RPC node for Devnet. This node should be used sparingly and is subject to rate-limiting. If you are going to make multiple requests, please consider using your own node.
 
 ```
 npm install

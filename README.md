@@ -36,10 +36,10 @@ The Monaco Protocol is a decentralized liquidity network for exchange-based appl
 - The protocol is currently in the process of an audit.
 - Additional information on this will be released once the the audit is complete.
 
-## When Will the Protocol be on MainNet?
+## When Will the Protocol be on Mainnet?
 
-- The protocol will launch on mainnet once auditing and testing is complete.
-- The protocol is currently deployed on the [devnet cluster](https://docs.solana.com/clusters#devnet) at [5Q2hKsxShaPxFqgVtQH3ErTkiBf8NGb99nmpaGw7FCrr](https://explorer.solana.com/address/5Q2hKsxShaPxFqgVtQH3ErTkiBf8NGb99nmpaGw7FCrr?cluster=devnet)
+- The protocol will launch on Mainnet once auditing and testing is complete.
+- The protocol is currently deployed on the [Devnet cluster](https://docs.solana.com/clusters#devnet) at [5Q2hKsxShaPxFqgVtQH3ErTkiBf8NGb99nmpaGw7FCrr](https://explorer.solana.com/address/5Q2hKsxShaPxFqgVtQH3ErTkiBf8NGb99nmpaGw7FCrr?cluster=devnet)
 - The authority on devnet is [98CVwMftrhm6zutmV29frqRPfXsocbFnwjXVxYo7xbHX](https://explorer.solana.com/address/98CVwMftrhm6zutmV29frqRPfXsocbFnwjXVxYo7xbHX?cluster=devnet)
 
 {% hint style="danger" %} Please be vigilant when interacting with any program claiming to be the Monaco Protocol. Program addresses and authorities will always be shared by the Monaco Protocol Foundation and publicized through official channels such as these docs.{% endhint %}
