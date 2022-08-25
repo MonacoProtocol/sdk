@@ -13,7 +13,7 @@ Only interact with protocol addresses shipped with the client as these are verif
 
 ## Test Markets
 
-Currently there is no admin client to allow for developers to create their own markets. As such, market automation is in place to facilitate development:
+The admin tooling for creating markets is still in development; but coming soon. Until such point, market automation is in place to facilitate building against the protocol:
 
 ### Creation
 
