@@ -46,8 +46,8 @@ The Monaco Protocol is a decentralized liquidity network for exchange-based appl
 
 ## Have any applications built on the Monaco Protocol?
 
-- BetDEX exchange is currently in closed beta.
-- You can learn more about the exchange on https://betdex.gitbook.io/betdex-beta/.
+- The BetDEX exchange is currently in closed beta.
+  - You can learn more about the exchange on https://betdex.gitbook.io/betdex-beta/.
 - [SAMO](https://samoyedcoin.com/) community members are working on a crypto-based prediction market.
 
 ## What is the relationship between BetDEX Labs, Inc. and the Monaco Protocol?
