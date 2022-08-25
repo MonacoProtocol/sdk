@@ -13,11 +13,21 @@ Only interact with protocol addresses shipped with the client as these are verif
 
 ## Test Markets
 
-Currently there is no admin client to allow for developers to create their own markets. Until this client is shipped, markets will be regularly added to the protocol to enable development. Similarly, the token used to enter the market can be obtained via an airdrop whilst we work on a faucet.
+Currently there is no admin client to allow for developers to create their own markets. As such, market automation is in place to facilitate development:
+
+### Creation
+
+- Two test markets are created each day at `12:30 UTC`
+- These test markets have 2 outcomes each
+
+### Settlement
+
+- The previous days markets will settle daily at `12:30 UTC`
+- Markets will settle with a winning outcome index of `0` meaning the first outcome on a marketAccount will always win
 
 ### Test Token
 
-Markets are created using the token [Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH](https://solscan.io/token/Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH?cluster=devnet) this is used on DevNet in place of a token such as USDT.&#x20;
+Markets are created to use the token [Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH](https://solscan.io/token/Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH?cluster=devnet) this is used on DevNet in place of a token such as USDT.&#x20;
 
 You can request an airdrop through the DevHub:
 
