@@ -19,7 +19,7 @@ The client opens up consumer-facing functionality but not admin-functionality. A
 
 Documentation for the client can be found in the client repository itself with the majority of documentation auto-generated from docstrings within the code itself. For convenience, the docs are also exposed via a GitBook linked to the repo.
 
-* [Client Docs GitBook](https://app.gitbook.com/o/QXqMMSlR6dqssLlaKHzO/s/zAX73BS1e1WV6tqGrBK6/)
+* [Client Docs GitBook](https://monacoprotocol.gitbook.io/monaco-protocol-client/)
 
 ## Examples
 
