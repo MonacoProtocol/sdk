@@ -2,7 +2,7 @@ import { getMarketAccounts } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { getProgram, logJson, log } from "./utils";
 
-async function getAllMarksAccounts(
+async function getAllMarketAccounts(
     marketPk: PublicKey,
     backing: boolean,
     marketOutcomeIndex: number,
@@ -24,5 +24,5 @@ async function getAllMarksAccounts(
     }
 }
 
-const marketPk = new PublicKey("4R6w8Q52jjnXdJB26K9ML9zUSzthscP3EWhvNZ2WyiAS")
-getAllMarksAccounts(marketPk, false, 0, 3)
+const marketPk = new PublicKey("CCJqgUHtTZcMtkjAuqJuTJoRA78gWpgeRRtbt7tNcZVi")
+getAllMarketAccounts(marketPk, false, 0, 3)
