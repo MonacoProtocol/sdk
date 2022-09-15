@@ -18,3 +18,6 @@ __pycache__/
 
 # production
 **/build
+
+# in dev
+**/cli-admin/

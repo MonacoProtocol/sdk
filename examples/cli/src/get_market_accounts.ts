@@ -2,11 +2,11 @@ import { getMarketAccounts } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { getProgram, logJson, log } from "./utils";
 
-async function getBetOrderbyPk(
+async function getAllMarketAccounts(
     marketPk: PublicKey,
     backing: boolean,
     marketOutcomeIndex: number,
-    odds: number,
+    price: number,
 ) {
     const program = await getProgram()
     const markets = await getMarketAccounts(
@@ -14,7 +14,7 @@ async function getBetOrderbyPk(
         marketPk,
         backing,
         marketOutcomeIndex,
-        odds,
+        price,
     )
     if (!markets.success){
         log(markets.errors)
@@ -24,5 +24,5 @@ async function getBetOrderbyPk(
     }
 }
 
-const marketPk = new PublicKey("4R6w8Q52jjnXdJB26K9ML9zUSzthscP3EWhvNZ2WyiAS")
-getBetOrderbyPk(marketPk, false, 0, 3)
+const marketPk = new PublicKey("CCJqgUHtTZcMtkjAuqJuTJoRA78gWpgeRRtbt7tNcZVi")
+getAllMarketAccounts(marketPk, false, 0, 3)
