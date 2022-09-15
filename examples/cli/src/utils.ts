@@ -5,8 +5,7 @@ import { ProtocolAddresses } from "@monaco-protocol/client";
 export async function getProgram() {
   const provider = AnchorProvider.env();
   setProvider(provider);
-  //const protocolAddress = new PublicKey(ProtocolAddresses.DEVNET_STABLE)
-  const protocolAddress = new PublicKey("yxvZ2jHThHQPTN6mGC8Z4i7iVBtQb3eBGeURQuLSrG9")
+  const protocolAddress = new PublicKey(ProtocolAddresses.DEVNET_STABLE)
 
   return Program.at(protocolAddress, provider);
 }

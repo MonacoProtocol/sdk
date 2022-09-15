@@ -13,5 +13,5 @@ async function getMarketPricesByPk(marketPk: PublicKey){
     }
 }
 
-const eventPk = new PublicKey("Dr8mauGvrpfQqT4y7FdrmMzq37FDijHfvyHvd3wmKEbw")
+const eventPk = new PublicKey("CCJqgUHtTZcMtkjAuqJuTJoRA78gWpgeRRtbt7tNcZVi")
 getMarketPricesByPk(eventPk)

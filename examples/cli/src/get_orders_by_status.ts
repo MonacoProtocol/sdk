@@ -12,4 +12,4 @@ async function getBetOrders(status: OrderStatus){
     }
 }
 
-getBetOrders(OrderStatus.Matched)
+getBetOrders(OrderStatus.Open)
