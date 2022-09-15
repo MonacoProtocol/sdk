@@ -25,7 +25,7 @@ export ANCHOR_WALLET=./wallet/example_secondary.json
 - All example scripts have been added to the [package.json](package.json) for execution, to list them - `npm run`
 - Where publicKeys are needs for scripts, examples have been provided however there is no guarantee the key links to valid accounts
   - For example in [GetMarketsByEvent](src/get_markets_by_event.ts), the eventAccountPk may not have a market associated with it
-- [PlaceBetOrder](src/place_bet_order.ts) requires an open market and for the example wallet to have enough funds (SOL for tnx and the mintToken of the market)
+- [PlaceForOrder](src/place_for_order.ts) requires an open market and for the example wallet to have enough funds (SOL for tnx and the mintToken of the market)
 
 ## Match Orders & View Trades
 

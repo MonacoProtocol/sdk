@@ -9,7 +9,7 @@ The Monaco Protocol offers the ability to wager on binary-outcome event, it is a
 ## Markets
 
 - Outcomes
-  - Betting markets can be created on anything: from the outcome of a sporting event, the weather in Nantucket on a specific day, to the winner of the next election.
+  - Markets can be created on anything: from the outcome of a sporting event, the weather in Nantucket on a specific day, to the winner of the next election.
   - Outcomes on the protocol are represented by an index, in a market with outcomes of `TEAM_A, DRAW, TEAM_B` a draw result will be a winning index of `1`.
 - Price Ladder
   - These markets can have their own price ladder. A sporting event may wish to offer prices ranging from `1.001` to `1000` whilst another market may just offer prices from `1.2` to `5` - these are set by the market operator at time of creation.
@@ -30,7 +30,7 @@ The Monaco Protocol offers the ability to wager on binary-outcome event, it is a
   - Price of the order.
   - Stake.
   - Index of the predicted winning outcome.
-  - Whether or not the bet order is for the outcome happening or against it.
+  - Whether or not the order is for the outcome happening or against it.
 - Once an order is placed it is recorded in a market matching pool to allow for matching of orders.
 - Fund are recorded in escrow.
 - Orders can be cancelled until they are fully matched.
