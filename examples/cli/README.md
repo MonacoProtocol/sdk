@@ -8,6 +8,8 @@ To aid testing matching orders, a secondary wallet is included [/wallet/example_
 
 The publicKey for this wallet is `GJFYdSWwcVzpmAQastTpN8j16EKLUtC7mGvqeE5gszL4`
 
+:warning: As a reminder, these wallet keyPairs are stored within the repository for educational purposes only. Never include a keypair in your own repository. :warning:
+
 These examples make use of the [anchor](https://github.com/coral-xyz/anchor) provider set on your environment, please note that the `ANCHOR_PROVIDER_URL` in the example is the public solana RPC node for Devnet. This node should be used sparingly and is subject to rate-limiting. If you are going to make multiple requests, please consider using your own node.
 
 ```
