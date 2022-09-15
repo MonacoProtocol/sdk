@@ -6,7 +6,7 @@ async function getAllMarketAccounts(
     marketPk: PublicKey,
     backing: boolean,
     marketOutcomeIndex: number,
-    odds: number,
+    price: number,
 ) {
     const program = await getProgram()
     const markets = await getMarketAccounts(
@@ -14,7 +14,7 @@ async function getAllMarketAccounts(
         marketPk,
         backing,
         marketOutcomeIndex,
-        odds,
+        price,
     )
     if (!markets.success){
         log(markets.errors)
