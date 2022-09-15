@@ -25,6 +25,12 @@ type FormData = {
     }
 }
 
+const defaultFormValues = {
+    forOrAgainst: "For" as "For",
+    odds: 1.5,
+    stake: 0,
+};
+
 const PlaceBet = () => {
     const program = useProgram();
     const { query } = useRouter();
@@ -48,17 +54,12 @@ const PlaceBet = () => {
     const getMarketData = async () => {
         try {
             const marketResponse = await getMarket(program, marketAccount);
-            marketResponse.data.account.mintAccount
             setMarket(marketResponse.data);
             const marketOutcomeAccountsResponse = await getMarketOutcomesByMarket(program, marketAccount);
             setMarketOucomes(marketOutcomeAccountsResponse.data.marketOutcomeAccounts);
-            const defaultFormState = marketOutcomeAccountsResponse.data.marketOutcomeAccounts.reduce((formState, { account: { title }}) => ({
+            const defaultFormState = marketOutcomeAccountsResponse.data.marketOutcomeAccounts.reduce((formState: FormData, { account: { title }}) => ({
                 ...formState,
-                [title]: {
-                    backing: "back",
-                    odds: 1.5,
-                    stake: 0,
-                },
+                [title]: defaultFormValues,
             }), {})
             setFormData(defaultFormState)
         } catch (e) {
@@ -78,7 +79,8 @@ const PlaceBet = () => {
             const marketTokenPk = new PublicKey(market.account.mintAccount);
             const mintInfo = await getMintInfo(program, marketTokenPk);
             const stakeInteger = new BN(stake * 10 ** mintInfo.data.decimals);
-            const createBetOrderResposne = await createOrder(program, marketAccount, marketOutcomeIndex, forOrAgainst === "For", odds, new BN(stakeInteger));
+            const createOrderResposne = await createOrder(program, marketAccount, marketOutcomeIndex, forOrAgainst === "For", odds, new BN(stakeInteger));
+            console.log(createOrderResposne);
         } catch (e) {
             console.error(e);
         }
