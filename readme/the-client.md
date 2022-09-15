@@ -10,8 +10,9 @@ The primary access point to the Protocol is the typeScript client. The client is
 The client opens up consumer-facing functionality but not admin-functionality. A separate admin client will be available to interact with the protocol from an operations point of view (create, update, and settle markets)
 
 * Get markets by status/event/wagering token
-* Place bet orders for markets
-* Cancel bet orders
+* Place orders for markets
+* Get trades for markets and orders
+* Cancel orders
 * Get market position for wallets
 * Get wallet token balances
 
