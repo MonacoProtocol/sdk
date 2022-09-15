@@ -1,6 +1,6 @@
 {
     "name": "@monaco-protocol/examples",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "Monaco Protocol Client Examples",
     "author": "Monaco Protocol",
     "module": "commonjs",
@@ -10,18 +10,24 @@
         "getMarketsByStatus": "ts-node src/get_markets_by_status.ts",
         "getMarketsByEvent": "ts-node src/get_markets_by_event.ts",
         "getMarketsByMintToken": "ts-node src/get_markets_by_mint_token.ts",
-        "getMarketPrices": "ts-node src/get_market_prices.ts",
+        "getMarket": "ts-node src/get_market.ts",
+        "getMarketOutcomes": "ts-node src/get_market_outcomes.ts",
+        "getMarketOutcomeTitles": "ts-node src/get_market_outcome_titles.ts",
+        "getMarketPrices": "ts-node src/get_market.ts",
         "getMarketPosition": "ts-node src/get_market_position.ts",
-        "getBetOrders": "ts-node src/get_bet_orders_by_status.ts",
-        "getBetOrder": "ts-node src/get_bet_order.ts",
-        "getMarketAccounts": "ts-node src/get_market_acounts.ts",
+        "getOrders": "ts-node src/get_orders_by_status.ts",
+        "getOrder": "ts-node src/get_order.ts",
+        "getMarketAccounts": "ts-node src/get_market_accounts.ts",
         "getMarketOutcomeAccounts": "ts-node src/get_market_outcome_accounts.ts",
-        "placeBetOrder": "ts-node src/place_bet_order.ts",
-        "cancelBetOrder": "ts-node src/cancel_bet_order.ts",
-        "cancelBetOrders": "ts-node src/cancel_bet_orders_for_market.ts"
+        "getTradesForMarket": "ts-node src/get_trades_for_market.ts",
+        "getTradesForOrder": "ts-node src/get_trades_for_order.ts",
+        "placeForOrder": "ts-node src/place_for_order.ts",
+        "placeAgainstOrder": "ts-node src/place_against_order.ts",
+        "cancelOrder": "ts-node src/cancel_order.ts",
+        "cancelOrders": "ts-node src/cancel_orders_for_market.ts"
     },
     "dependencies": {
-        "@monaco-protocol/client": "^0.0.2",
+        "@monaco-protocol/client": "^1.0.2",
         "@project-serum/anchor": "^0.25.0",
         "@solana/web3.js": "^1.53.0"
     }
