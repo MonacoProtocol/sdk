@@ -1,6 +1,6 @@
 import { cancelOrdersForMarket } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
-import { getProgram, logJson, log } from "./utils";
+import { getProgram, logJson, log, getProcessArgs } from "./utils";
 
 async function cancelOrders(marketPk: PublicKey){
     const program = await getProgram()
@@ -13,5 +13,6 @@ async function cancelOrders(marketPk: PublicKey){
     }
 }
 
-const marketPk = new PublicKey("4R6w8Q52jjnXdJB26K9ML9zUSzthscP3EWhvNZ2WyiAS")
+const processArgs = getProcessArgs(["marketPk"], "npm run cancelOrders")
+const marketPk = new PublicKey(processArgs.marketPk)
 cancelOrders(marketPk)

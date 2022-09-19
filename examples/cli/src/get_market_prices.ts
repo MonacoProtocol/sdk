@@ -1,6 +1,6 @@
 import { getMarketPrices } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
-import { getProgram, logJson, log } from "./utils";
+import { getProgram, logJson, log, getProcessArgs} from "./utils";
 
 async function getMarketPricesByPk(marketPk: PublicKey){
     const program = await getProgram()
@@ -13,5 +13,6 @@ async function getMarketPricesByPk(marketPk: PublicKey){
     }
 }
 
-const eventPk = new PublicKey("CCJqgUHtTZcMtkjAuqJuTJoRA78gWpgeRRtbt7tNcZVi")
-getMarketPricesByPk(eventPk)
+const processArgs = getProcessArgs(["marketPk"], "npm run getMarketPrices")
+const marketPk = new PublicKey(processArgs.marketPk)
+getMarketPricesByPk(marketPk)

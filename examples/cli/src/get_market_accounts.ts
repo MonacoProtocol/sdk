@@ -1,6 +1,6 @@
 import { getMarketAccounts } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
-import { getProgram, logJson, log } from "./utils";
+import { getProgram, logJson, log, getProcessArgs } from "./utils";
 
 async function getAllMarketAccounts(
     marketPk: PublicKey,
@@ -24,5 +24,9 @@ async function getAllMarketAccounts(
     }
 }
 
-const marketPk = new PublicKey("CCJqgUHtTZcMtkjAuqJuTJoRA78gWpgeRRtbt7tNcZVi")
-getAllMarketAccounts(marketPk, false, 0, 3)
+const processArgs = getProcessArgs(["marketPk", "forOutcome", "marketOutcomeIndex", "price"], "npm run getMarketAccounts")
+const marketPk = new PublicKey(processArgs.marketPk)
+const forOutcome = processArgs.forOutcome === "true"
+const marketOutcomeIndex = parseFloat(processArgs.marketOutcomeIndex)
+const price = parseFloat(processArgs.price)
+getAllMarketAccounts(marketPk, forOutcome, marketOutcomeIndex, price)
