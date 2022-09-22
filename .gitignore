@@ -19,5 +19,5 @@ __pycache__/
 # production
 **/build
 
-# in dev
-**/cli-admin/
+# no example wallet for admin
+**/cli-admin/wallet/

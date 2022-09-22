@@ -1,0 +1,19 @@
+{
+    "name": "@monaco-protocol/admin-examples",
+    "version": "0.0.1",
+    "description": "Monaco Protocol Admin Client Examples",
+    "author": "Monaco Protocol",
+    "module": "commonjs",
+    "target": "es5",
+    "scripts": {
+        "checkRoles": "ts-node src/check_operator_roles.ts",
+        "addMarketOperator": "ts-node src/add_market_operator.ts",
+        "createMarket": "ts-node src/create_market.ts"
+    },
+    "dependencies": {
+        "@monaco-protocol/client": "^1.0.2",
+        "@betdexlabs/betdex-internal-admin-client": "^0.1.1",
+        "@project-serum/anchor": "^0.25.0",
+        "@solana/web3.js": "^1.53.0"
+    }
+}
