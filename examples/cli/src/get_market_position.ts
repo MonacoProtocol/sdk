@@ -1,6 +1,6 @@
 import { getMarketPosition } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
-import { getProgram, logJson, log } from "./utils";
+import { getProgram, logJson, log, getProcessArgs } from "./utils";
 import { AnchorProvider } from "@project-serum/anchor";
 
 async function getMarketPositionForProvider(marketPk: PublicKey){
@@ -15,5 +15,6 @@ async function getMarketPositionForProvider(marketPk: PublicKey){
     }
 }
 
-const eventPk = new PublicKey("4R6w8Q52jjnXdJB26K9ML9zUSzthscP3EWhvNZ2WyiAS")
-getMarketPositionForProvider(eventPk)
+const processArgs = getProcessArgs(["marketPk"], "npm run getMarketPosition")
+const marketPk = new PublicKey(processArgs.marketPk)
+getMarketPositionForProvider(marketPk)

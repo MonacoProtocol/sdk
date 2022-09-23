@@ -1,5 +1,5 @@
 import { getMarketAccountsByStatus, MarketStatus } from "@monaco-protocol/client";
-import { getProgram, logJson, log } from "./utils";
+import { getProgram, logJson, log, getProcessArgs, marketStatusFromString } from "./utils";
 
 async function getMarkets(status: MarketStatus){
     const program = await getProgram()
@@ -12,4 +12,6 @@ async function getMarkets(status: MarketStatus){
     }
 }
 
-getMarkets(MarketStatus.Open)
+const processArgs = getProcessArgs(["marketStatus"], "npm run getMarketsByStatus")
+const marketStatus = marketStatusFromString(processArgs.marketStatus)
+getMarkets(marketStatus)
