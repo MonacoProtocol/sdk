@@ -15,7 +15,7 @@
         "getMarketOutcomeTitles": "ts-node src/get_market_outcome_titles.ts",
         "getMarketPrices": "ts-node src/get_market_prices.ts",
         "getMarketPosition": "ts-node src/get_market_position.ts",
-        "getOrders": "ts-node src/get_orders_by_status.ts",
+        "getOrdersByStatus": "ts-node src/get_orders_by_status.ts",
         "getOrder": "ts-node src/get_order.ts",
         "getMarketAccounts": "ts-node src/get_market_accounts.ts",
         "getMarketOutcomeAccounts": "ts-node src/get_market_outcome_accounts.ts",
