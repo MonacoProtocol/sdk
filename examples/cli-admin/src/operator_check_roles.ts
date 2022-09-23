@@ -1,15 +1,11 @@
-import { getProgram, logJson, log } from "./utils";
 import { checkOperatorRoles } from "@betdexlabs/betdex-internal-admin-client"
+import { getProgram, getProcessArgs, logResponse } from "./utils";
 
 async function checkRoles(){
     const program = await getProgram()
     const response = await checkOperatorRoles(program, program.provider.publicKey)
-    if (!response.success){
-        log(response.errors)
-    }
-    else{
-        logJson(response)
-    }
+    logResponse(response)
 }
 
+getProcessArgs([], "npm run checkRoles")
 checkRoles()

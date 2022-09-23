@@ -6,9 +6,13 @@
     "module": "commonjs",
     "target": "es5",
     "scripts": {
-        "checkRoles": "ts-node src/check_operator_roles.ts",
-        "addMarketOperator": "ts-node src/add_market_operator.ts",
-        "createMarket": "ts-node src/create_market.ts"
+        "checkRoles": "ts-node src/operator_check_roles.ts",
+        "addMarketOperator": "ts-node src/operator_add_market_operator.ts",
+        "getOperatorsByType": "ts-node src/operator_get_operators.ts",
+        "createMarket": "ts-node src/market_create.ts",
+        "settleMarket": "ts-node src/market_settle.ts",
+        "getMarket": "ts-node src/market_get.ts",
+        "updateMarketStatus": "ts-node src/market_update_status.ts"
     },
     "dependencies": {
         "@monaco-protocol/client": "^1.0.2",
