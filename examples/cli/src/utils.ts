@@ -1,6 +1,6 @@
 import { PublicKey } from "@solana/web3.js";
 import { AnchorProvider, setProvider, Program } from "@project-serum/anchor";
-import { ProtocolAddresses, MarketStatus, OrderStatus } from "@monaco-protocol/client";
+import { ProtocolAddresses, MarketStatus, OrderStatus, ClientResponse } from "@monaco-protocol/client";
 
 export async function getProgram() {
   const provider = AnchorProvider.env();
@@ -16,6 +16,15 @@ export function log(log: any){
 
 export function logJson(json: object){
   console.log(JSON.stringify(json, null, 2))
+}
+
+export function logResponse(response: ClientResponse<{}>){
+  if (!response.success){
+      log(response.errors)
+  }
+  else{
+      logJson(response)
+  }
 }
 
 export function getProcessArgs(expectedArgs: string[], exampleInvocation: string): any{

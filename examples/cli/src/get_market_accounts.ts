@@ -1,6 +1,6 @@
 import { getMarketAccounts } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
-import { getProgram, logJson, log, getProcessArgs } from "./utils";
+import { getProgram, getProcessArgs, logResponse } from "./utils";
 
 async function getAllMarketAccounts(
     marketPk: PublicKey,
@@ -9,19 +9,14 @@ async function getAllMarketAccounts(
     price: number,
 ) {
     const program = await getProgram()
-    const markets = await getMarketAccounts(
+    const response = await getMarketAccounts(
         program,
         marketPk,
         backing,
         marketOutcomeIndex,
         price,
     )
-    if (!markets.success){
-        log(markets.errors)
-    }
-    else{
-        logJson(markets)
-    }
+    logResponse(response)
 }
 
 const processArgs = getProcessArgs(["marketPk", "forOutcome", "marketOutcomeIndex", "price"], "npm run getMarketAccounts")

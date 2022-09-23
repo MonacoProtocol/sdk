@@ -1,15 +1,10 @@
 import { getOrdersByStatusForProviderWallet, OrderStatus } from "@monaco-protocol/client";
-import { getProgram, logJson, log, getProcessArgs, orderStatusFromString } from "./utils";
+import { getProgram, getProcessArgs, orderStatusFromString, logResponse } from "./utils";
 
 async function getBetOrders(status: OrderStatus){
     const program = await getProgram()
-    const betOrders = await getOrdersByStatusForProviderWallet(program, status)
-    if (!betOrders.success){
-        log(betOrders.errors)
-    }
-    else{
-        logJson(betOrders)
-    }
+    const response = await getOrdersByStatusForProviderWallet(program, status)
+    logResponse(response)
 }
 
 const processArgs = getProcessArgs(["orderStatus"], "npm run getOrdersByStatus")

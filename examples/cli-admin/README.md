@@ -1,10 +1,13 @@
 # Getting Started
 
-This repository contains a solana wallet keypair located in [/wallet/example.json](./wallet/example.json) in order to run the example scripts with minimal setup. Please be aware that this keypair is public and should never be used on `Mainnet`. Never include a keypair in your own repository.
+Unlike the examples for the primary client, no example wallet is included in with these admin-function examples. To get started, you will want to generate your own wallet for admin functionality.
 
-The publicKey for this wallet is `5BZWY6XWPxuWFxs2jagkmUkCoBWmJ6c4YEArr83hYBWk`
+```
+mkdir wallet
+solana-keygen new -o wallet/example.json
+```
 
-These examples make use of the [anchor](https://github.com/coral-xyz/anchor) provider set on your environment, please note that the `ANCHOR_PROVIDER_URL` in the example is the public solana RPC node for Devnet. This node should be used sparingly and is subject to rate-limiting. If you are going to make multiple requests, please consider using your own node.
+To help ensure this wallet isn't accidentally committed, the path to the example wallet dir `**/cli-admin/wallet/` is included in the [.gitignore](../../.gitignore) file for this repository.
 
 ```
 npm install
@@ -13,6 +16,14 @@ export ANCHOR_PROVIDER_URL=https://api.devnet.solana.com
 ```
 
 - All example scripts have been added to the [package.json](package.json) for execution, to list them - `npm run`
-- Where publicKeys are needs for scripts, examples have been provided however there is no guarantee the key links to valid accounts
-  - For example in [GetMarketsByEvent](src/get_markets_by_event.ts), the eventAccountPk may not have a market associated with it
-- [PlaceBetOrder](src/place_bet_order.ts) requires an open market and for the example wallet to have enough funds (SOL for tnx and the mintToken of the market)
+- Where arguments are needed, when you invoke a script, you will be informed what arguments are missing for example:
+
+```
+$ npm run getOperatorsByType
+
+> @monaco-protocol/admin-examples@0.0.1 getOperatorsByType
+> ts-node src/operator_get_operators.ts
+
+> Expected number of args: 1
+> Example invocation: npm run getOperatorsByType operatorType
+```

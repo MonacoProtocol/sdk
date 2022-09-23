@@ -1,16 +1,11 @@
 import { getWalletTokenBalancesWithSol } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
-import { getProgram, logJson, log, getProcessArgs } from "./utils";
+import { getProgram, getProcessArgs, logResponse } from "./utils";
 
 async function getBalances(tokenMints: PublicKey[]){
     const program = await getProgram()
-    const markets = await getWalletTokenBalancesWithSol(program, tokenMints)
-    if (!markets.success){
-        log(markets.errors)
-    }
-    else{
-        logJson(markets)
-    }
+    const response = await getWalletTokenBalancesWithSol(program, tokenMints)
+    logResponse(response)
 }
 
 const exampleTokenMint1 = new PublicKey("Qegj89Mzpx4foJJqkj6B4551aiGrgaV33Dtcm7WZ9kf")
