@@ -27,3 +27,29 @@ $ npm run getOperatorsByType
 > Expected number of args: 1
 > Example invocation: npm run getOperatorsByType operatorType
 ```
+
+# Operators
+
+In order to create a market, an authorised wallet is required. It is recommended that you create a new CLI wallet for this purpose. You can then make a request to be added as an authorised market operator on the [dev hub](https://github.com/MonacoProtocol/sdk/discussions). The `checkOperatorRoles` function included with the admin client allows you to check what operator roles a given wallet has. 
+
+The example script, `checkRoles` returns roles for your set `ANCHOR_WALLET`.
+
+```
+npm run checkRoles
+
+> @monaco-protocol/admin-examples@0.0.1 checkRoles
+> ts-node src/operator_check_roles.ts
+
+Supplied arguments:
+{}
+{
+  "success": true,
+  "errors": [],
+  "data": {
+    "operatorPk": "98CVwMftrhm6zutmV29frqRPfXsocbFnwjXVxYo7xbHX",
+    "admin": true,
+    "market": true,
+    "crank": false
+  }
+}
+```
