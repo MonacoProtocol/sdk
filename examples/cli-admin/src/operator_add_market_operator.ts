@@ -1,5 +1,5 @@
 import { PublicKey } from "@solana/web3.js";
-import { authoriseMarketOperator } from "@betdexlabs/betdex-internal-admin-client"
+import { authoriseMarketOperator } from "@monaco-protocol/admin-client"
 import { getProgram, getProcessArgs, logResponse } from "./utils";
 
 async function addRole(newOperatorPk: PublicKey){

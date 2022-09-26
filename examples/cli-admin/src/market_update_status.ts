@@ -1,5 +1,5 @@
 import { PublicKey } from "@solana/web3.js";
-import { publishMarket, unpublishMarket, suspendMarket, unsuspendMarket } from "@betdexlabs/betdex-internal-admin-client"
+import { publishMarket, unpublishMarket, suspendMarket, unsuspendMarket } from "@monaco-protocol/admin-client"
 import { getProgram, logResponse, getProcessArgs } from "./utils";
 
 async function updateStatus(marketPk: PublicKey, status: string){

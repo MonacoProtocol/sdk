@@ -1,8 +1,7 @@
 import { PublicKey } from "@solana/web3.js";
 import { AnchorProvider, setProvider, Program } from "@project-serum/anchor";
 import { ProtocolAddresses } from "@monaco-protocol/client";
-import { Operator } from "@betdexlabs/betdex-internal-admin-client";
-import { ClientResponse } from "@monaco-protocol/client";
+import { Operator, ClientResponse } from "@monaco-protocol/admin-client"
 
 export async function getProgram() {
   const provider = AnchorProvider.env();

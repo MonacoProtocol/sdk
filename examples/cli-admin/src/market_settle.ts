@@ -1,5 +1,5 @@
 import { PublicKey } from "@solana/web3.js";
-import { settleMarket } from "@betdexlabs/betdex-internal-admin-client"
+import { settleMarket } from "@monaco-protocol/admin-client"
 import { getProgram, getProcessArgs, logResponse } from "./utils";
 
 async function settlement(marketPk: PublicKey, winningOutcomeIndex: number){

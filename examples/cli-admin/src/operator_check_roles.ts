@@ -1,4 +1,4 @@
-import { checkOperatorRoles } from "@betdexlabs/betdex-internal-admin-client"
+import { checkOperatorRoles } from "@monaco-protocol/admin-client"
 import { getProgram, getProcessArgs, logResponse } from "./utils";
 
 async function checkRoles(){

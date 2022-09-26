@@ -1,6 +1,5 @@
 import { PublicKey, Keypair } from "@solana/web3.js";
-import { createMarketWithOutcomesAndPriceLadder } from "@betdexlabs/betdex-internal-admin-client"
-import { MarketType, DEFAULT_PRICE_LADDER} from "@betdexlabs/betdex-internal-admin-client"
+import { createMarketWithOutcomesAndPriceLadder, MarketType, DEFAULT_PRICE_LADDER } from "@monaco-protocol/admin-client"
 import { getProgram, log, getProcessArgs, logResponse } from "./utils";
 
 async function createMarket(mintToken: PublicKey){
@@ -17,7 +16,7 @@ async function createMarket(mintToken: PublicKey){
         eventAccountKeyPair.publicKey,
         ["Red", "Blue"],
         DEFAULT_PRICE_LADDER,
-        50
+        40
         )
     logResponse(response)
     if (response.success){

@@ -1,4 +1,4 @@
-import { getOperatorsAccountByType, Operator } from "@betdexlabs/betdex-internal-admin-client"
+import { getOperatorsAccountByType, Operator } from "@monaco-protocol/admin-client"
 import { getProgram, getProcessArgs, operatorTypeFromString, logResponse } from "./utils";
 
 async function getOperators(operatorType: Operator){
