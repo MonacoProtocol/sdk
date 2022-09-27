@@ -23,9 +23,18 @@ export ANCHOR_WALLET=./wallet/example_secondary.json
 ```
 
 - All example scripts have been added to the [package.json](package.json) for execution, to list them - `npm run`
-- Where publicKeys are needs for scripts, examples have been provided however there is no guarantee the key links to valid accounts
-  - For example in [GetMarketsByEvent](src/get_markets_by_event.ts), the eventAccountPk may not have a market associated with it
-- [PlaceForOrder](src/place_for_order.ts) requires an open market and for the example wallet to have enough funds (SOL for tnx and the mintToken of the market)
+- Where arguments are needed, when you invoke a script, you will be informed what arguments are missing for example:
+
+```
+$ npm run getMarket
+
+> @monaco-protocol/examples@1.0.0 getMarket
+> ts-node src/get_market.ts
+
+> Expected number of args: 1
+> Example invocation: npm run getMarket marketPk
+```
+
 
 ## Match Orders & View Trades
 

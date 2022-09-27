@@ -1,6 +1,7 @@
 import { PublicKey } from "@solana/web3.js";
 import { AnchorProvider, setProvider, Program } from "@project-serum/anchor";
-import { ProtocolAddresses, MarketStatus, OrderStatus, ClientResponse } from "@monaco-protocol/client";
+import { ProtocolAddresses } from "@monaco-protocol/client";
+import { Operator, ClientResponse } from "@monaco-protocol/admin-client"
 
 export async function getProgram() {
   const provider = AnchorProvider.env();
@@ -46,36 +47,15 @@ export function getProcessArgs(expectedArgs: string[], exampleInvocation: string
   return values
 }
 
-export function marketStatusFromString(status: string){
-  switch (status){
-    case "open":
-      return MarketStatus.Open
-    case "locked":
-      return MarketStatus.Locked
-    case "settled":
-      return MarketStatus.Settled
-    case "complete":
-      return MarketStatus.Complete
-    case "readyForSettlement":
-      return MarketStatus.ReadyForSettlement
+export function operatorTypeFromString(operatorType: string){
+  switch (operatorType){
+    case "market":
+      return Operator.MARKET
+    case "crank":
+      return Operator.CRANK
+    case "admin":
+      return Operator.ADMIN
     default:
-      throw "Available market statuses: open, locked, settled, complete, readyForSettlement"
-  }
-}
-
-export function orderStatusFromString(status: string){
-  switch (status){
-    case "open":
-      return OrderStatus.Open  
-    case "matched":
-      return OrderStatus.Matched 
-    case "settledWin":
-      return OrderStatus.SettledWin  
-    case "settledLose":
-      return OrderStatus.SettledLose  
-    case "cancelled":
-      return OrderStatus.Cancelled  
-    default:
-      throw "Available order statuses: open, matched, settledWin, settledLose, cancelled" 
+      throw "Available operator types: market, crank, admin"
   }
 }
