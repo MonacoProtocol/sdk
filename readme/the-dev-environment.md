@@ -13,7 +13,7 @@ Only interact with protocol addresses shipped with the client as these are verif
 
 ## Test Markets
 
-The admin tooling for creating markets is still in development; but coming soon. Until such point, market automation is in place to facilitate building against the protocol:
+Whilst an [admin client is available for you to make your own markets](https://www.npmjs.com/package/@monaco-protocol/admin-client), it is highly encouraged that until you are at the point where you absolutely need to make your own markets, that you make use of the test markets created daily on the protocol.
 
 ### Creation
 
