@@ -18,7 +18,7 @@
         "getOrdersByStatus": "ts-node src/get_orders_by_status.ts",
         "getOrder": "ts-node src/get_order.ts",
         "getMarketAccounts": "ts-node src/get_market_accounts.ts",
-        "getMarketOutcomeAccounts": "ts-node src/get_market_outcome_accounts.ts",
+        "getMarketOutcomeAccounts": "ts-node src/get_market_outcomes.ts",
         "getTradesForMarket": "ts-node src/get_trades_for_market.ts",
         "getTradesForOrder": "ts-node src/get_trades_for_order.ts",
         "placeForOrder": "ts-node src/place_for_order.ts",
@@ -27,7 +27,7 @@
         "cancelOrders": "ts-node src/cancel_orders_for_market.ts"
     },
     "dependencies": {
-        "@monaco-protocol/client": "^1.1.0",
+        "@monaco-protocol/client": "^1.1.2",
         "@project-serum/anchor": "^0.25.0",
         "@solana/web3.js": "^1.53.0"
     }
