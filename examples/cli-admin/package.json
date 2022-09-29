@@ -15,8 +15,8 @@
         "updateMarketStatus": "ts-node src/market_update_status.ts"
     },
     "dependencies": {
-        "@monaco-protocol/client": "^1.1.0",
-        "@monaco-protocol/admin-client": "^0.1.0",
+        "@monaco-protocol/client": "^1.1.2",
+        "@monaco-protocol/admin-client": "^0.1.1",
         "@project-serum/anchor": "^0.25.0",
         "@solana/web3.js": "^1.53.0"
     }
