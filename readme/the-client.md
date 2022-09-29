@@ -7,7 +7,7 @@ The primary access point to the Protocol is the typeScript client. The client is
 * [Monaco Protocol Client - NPM repository](https://www.npmjs.com/package/@monaco-protocol/client)
 * [Monaco Protocol Client - GitHub repository](https://github.com/MonacoProtocol/client)
 
-The client opens up consumer-facing functionality but not admin-functionality. A separate admin client will be available to interact with the protocol from an operations point of view (create, update, and settle markets)
+The client opens up consumer-facing functionality to the Monaco Protocol.
 
 * Get markets by status/event/wagering token
 * Place orders for markets
