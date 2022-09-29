@@ -67,3 +67,13 @@ The Monaco Protocol offers the ability to wager on binary-outcome event, it is a
 - Due to the nature of the blockchain, it is necessary to facilitate on-chain actions with a crank.
 - Cranks send regular commands to an on-chain program in order to make it perform an action.
 - To ensure decentralization, multiple cranks will power the protocol. The tooling will be open-source and the process of cranking rewarded.
+
+## Operators
+
+- There are 3 different operator types on the protocol.
+  - ADMIN: this operator role allows for the administration of the other roles.
+  - MARKET: this operator role allows to the creation and administration (status change, marking for settlement) of markets.
+  - CRANK: this operator role allows for off-chain cranking.
+- Operators are identified by a wallet publicKey.
+- All admin functions, apart from querying operators and roles, require the correct operator role.
+- Operator roles are assigned to wallets by the Monaco Protocol Foundation.
