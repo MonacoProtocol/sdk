@@ -1,5 +1,5 @@
-import { BetOrders, BetOrderAccounts } from "@monaco-protocol/client";
-import { Card, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { Orders, OrderAccounts } from "@monaco-protocol/client";
+import { Card, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { BN } from "@project-serum/anchor";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { PublicKey } from "@solana/web3.js";
@@ -14,17 +14,17 @@ const MyBets = () => {
     const { publicKey } = useWallet();
     const { query } = useRouter();
     const program = useProgram();
-    const [myBets, setMyBets] = useState<BetOrderAccounts["betOrderAccounts"]>();
+    const [myBets, setMyBets] = useState<OrderAccounts["orderAccounts"]>();
 
     const getMyBets = async () => {
         if (!publicKey) {
             return
         }
-        const betOrdersResponse = await new BetOrders(program)
+        const betOrdersResponse = await new Orders(program)
             .filterByMarket(new PublicKey(query.marketAccount as string))
             .filterByPurchaser(publicKey)
             .fetch();
-        setMyBets(betOrdersResponse.data.betOrderAccounts);
+        setMyBets(betOrdersResponse.data.orderAccounts);
     }
 
     useEffect(() => {
@@ -56,8 +56,8 @@ const MyBets = () => {
                             <TableBody>
                                 {myBets.map(myBet => (
                                     <TableRow key={new BN(myBet.account.creationTimestamp).toNumber()}>
-                                        <TableCell>{myBet.account.expectedOdds}</TableCell>
-                                        <TableCell>{myBet.account.backing ? "BACK" : "LAY"}</TableCell>
+                                        <TableCell>{myBet.account.expectedPrice}</TableCell>
+                                        <TableCell>{myBet.account.forOutcome ? "FOR" : "AGAINST"}</TableCell>
                                         <TableCell>{parseProtocolNumber(myBet.account.stake)}</TableCell>
                                         <TableCell>{parseProtocolNumber(myBet.account.stakeUnmatched)}</TableCell>
                                         <TableCell>{parseProtocolNumber(myBet.account.payout)}</TableCell>
