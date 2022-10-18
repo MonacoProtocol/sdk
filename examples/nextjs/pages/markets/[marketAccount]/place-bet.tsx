@@ -79,8 +79,8 @@ const PlaceBet = () => {
             const marketTokenPk = new PublicKey(market.account.mintAccount);
             const mintInfo = await getMintInfo(program, marketTokenPk);
             const stakeInteger = new BN(stake * 10 ** mintInfo.data.decimals);
-            const createOrderResposne = await createOrder(program, marketAccount, marketOutcomeIndex, forOrAgainst === "For", odds, new BN(stakeInteger));
-            console.log(createOrderResposne);
+            const createOrderResponse = await createOrder(program, marketAccount, marketOutcomeIndex, forOrAgainst === "For", odds, new BN(stakeInteger));
+            console.log(createOrderResponse);
         } catch (e) {
             console.error(e);
         }
