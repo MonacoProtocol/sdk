@@ -58,8 +58,10 @@ export function marketStatusFromString(status: string){
       return MarketStatus.Complete
     case "readyForSettlement":
       return MarketStatus.ReadyForSettlement
+    case "initializing":
+      return MarketStatus.Initializing
     default:
-      throw "Available market statuses: open, locked, settled, complete, readyForSettlement"
+      throw "Available market statuses: open, locked, settled, complete, readyForSettlement, initializing"
   }
 }
 
