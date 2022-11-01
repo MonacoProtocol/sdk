@@ -6,17 +6,25 @@ async function createMarket(mintToken: PublicKey){
     const program = await getProgram()
     // Generate a publicKey to represent the event
     const eventAccountKeyPair = Keypair.generate();
+    const eventPk = eventAccountKeyPair.publicKey;
+
+    const marketName = "Example Market";
+    const type = MarketType.EventResultWinner;
+    const marketLock = 32503680000;
+    const outcomes = ["Red", "Blue"];
+    const priceLadder = DEFAULT_PRICE_LADDER;
+    const batchSize = 40;
 
     const response = await createMarketWithOutcomesAndPriceLadder(
         program,
-        "Example Market",
-        MarketType.EventResultWinner,
+        marketName,
+        type,
         mintToken,
-        32503680000,
-        eventAccountKeyPair.publicKey,
-        ["Red", "Blue"],
-        DEFAULT_PRICE_LADDER,
-        40
+        marketLock,
+        eventPk,
+        outcomes,
+        priceLadder,
+        batchSize
         )
     logResponse(response)
     if (response.success){
