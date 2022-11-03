@@ -12,6 +12,6 @@ async function placeOrder(marketPk: PublicKey){
     logResponse(response)
 }
 
-const processArgs = getProcessArgs(["marketPk"], "npm run placeAgainstOrder")
+const processArgs = getProcessArgs(["marketPk"], "npm run placeForOrder")
 const marketPk = new PublicKey(processArgs.marketPk)
 placeOrder(marketPk)
