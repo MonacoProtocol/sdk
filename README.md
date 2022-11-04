@@ -28,12 +28,12 @@ The Monaco Protocol is a decentralized liquidity network for exchange-based appl
 
 ## Is the Protocol audited?
 
-- The protocol is currently in the process of an audit.
-- Additional information on this will be released once the the audit is complete.
+- The protocol has been audited by [sec3](https://www.sec3.dev/).
+- A full report will be released during Q4 2022.
 
 ## When Will the Protocol be on Mainnet?
 
-- The protocol will launch on Mainnet once auditing and testing is complete.
+- The protocol will launch on Mainnet during Q4 2022.
 - The protocol is currently deployed on the [Devnet cluster](https://docs.solana.com/clusters#devnet) at [5Q2hKsxShaPxFqgVtQH3ErTkiBf8NGb99nmpaGw7FCrr](https://explorer.solana.com/address/5Q2hKsxShaPxFqgVtQH3ErTkiBf8NGb99nmpaGw7FCrr?cluster=devnet)
 - The authority on devnet is [98CVwMftrhm6zutmV29frqRPfXsocbFnwjXVxYo7xbHX](https://explorer.solana.com/address/98CVwMftrhm6zutmV29frqRPfXsocbFnwjXVxYo7xbHX?cluster=devnet)
 
