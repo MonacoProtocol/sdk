@@ -16,7 +16,10 @@ These examples make use of the [anchor](https://github.com/coral-xyz/anchor) pro
 npm install
 export ANCHOR_WALLET=./wallet/example.json
 export ANCHOR_PROVIDER_URL=https://api.devnet.solana.com
+export PROTOCOL_TYPE=stable
 ```
+
+To connect to `mainnet` use `PROTOCOL_TYPE=release` and change your `ANCHOR_PROVIDER_URL` for a `mainnet` rpc node.
 
 ```
 export ANCHOR_WALLET=./wallet/example_secondary.json
@@ -35,6 +38,12 @@ $ npm run getMarket
 > Example invocation: npm run getMarket marketPk
 ```
 
+When you run a script you will also be presented with information for debugging purposes:
+
+- The arguments provided
+- The set protocol type
+- The set RPC node
+- The set wallet publicKey
 
 ## Match Orders & View Trades
 

@@ -6,9 +6,28 @@ import { Operator, ClientResponse } from "@monaco-protocol/admin-client"
 export async function getProgram() {
   const provider = AnchorProvider.env();
   setProvider(provider);
-  const protocolAddress = new PublicKey(ProtocolAddresses.DEVNET_STABLE)
+  const protocol = process.env.PROTOCOL_TYPE;
 
-  return Program.at(protocolAddress, provider);
+  let protocolAddress: PublicKey
+  switch(protocol){
+    case "stable":
+      protocolAddress = new PublicKey(ProtocolAddresses.DEVNET_STABLE);
+      break;
+    case "release":
+      protocolAddress = new PublicKey(ProtocolAddresses.RELEASE);
+      break;
+    default:
+      log("⚠️  PROTOCOL_TYPE env variable not set ⚠️\n\nSet with:\n\nexport PROTOCOL_TYPE=stable\nexport PROTOCOL_TYPE=release");
+      process.exit(1);      
+  }
+
+  const program = await Program.at(protocolAddress, provider);
+  
+  log(`Protocol type: ${protocol}`);
+  log(`RPC node: ${program.provider.connection.rpcEndpoint}`)
+  log(`Wallet PublicKey: ${program.provider.publicKey}`)
+  
+  return program
 }
 
 export function log(log: any){
