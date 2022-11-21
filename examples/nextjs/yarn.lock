@@ -370,10 +370,10 @@
   resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-6.10.0.tgz#c012c1ecc1a0e53d50e6af381618dca5268461c1"
   integrity sha512-lLseUPEhSFUXYTKj6q7s2O3s2vW2ebgA11vMAlKodXGf5AFw4zUoEbTz9CoFOC9jS6xY4Qr8BmRnxP/odT4Uuw==
 
-"@monaco-protocol/client@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@monaco-protocol/client/-/client-1.1.4.tgz#531409f0cbf79ec6c1fd37c194e418f0503e2d83"
-  integrity sha512-6EyRYX6GBlCJOgHCHQm+/3Ywb8CZpCixUXxSYUTzXe4p5HLMPiZXengb9ijNzO3uylH/vuZOT0qDLN83Fdx6Yg==
+"@monaco-protocol/client@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@monaco-protocol/client/-/client-2.0.0.tgz#55f31316bab8be0cb82224e595acad8620756347"
+  integrity sha512-nLbGNq4UQZQpbMwrIV4JU75QzpnTRdCxnkB4/Xx6leIe4YmXUAqr+W/l2ZeAREifv0nMi1nlhLWJbp3/4lMmsg==
 
 "@mui/base@5.0.0-alpha.97":
   version "5.0.0-alpha.97"
