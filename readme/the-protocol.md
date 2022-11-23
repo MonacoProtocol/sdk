@@ -2,6 +2,12 @@
 
 The Monaco Protocol is a liquidity matching program to be deployed on the Solana blockchain. It is currently operating on Devnet during its testing phase.
 
+# Fully Audited
+
+The Monaco Protocol has been fully audited by [sec3](https://www.sec3.dev/).
+
+- [Sec3 November 2022 Audit](../media/pdf/sec3_audit_the_monaco_protocol_nov_2022.pdf)
+
 # What The Protocol Does
 
 The Monaco Protocol offers the ability to wager on binary-outcome event, it is agnostic to the nature of these events. Orders can be placed either `FOR` the outcome (it will happen) or to `AGAINST` it (it won't happen) at a specific price (odds) and stake (wager).
