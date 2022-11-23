@@ -29,7 +29,7 @@ The Monaco Protocol is a decentralized liquidity network for exchange-based appl
 ## Is the Protocol audited?
 
 - The protocol has been audited by [sec3](https://www.sec3.dev/).
-- A full report will be released during Q4 2022.
+- The full report is available [right here](media/pdf/sec3_audit_the_monaco_protocol_nov_2022.pdf).
 
 ## When Will the Protocol be on Mainnet?
 
