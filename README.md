@@ -1,6 +1,6 @@
 # Monaco Protocol
 
-Everything you need know about the Monaco Protocol can be found here. This is also the home of the developer community where you can find information about the latest updates, showcase what you've been building, and, most importantly, ask any questions if you're looking for some help.
+E verything you need know about the Monaco Protocol can be found here. This is also the home of the developer community where you can find information about the latest updates, showcase what you've been building, and, most importantly, ask any questions if you're looking for some help.
 
 - [Documentation](SUMMARY.md)
 - [DevHub](https://github.com/MonacoProtocol/sdk/discussions/6)
