@@ -31,10 +31,15 @@ The Monaco Protocol is a decentralized liquidity network for exchange-based appl
 - The protocol has been audited by [sec3](https://www.sec3.dev/).
 - The full report is available [right here](media/pdf/sec3_audit_the_monaco_protocol_nov_2022.pdf).
 
-## When Will the Protocol be on Mainnet?
+## The Protocol on Mainnet
 
-- The protocol will launch on Mainnet during Q4 2022.
-- The protocol is currently deployed on the [Devnet cluster](https://docs.solana.com/clusters#devnet) at [5Q2hKsxShaPxFqgVtQH3ErTkiBf8NGb99nmpaGw7FCrr](https://explorer.solana.com/address/5Q2hKsxShaPxFqgVtQH3ErTkiBf8NGb99nmpaGw7FCrr?cluster=devnet)
+- The protocol launched on mainnet in Q4 2022
+- The program address is [monacoUXKtUi6vKsQwaLyxmXKSievfNWEcYXTgkbCih](https://explorer.solana.com/address/monacoUXKtUi6vKsQwaLyxmXKSievfNWEcYXTgkbCih)
+- The authority is [HVirxFBMqTcZjW6b8g5gDRGfDfPaRMF8uGvtwLiLSsC6](https://explorer.solana.com/address/HVirxFBMqTcZjW6b8g5gDRGfDfPaRMF8uGvtwLiLSsC6)
+
+### Devnet
+
+- The program address is [5Q2hKsxShaPxFqgVtQH3ErTkiBf8NGb99nmpaGw7FCrr](https://explorer.solana.com/address/5Q2hKsxShaPxFqgVtQH3ErTkiBf8NGb99nmpaGw7FCrr?cluster=devnet)
 - The authority on devnet is [98CVwMftrhm6zutmV29frqRPfXsocbFnwjXVxYo7xbHX](https://explorer.solana.com/address/98CVwMftrhm6zutmV29frqRPfXsocbFnwjXVxYo7xbHX?cluster=devnet)
 
 {% hint style="danger" %} Please be vigilant when interacting with any program claiming to be the Monaco Protocol. Program addresses and authorities will always be shared by the Monaco Protocol Foundation and publicized through official channels such as these docs.{% endhint %}
@@ -46,8 +51,8 @@ The Monaco Protocol is a decentralized liquidity network for exchange-based appl
 
 ## Have any applications built on the Monaco Protocol?
 
-- The BetDEX Exchange is currently in closed beta.
-  - You can learn more about the exchange on https://betdex.gitbook.io/betdex-beta/.
+- The BetDEX Exchange is currently in open beta on mainnet
+  - You can learn more about the exchange on their [Gitbook](https://betdex.gitbook.io/betdex-exchange/overview/welcome-to-the-betdex-exchange) or on https://www.betdex.com/.
 - [SAMO](https://samoyedcoin.com/) community members are working on a crypto-based prediction market.
 
 ## What is the relationship between BetDEX Labs, Inc. and the Monaco Protocol?
