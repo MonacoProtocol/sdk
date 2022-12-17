@@ -12,7 +12,19 @@ import { PublicKey } from "@solana/web3.js";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useProgram } from "../../../context/ProgramProvider";
-import { Box, Button, Card, Divider, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Select, TextField, Typography } from "@mui/material";
+import { 
+    Box, 
+    Button, 
+    Card, 
+    CircularProgress, 
+    Divider, 
+    FormControl, FormControlLabel, FormLabel, InputLabel, 
+    MenuItem, 
+    Radio, RadioGroup, 
+    Select, 
+    TextField, 
+    Typography,
+} from "@mui/material";
 import { BN } from "@project-serum/anchor";
 import { Page } from "../../../components/Page";
 import { useWallet } from "@solana/wallet-adapter-react";
@@ -109,6 +121,7 @@ const PlaceBet = () => {
             title="Place Bet Example"
             description="Example of how to get the required data to construct a bet order and how to exexute it."
         >
+            <Typography variant="h4">{market?.account.title}</Typography>
             <Card sx={{
                 padding: '3rem 1rem',
                 display: 'flex',
@@ -118,6 +131,10 @@ const PlaceBet = () => {
                     lg: 'row',
                 }
             }}>
+            
+            {!formData && (
+                <CircularProgress sx={{ ml: "50%" }} />
+            )}
 
             {formData && marketOutcomes?.map(({ account: { title }}, marketOutcomeIndex) =>
                 (
@@ -194,7 +211,6 @@ const PlaceBet = () => {
             </Card>
         </Page>
     );
-
 }
 
 export default PlaceBet;
