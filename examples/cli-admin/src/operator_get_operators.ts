@@ -7,6 +7,5 @@ async function getOperators(operatorType: Operator){
     logResponse(response)
 }
 
-const processArgs = getProcessArgs(["operatorType"], "npm run getOperatorsByType")
-const operatorType = operatorTypeFromString(processArgs.operatorType)
-getOperators(operatorType)
+const args = getProcessArgs(["operatorType"], "npm run getOperatorsByType")
+getOperators(operatorTypeFromString(args.operatorType))

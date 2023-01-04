@@ -56,6 +56,5 @@ async function createVerboseMarket(mintToken: PublicKey){
     log(`Market ${marketPk.toString()} creation complete ✨`)
 }
 
-const processArgs = getProcessArgs(["mintToken"], "npm run createMarketVerbose")
-const mintToken = new PublicKey(processArgs.mintToken)
-createVerboseMarket(mintToken)
+const args = getProcessArgs(["mintToken"], "npm run createMarketVerbose")
+createVerboseMarket(new PublicKey(args.mintToken))
