@@ -19,9 +19,10 @@ async function getAllMarketAccounts(
     logResponse(response)
 }
 
-const processArgs = getProcessArgs(["marketPk", "forOutcome", "marketOutcomeIndex", "price"], "npm run getMarketAccounts")
-const marketPk = new PublicKey(processArgs.marketPk)
-const forOutcome = processArgs.forOutcome === "true"
-const marketOutcomeIndex = parseFloat(processArgs.marketOutcomeIndex)
-const price = parseFloat(processArgs.price)
-getAllMarketAccounts(marketPk, forOutcome, marketOutcomeIndex, price)
+const args = getProcessArgs(["marketPk", "forOutcome", "marketOutcomeIndex", "price"], "npm run getMarketAccounts")
+getAllMarketAccounts(
+    new PublicKey(args.marketPk),
+    args.forOutcome === "true",
+    parseFloat(args.marketOutcomeIndex),
+    parseFloat(args.price)
+)

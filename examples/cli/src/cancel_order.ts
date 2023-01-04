@@ -8,6 +8,5 @@ async function cancelOrderbyPk(orderPk: PublicKey){
     logResponse(response)
 }
 
-const processArgs = getProcessArgs(["orderPk"], "npm run cancelOrder")
-const orderPk = new PublicKey(processArgs.orderPk)
-cancelOrderbyPk(orderPk)
+const args = getProcessArgs(["orderPk"], "npm run cancelOrder")
+cancelOrderbyPk(new PublicKey(args.orderPk))

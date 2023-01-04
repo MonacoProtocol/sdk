@@ -7,6 +7,5 @@ async function getMarkets(status: MarketStatus){
     logResponse(response)
 }
 
-const processArgs = getProcessArgs(["marketStatus"], "npm run getMarketsByStatus")
-const marketStatus = marketStatusFromString(processArgs.marketStatus)
-getMarkets(marketStatus)
+const args = getProcessArgs(["marketStatus"], "npm run getMarketsByStatus")
+getMarkets(marketStatusFromString(args.marketStatus))

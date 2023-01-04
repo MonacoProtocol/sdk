@@ -8,6 +8,5 @@ async function getTrades(marketPk: PublicKey){
     logResponse(response)
 }
 
-const processArgs = getProcessArgs(["betOrderPk"], "npm run getTradesForOrder")
-const betOrderPk = new PublicKey(processArgs.betOrderPk)
-getTrades(betOrderPk)
+const args = getProcessArgs(["betOrderPk"], "npm run getTradesForOrder")
+getTrades(new PublicKey(args.betOrderPk))

@@ -7,6 +7,5 @@ async function getBetOrders(status: OrderStatus){
     logResponse(response)
 }
 
-const processArgs = getProcessArgs(["orderStatus"], "npm run getOrdersByStatus")
-const orderStatus = orderStatusFromString(processArgs.orderStatus)
-getBetOrders(orderStatus)
+const args = getProcessArgs(["orderStatus"], "npm run getOrdersByStatus")
+getBetOrders(orderStatusFromString(args.orderStatus))

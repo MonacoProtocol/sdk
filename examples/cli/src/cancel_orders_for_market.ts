@@ -8,6 +8,5 @@ async function cancelOrders(marketPk: PublicKey){
     logResponse(response)
 }
 
-const processArgs = getProcessArgs(["marketPk"], "npm run cancelOrders")
-const marketPk = new PublicKey(processArgs.marketPk)
-cancelOrders(marketPk)
+const args = getProcessArgs(["marketPk"], "npm run cancelOrders")
+cancelOrders(new PublicKey(args.marketPk))

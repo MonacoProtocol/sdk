@@ -8,6 +8,5 @@ async function getBetOrderbyPk(betOrderPk: PublicKey){
     logResponse(response)
 }
 
-const processArgs = getProcessArgs(["betOrderPk"], "npm run getOrder")
-const betOrderPk = new PublicKey(processArgs.betOrderPk)
-getBetOrderbyPk(betOrderPk)
+const args = getProcessArgs(["betOrderPk"], "npm run getOrder")
+getBetOrderbyPk(new PublicKey(args.betOrderPk))

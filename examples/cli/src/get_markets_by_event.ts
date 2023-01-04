@@ -8,6 +8,5 @@ async function getMarkets(eventAccountPk: PublicKey){
     logResponse(response)
 }
 
-const processArgs = getProcessArgs(["eventPk"], "npm run getMarketsByEvent")
-const eventPk = new PublicKey(processArgs.eventPk)
-getMarkets(eventPk)
+const args = getProcessArgs(["eventPk"], "npm run getMarketsByEvent")
+getMarkets(new PublicKey(args.eventPk))
