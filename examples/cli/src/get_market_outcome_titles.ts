@@ -5,7 +5,7 @@ import { getProgram, getProcessArgs, logResponse } from "./utils";
 async function marketOutcomeTitles(marketPk: PublicKey){
     const program = await getProgram()
     const response = await getMarketOutcomeTitlesByMarket(program, marketPk)
-    logResponse(response)
+    console.table(response.data.marketOutcomeTitles)
 }
 
 const args = getProcessArgs(["marketPk"], "npm run getMarketOutcomeTitles")
