@@ -8,7 +8,8 @@ async function settlement(marketPk: PublicKey, winningOutcomeIndex: number){
     logResponse(response)
 }
 
-const processArgs = getProcessArgs(["marketPk", "winningOutcomeIndex"], "npm run settleMarket")
-const marketPk = new PublicKey(processArgs.marketPk)
-const winningOutcomeIndex = parseFloat(processArgs.winningOutcomeIndex)
-settlement(marketPk, winningOutcomeIndex)
+const args = getProcessArgs(["marketPk", "winningOutcomeIndex"], "npm run settleMarket")
+settlement(
+    new PublicKey(args.marketPk),
+    parseFloat(args.winningOutcomeIndex)
+)

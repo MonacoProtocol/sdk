@@ -8,6 +8,5 @@ async function addRole(newOperatorPk: PublicKey){
     logResponse(response)
 }
 
-const processArgs = getProcessArgs(["newOperatorPk"], "npm run addMarketOperator")
-const newOperatorPk = new PublicKey(processArgs.newOperatorPk)
-addRole(newOperatorPk)
+const args = getProcessArgs(["newOperatorPk"], "npm run addMarketOperator")
+addRole(new PublicKey(args.newOperatorPk))

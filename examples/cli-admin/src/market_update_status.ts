@@ -32,7 +32,8 @@ async function updateStatus(marketPk: PublicKey, status: string){
     }
 }
 
-const processArgs = getProcessArgs(["marketPk", "status"], "npm run updateMarketStatus")
-const marketPk = new PublicKey(processArgs.marketPk)
-const status = processArgs.status
-updateStatus(marketPk, status)
+const args = getProcessArgs(["marketPk", "status"], "npm run updateMarketStatus")
+updateStatus(
+    new PublicKey(args.marketPk),
+    args.status
+)

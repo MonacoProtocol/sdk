@@ -33,6 +33,5 @@ async function createMarket(mintToken: PublicKey){
     }
 }
 
-const processArgs = getProcessArgs(["mintToken"], "npm run createMarket")
-const mintToken = new PublicKey(processArgs.mintToken)
-createMarket(mintToken)
+const args = getProcessArgs(["mintToken"], "npm run createMarket")
+createMarket(new PublicKey(args.mintToken))
