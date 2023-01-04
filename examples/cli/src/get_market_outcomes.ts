@@ -8,6 +8,5 @@ async function marketOutcomes(marketPk: PublicKey){
     logResponse(response)
 }
 
-const processArgs = getProcessArgs(["marketPk"], "npm run getMarketOutcomes")
-const marketPk = new PublicKey(processArgs.marketPk)
-marketOutcomes(marketPk)
+const args = getProcessArgs(["marketPk"], "npm run getMarketOutcomes")
+marketOutcomes(new PublicKey(args.marketPk))

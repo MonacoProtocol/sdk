@@ -8,7 +8,9 @@ async function getBalances(tokenMints: PublicKey[]){
     logResponse(response)
 }
 
-const exampleTokenMint1 = new PublicKey("Qegj89Mzpx4foJJqkj6B4551aiGrgaV33Dtcm7WZ9kf")
-const exampleTokenMint2 = new PublicKey("Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH")
+const exampleTokens = [ 
+    new PublicKey("Qegj89Mzpx4foJJqkj6B4551aiGrgaV33Dtcm7WZ9kf"),
+    new PublicKey("Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH")
+]
 getProcessArgs([], "npm run getBalances")
-getBalances([exampleTokenMint1, exampleTokenMint2])
+getBalances(exampleTokens)

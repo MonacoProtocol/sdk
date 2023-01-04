@@ -10,6 +10,5 @@ async function getMarketPositionForProvider(marketPk: PublicKey){
     logResponse(response)
 }
 
-const processArgs = getProcessArgs(["marketPk"], "npm run getMarketPosition")
-const marketPk = new PublicKey(processArgs.marketPk)
-getMarketPositionForProvider(marketPk)
+const args = getProcessArgs(["marketPk"], "npm run getMarketPosition")
+getMarketPositionForProvider(new PublicKey(args.marketPk))

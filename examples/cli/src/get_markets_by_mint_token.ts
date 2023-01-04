@@ -9,7 +9,8 @@ async function getMarkets(mintToken: PublicKey, marketStatus: MarketStatus){
 }
 
 // The Monaco Protocol example token: Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH
-const processArgs = getProcessArgs(["mintToken", "marketStatus"], "npm run getMarketsByMintToken")
-const mintToken = new PublicKey(processArgs.mintToken)
-const marketStatus = marketStatusFromString(processArgs.marketStatus)
-getMarkets(mintToken, marketStatus)
+const args = getProcessArgs(["mintToken", "marketStatus"], "npm run getMarketsByMintToken")
+getMarkets(
+    new PublicKey(args.mintToken),
+    marketStatusFromString(args.marketStatus)
+)
