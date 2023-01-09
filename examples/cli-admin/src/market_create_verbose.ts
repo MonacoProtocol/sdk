@@ -5,12 +5,22 @@ import {
   DEFAULT_PRICE_LADDER,
   initialiseOutcomes,
   batchAddPricesToAllOutcomePools,
-  addPricesToOutcome
+  checkOperatorRoles
 } from "@monaco-protocol/admin-client";
 import { getProgram, log, getProcessArgs, logResponse } from "./utils";
 
 async function createVerboseMarket(mintToken: PublicKey) {
   const program = await getProgram();
+  const checkRoles = await checkOperatorRoles(
+    program,
+    program.provider.publicKey
+  );
+
+  if (!checkRoles.data.market)
+    throw new Error(
+      `Currently set wallet ${program.provider.publicKey} does not have the operator role`
+    );
+
   // Generate a publicKey to represent the event
   const eventAccountKeyPair = Keypair.generate();
   const eventPk = eventAccountKeyPair.publicKey;

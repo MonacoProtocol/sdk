@@ -2,12 +2,23 @@ import { PublicKey, Keypair } from "@solana/web3.js";
 import {
   createMarketWithOutcomesAndPriceLadder,
   MarketType,
-  DEFAULT_PRICE_LADDER
+  DEFAULT_PRICE_LADDER,
+  checkOperatorRoles
 } from "@monaco-protocol/admin-client";
 import { getProgram, log, getProcessArgs, logResponse } from "./utils";
 
 async function createMarket(mintToken: PublicKey) {
   const program = await getProgram();
+  const checkRoles = await checkOperatorRoles(
+    program,
+    program.provider.publicKey
+  );
+
+  if (!checkRoles.data.market)
+    throw new Error(
+      `Currently set wallet ${program.provider.publicKey} does not have the operator role`
+    );
+
   // Generate a publicKey to represent the event
   const eventAccountKeyPair = Keypair.generate();
   const eventPk = eventAccountKeyPair.publicKey;
