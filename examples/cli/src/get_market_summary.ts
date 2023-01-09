@@ -3,8 +3,6 @@ import {
   getMintInfo,
   MarketOutcomeAccount,
   MarketPrice,
-  MarketPricesAndPendingOrders,
-  Order
 } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { mapPricesToOutcomesAndForAgainst } from "./mappers/market_price_mapper";
