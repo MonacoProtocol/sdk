@@ -1,48 +1,48 @@
 {
-    "name": "@monaco-protocol/examples",
-    "version": "1.0.0",
-    "description": "Monaco Protocol Client Examples",
-    "author": "Monaco Protocol",
-    "module": "commonjs",
-    "target": "es5",
-    "scripts": {
-        "getBalances": "ts-node src/get_balances.ts",
-        "getMarketsByStatus": "ts-node src/get_markets_by_status.ts",
-        "getMarketsByEvent": "ts-node src/get_markets_by_event.ts",
-        "getMarketsByMintToken": "ts-node src/get_markets_by_mint_token.ts",
-        "getMarket": "ts-node src/get_market.ts",
-        "getMarketOutcomes": "ts-node src/get_market_outcomes.ts",
-        "getMarketOutcomeTitles": "ts-node src/get_market_outcome_titles.ts",
-        "getMarketPrices": "ts-node src/get_market_prices.ts",
-        "getMarketPosition": "ts-node src/get_market_position.ts",
-        "getOrdersByStatus": "ts-node src/get_orders_by_status.ts",
-        "getOrdersForMarketByStatus": "ts-node src/get_orders_for_market_by_status.ts",
-        "getOrder": "ts-node src/get_order.ts",
-        "getMarketAccounts": "ts-node src/get_market_accounts.ts",
-        "getMarketSummary": "ts-node src/get_market_summary.ts",
-        "getMarketOutcomeAccounts": "ts-node src/get_market_outcomes.ts",
-        "getTradesForMarket": "ts-node src/get_trades_for_market.ts",
-        "getTradesForOrder": "ts-node src/get_trades_for_order.ts",
-        "placeForOrder": "ts-node src/place_for_order.ts",
-        "placeAgainstOrder": "ts-node src/place_against_order.ts",
-        "cancelOrder": "ts-node src/cancel_order.ts",
-        "cancelOrders": "ts-node src/cancel_orders_for_market.ts",
-        "prepare": "husky install"
-    },
-    "dependencies": {
-        "-": "^0.0.1",
-        "@monaco-protocol/client": "^2.0.0",
-        "@project-serum/anchor": "^0.25.0",
-        "@solana/spl-token": "^0.3.5",
-        "@solana/web3.js": "^1.53.0",
-        "ts-node": "^10.7.0"
-    },
-    "devDependencies": {
-        "husky": "^8.0.3",
-        "lint-staged": "^13.1.0",
-        "prettier": "2.8.2"
-    },
-    "lint-staged": {
-        "**/*": "prettier --write --ignore-unknown"
-    }
+  "name": "@monaco-protocol/examples",
+  "version": "1.0.0",
+  "description": "Monaco Protocol Client Examples",
+  "author": "Monaco Protocol",
+  "module": "commonjs",
+  "target": "es5",
+  "scripts": {
+    "getBalances": "ts-node src/get_balances.ts",
+    "getMarketsByStatus": "ts-node src/get_markets_by_status.ts",
+    "getMarketsByEvent": "ts-node src/get_markets_by_event.ts",
+    "getMarketsByMintToken": "ts-node src/get_markets_by_mint_token.ts",
+    "getMarket": "ts-node src/get_market.ts",
+    "getMarketOutcomes": "ts-node src/get_market_outcomes.ts",
+    "getMarketOutcomeTitles": "ts-node src/get_market_outcome_titles.ts",
+    "getMarketPrices": "ts-node src/get_market_prices.ts",
+    "getMarketPosition": "ts-node src/get_market_position.ts",
+    "getOrdersByStatus": "ts-node src/get_orders_by_status.ts",
+    "getOrdersForMarketByStatus": "ts-node src/get_orders_for_market_by_status.ts",
+    "getOrder": "ts-node src/get_order.ts",
+    "getMarketAccounts": "ts-node src/get_market_accounts.ts",
+    "getMarketSummary": "ts-node src/get_market_summary.ts",
+    "getMarketOutcomeAccounts": "ts-node src/get_market_outcomes.ts",
+    "getTradesForMarket": "ts-node src/get_trades_for_market.ts",
+    "getTradesForOrder": "ts-node src/get_trades_for_order.ts",
+    "placeForOrder": "ts-node src/place_for_order.ts",
+    "placeAgainstOrder": "ts-node src/place_against_order.ts",
+    "cancelOrder": "ts-node src/cancel_order.ts",
+    "cancelOrders": "ts-node src/cancel_orders_for_market.ts",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "@monaco-protocol/client": "^2.0.0",
+    "@project-serum/anchor": "^0.25.0",
+    "@solana/spl-token": "^0.3.5",
+    "@solana/web3.js": "^1.53.0",
+    "ts-node": "^10.7.0"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "2.8.2"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
 }
