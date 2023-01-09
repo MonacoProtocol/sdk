@@ -1,27 +1,36 @@
 {
-    "name": "@monaco-protocol/admin-examples",
-    "version": "1.0.0",
-    "description": "Monaco Protocol Admin Client Examples",
-    "author": "Monaco Protocol",
-    "module": "commonjs",
-    "target": "es5",
-    "scripts": {
-        "checkRoles": "ts-node src/operator_check_roles.ts",
-        "addMarketOperator": "ts-node src/operator_add_market_operator.ts",
-        "getOperatorsByType": "ts-node src/operator_get_operators.ts",
-        "openMarket": "ts-node src/market_open.ts",
-        "createMarket": "ts-node src/market_create.ts",
-        "createMarketVerbose": "ts-node src/market_create_verbose.ts",
-        "settleMarket": "ts-node src/market_settle.ts",
-        "getMarket": "ts-node src/market_get.ts",
-        "updateMarketStatus": "ts-node src/market_update_status.ts"
-    },
-    "dependencies": {
-        "@monaco-protocol/client": "^2.0.0",
-        "@monaco-protocol/admin-client": "^1.0.0",
-        "@project-serum/anchor": "^0.25.0",
-        "@solana/web3.js": "^1.53.0",
-        "@solana/spl-token": "^0.3.5",
-        "ts-node": "^10.7.0"
-    }
+  "name": "@monaco-protocol/admin-examples",
+  "version": "1.0.0",
+  "description": "Monaco Protocol Admin Client Examples",
+  "author": "Monaco Protocol",
+  "module": "commonjs",
+  "target": "es5",
+  "scripts": {
+    "checkRoles": "ts-node src/operator_check_roles.ts",
+    "addMarketOperator": "ts-node src/operator_add_market_operator.ts",
+    "getOperatorsByType": "ts-node src/operator_get_operators.ts",
+    "openMarket": "ts-node src/market_open.ts",
+    "createMarket": "ts-node src/market_create.ts",
+    "createMarketVerbose": "ts-node src/market_create_verbose.ts",
+    "settleMarket": "ts-node src/market_settle.ts",
+    "getMarket": "ts-node src/market_get.ts",
+    "updateMarketStatus": "ts-node src/market_update_status.ts",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@monaco-protocol/admin-client": "^1.0.0",
+    "@monaco-protocol/client": "^2.0.0",
+    "@project-serum/anchor": "^0.25.0",
+    "@solana/spl-token": "^0.3.5",
+    "@solana/web3.js": "^1.53.0",
+    "ts-node": "^10.7.0"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "2.8.2"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
 }

@@ -1,37 +1,41 @@
 import { PublicKey, Keypair } from "@solana/web3.js";
-import { createMarketWithOutcomesAndPriceLadder, MarketType, DEFAULT_PRICE_LADDER } from "@monaco-protocol/admin-client"
+import {
+  createMarketWithOutcomesAndPriceLadder,
+  MarketType,
+  DEFAULT_PRICE_LADDER
+} from "@monaco-protocol/admin-client";
 import { getProgram, log, getProcessArgs, logResponse } from "./utils";
 
-async function createMarket(mintToken: PublicKey){
-    const program = await getProgram()
-    // Generate a publicKey to represent the event
-    const eventAccountKeyPair = Keypair.generate();
-    const eventPk = eventAccountKeyPair.publicKey;
+async function createMarket(mintToken: PublicKey) {
+  const program = await getProgram();
+  // Generate a publicKey to represent the event
+  const eventAccountKeyPair = Keypair.generate();
+  const eventPk = eventAccountKeyPair.publicKey;
 
-    const marketName = "Example Market";
-    const type = MarketType.EventResultWinner;
-    const marketLock = 32503680000;
-    const outcomes = ["Red", "Blue"];
-    const priceLadder = DEFAULT_PRICE_LADDER;
-    const batchSize = 40;
+  const marketName = "Example Market";
+  const type = MarketType.EventResultWinner;
+  const marketLock = 32503680000;
+  const outcomes = ["Red", "Blue"];
+  const priceLadder = DEFAULT_PRICE_LADDER;
+  const batchSize = 40;
 
-    const response = await createMarketWithOutcomesAndPriceLadder(
-        program,
-        marketName,
-        type,
-        mintToken,
-        marketLock,
-        eventPk,
-        outcomes,
-        priceLadder,
-        batchSize
-        )
-    logResponse(response)
-    if (response.success){
-        log(`MarketAccount: ${response.data.marketPk.toString()}`)
-        log(`TransactionId: ${response.data.tnxId}`)
-    }
+  const response = await createMarketWithOutcomesAndPriceLadder(
+    program,
+    marketName,
+    type,
+    mintToken,
+    marketLock,
+    eventPk,
+    outcomes,
+    priceLadder,
+    batchSize
+  );
+  logResponse(response);
+  if (response.success) {
+    log(`MarketAccount: ${response.data.marketPk.toString()}`);
+    log(`TransactionId: ${response.data.tnxId}`);
+  }
 }
 
-const args = getProcessArgs(["mintToken"], "npm run createMarket")
-createMarket(new PublicKey(args.mintToken))
+const args = getProcessArgs(["mintToken"], "npm run createMarket");
+createMarket(new PublicKey(args.mintToken));
