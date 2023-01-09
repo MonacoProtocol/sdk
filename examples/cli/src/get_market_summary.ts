@@ -23,33 +23,60 @@ async function getMarketSummary(marketPk: PublicKey){
             matchedTotal: outcome.account.matchedTotal
         }
     })
-    const pendingOrderSummary = parsedMarketPrices.pendingOrders.map((pendingOrder) => {
+
+    const forAndAgainst = [true, false]
+
+    const pendingOrderSummary = {}
+    parsedMarketPrices.marketOutcomeAccounts.map((outcome) => {
+        pendingOrderSummary[outcome.account.title] = forAndAgainst.map((forAgainst) => {
+            let forAgainstSummary = {}
+            const filteredOrders = parsedMarketPrices.pendingOrders.filter((pendingOrder) => pendingOrder.account.forOutcome === forAgainst && pendingOrder.account.marketOutcomeIndex === outcome.account.index)
+            let forOrAgainst = "Against"
+            if (forAgainst) forOrAgainst = "For"
+            forAgainstSummary[forOrAgainst] = filteredOrders.map((filteredOrder) => {
+                return {
+                    stake: filteredOrder.account.stake,
+                    price: filteredOrder.account.expectedPrice
+                }
+            })
+            return forAgainstSummary
+        })
+    })
+    const pendingOrderSummary2 = parsedMarketPrices.pendingOrders.map((pendingOrder) => {
         return {
-            outcomeIndex: pendingOrder.account.marketOutcomeIndex,
+            outcome: parsedMarketPrices.marketOutcomeAccounts[pendingOrder.account.marketOutcomeIndex].account.title,
             forOutcome: pendingOrder.account.forOutcome,
             stake: pendingOrder.account.stake,
             expectedPrice: pendingOrder.account.expectedPrice
         }
     })
-    const marketPricesSummary = parsedMarketPrices.marketPrices.map((marketPrice) => {
-        return {
-            outcome: marketPrice.marketOutcome,
-            outcomeIndex: marketPrice.marketOutcomeIndex,
-            price: marketPrice.price,
-            forOutcome: marketPrice.forOutcome,
-            liquidity: marketPrice.matchingPool.liquidityAmount,
-        }
+
+    const marketPriceSummary = {}
+    parsedMarketPrices.marketOutcomeAccounts.map((outcome) => {
+        marketPriceSummary[outcome.account.title] = forAndAgainst.map((forAgainst) => {
+            let forAgainstSummary = {}
+            const filteredPrices = parsedMarketPrices.marketPrices.filter((marketPrice) => marketPrice.forOutcome === forAgainst && marketPrice.marketOutcome == outcome.account.title)
+            let forOrAgainst = "Against"
+            if (forAgainst) forOrAgainst = "For"
+            forAgainstSummary[forOrAgainst] = filteredPrices.map((filteredPrice) => {
+                return {
+                    price: filteredPrice.price,
+                    liquidity: filteredPrice.matchingPool.liquidityAmount
+                }
+            })
+            return forAgainstSummary
+        })
     })
     logJson(
         {
             pendingOrderSummary: pendingOrderSummary,
-            marketPriceSummary: marketPricesSummary,
+            marketPriceSummary: marketPriceSummary,
             marketTitle: parsedMarketPrices.market.title,
             marketLock: new Date(parsedMarketPrices.market.marketLockTimestamp * 1000),
             liquidityTotal: liquidityTotal,
             matchedTotal: matchedTotal,
             marketOutcomesSummary: marketOutcomesSummary,
-            totalUnmatchedOrders: parsedMarketPrices.pendingOrders.length,
+            totalUnmatchedOrders: parsedMarketPrices.pendingOrders.length
         }
     )
 }

@@ -16,6 +16,7 @@
         "getMarketPrices": "ts-node src/get_market_prices.ts",
         "getMarketPosition": "ts-node src/get_market_position.ts",
         "getOrdersByStatus": "ts-node src/get_orders_by_status.ts",
+        "getOrdersForMarketByStatus": "ts-node src/get_orders_for_market_by_status.ts",
         "getOrder": "ts-node src/get_order.ts",
         "getMarketAccounts": "ts-node src/get_market_accounts.ts",
         "getMarketSummary": "ts-node src/get_market_summary.ts",
