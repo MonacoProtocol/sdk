@@ -38,8 +38,7 @@ async function getMarketSummary(marketPk: PublicKey){
             marketLock: new Date(parsedMarketPrices.market.marketLockTimestamp * 1000),
             liquidityTotal: liquidityTotal,
             matchedTotal: matchedTotal,
-            totalUnmatchedOrders: parsedMarketPrices.pendingOrders.length,
-            test: pendingOrderSummary[0]
+            totalUnmatchedOrders: parsedMarketPrices.pendingOrders.length
         }
     )
 }
