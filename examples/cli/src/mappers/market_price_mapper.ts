@@ -17,14 +17,14 @@ export function mapPricesToOutcomesAndForAgainst(
       for: forOutcome.map((price) => {
         return {
           outcome: outcomeTitle,
-          stake: price.price,
+          price: price.price,
           liquidity: price.matchingPool.liquidityAmount
         };
       }),
       against: againstOutcome.map((price) => {
         return {
           outcome: outcomeTitle,
-          stake: price.price,
+          price: price.price,
           liquidity: price.matchingPool.liquidityAmount
         };
       })

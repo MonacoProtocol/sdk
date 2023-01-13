@@ -34,9 +34,9 @@ async function getMarketSummary(marketPk: PublicKey) {
   const liquidityTotal = liquidityTotalFromParsedMarketPrices(
     parsedMarketPrices.marketPrices
   );
-  const marketOutcomesSummary = {};
-  parsedMarketPrices.marketOutcomeAccounts.map((outcome) => {
-    marketOutcomesSummary[outcome.account.title] = {
+  const marketOutcomesSummary = parsedMarketPrices.marketOutcomeAccounts.map((outcome) => {
+    return {
+      outcome: outcome.account.title,
       latestMatchedPrice: outcome.account.latestMatchedPrice,
       matchedTotal: outcome.account.matchedTotal
     };
