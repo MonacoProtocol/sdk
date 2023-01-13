@@ -2,7 +2,7 @@
 
 When working with the Monaco Protocol, one thing that you will notice is that fields you expect to be numbers (stake, timestamp) - aren't.
 
-Instead, these numbers are represented as a `BNs`, or big numbers. These `BNs` are excellent for brevity but not for readability as they need to be converted back into a `number`.
+Instead, these numbers are represented as a `BNs`, or big numbers. - this is a convention of solana as javascript `number` will not be able to hold the full range of numbers supported by u64. So whilst `BNs` are excellent for brevity, they are not for readability as they need to be converted back into a `number`.
 
 
 # The Client Approach
@@ -78,7 +78,7 @@ When placing an order on the protocol, you have two options for representing you
 - Raw number taking into account the mint token decimal amount `createOrder()`
   - Stake would be `10000000`
 
-The UI stake method makes a request to get the mint decimal and converts it into the amount that will be stored as a `BN` on chain. In the case of a `10 USDT` stake, it performs the action:
+The UI stake method makes a request to get the mint decimal (using the `mintAccount` on the `marketAccount`) and converts it into the amount that will be stored as a `BN` on chain. In the case of a `10 USDT` stake, it performs the action:
 
 ```
 const mintInfo = await getMintInfo(program, new PublicKey('Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB'))
@@ -96,3 +96,9 @@ As numbers are an important part of an exchange protocol, examples for parsing r
 - Market prices available per outcome/for/against
 - Outcomes with latest matched price and matched total
 - Liquidity amount based on pending orders
+
+# Further Reading
+
+- [BN.js](https://github.com/indutny/bn.js/)
+- [u64 in Rust](https://doc.rust-lang.org/std/primitive.u64.html)
+  
