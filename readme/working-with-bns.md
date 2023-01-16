@@ -24,7 +24,7 @@ marketLockTimestamp: <BN: 63c2a048>
 To return the numbered timestamp, we perform the `toNumber()` function on the `BN` to give us the unix timestamp for the market lock.
 
 ```
-marketLockTimestamp = marketLockTimestamp
+marketLockTimestamp = marketLockTimestamp.toNumber()
 marketLockTimestamp: 1673699400
 ```
 
