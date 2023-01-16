@@ -1,6 +1,6 @@
 # The Monaco Protocol
 
-The Monaco Protocol is a liquidity matching program to be deployed on the Solana blockchain. It is currently operating on Devnet during its testing phase.
+The Monaco Protocol is a liquidity matching program to be deployed on the Solana blockchain. The protocol launched on mainnet in Q4 2022.
 
 # Fully Audited
 
