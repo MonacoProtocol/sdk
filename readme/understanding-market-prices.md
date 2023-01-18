@@ -2,7 +2,7 @@
 
 The endpoint `getMarketPrices()` aggregates a lot of data for the given market and contains most of the information required to build an exchange interface. So let's break down what it gives us. 
 
-:memo: If you haven't yet, you may wish to read over [working with BNs](working-with-bns.md) before continuing with this guide as all response examples have been parsed in order to present human-readable numbers instead of `BNs`.
+**Note:** If you haven't yet, you may wish to read over [working with BNs](working-with-bns.md) before continuing with this guide as all response examples have been parsed in order to present human-readable numbers instead of `BNs`.
 
 # Market Account
 
@@ -13,7 +13,7 @@ Firstly we get the full market account returned, this contains all the key infor
 - Lock timestamp
 - Outcome count
 
-:memo: Note, at this point the `eventAccount` does not link to an on-chain account. Eventually it will link to a solana account containing details about the event the market is for - for example `Manchester United vs Manchester City`.
+**Note:** at this point the `eventAccount` does not link to an on-chain account. Eventually it will link to a solana account containing details about the event the market is for - for example `Manchester United vs Manchester City`.
 
 ```
 {
