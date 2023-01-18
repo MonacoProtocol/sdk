@@ -1,6 +1,6 @@
 # Introduction
 
-The endpoint `getMarketPrices()` aggregates a lot of data for the given market and contains most of the information required to build an exchange interface for that market. So let's break down what it gives us. 
+The endpoint `getMarketPrices()` aggregates a lot of data for the given market and contains most of the information required to build an exchange interface. So let's break down what it gives us. 
 
 :memo: If you haven't yet, you may wish to read over [working with BNs](working-with-bns.md) before continuing with this guide as all response examples have been parsed in order to present human-readable numbers instead of `BNs`.
 
@@ -12,6 +12,8 @@ Firstly we get the full market account returned, this contains all the key infor
 - Title,
 - Lock timestamp
 - Outcome count
+
+:memo: Note, at this point the `eventAccount` does not link to an on-chain account. Eventually it will link to a solana account containing details about the event the market is for - for example `Manchester United vs Manchester City`.
 
 ```
 {
@@ -38,7 +40,8 @@ Firstly we get the full market account returned, this contains all the key infor
 
 As the outcomes for a market are stored in separate accounts, we return those account details too. These are presented as an array, ordered by outcome index. Key information here:
 
-- Outcome index (for order creation and settlement)
+- Outcome index
+  - For order creation and settlement
 - Title
 - Latest matched price
 - Matched total
@@ -78,7 +81,7 @@ Pending orders are all open or partially matched orders (a partially matched ord
 - For or against outcome (back or lay)
 - Stake amount
   - And stake unmatched
-- Price of order
+- Price of order (odds)
 - Creation timestamp
 
 ```
@@ -142,6 +145,30 @@ This translates to the market prices of:
 - price @ 2 against outcome b
 - price @ 5 for outcome b
 
+```
+      {
+        "marketOutcome": "Manchester United",
+        "marketOutcomeIndex": 2,
+        "price": 1.9,
+        "forOutcome": true,
+        "matchingPoolPda": "CMkfVXokrXqfbCZ6jCdL8AbnPSW3qmHEvMvN1Q4GzQ2a",
+        "matchingPool": {
+          "purchaser": "37iY8P1WyGyakYmjH9qaeeg5w5opsYk4v53EKmwt18x5",
+          "liquidityAmount": 28,
+          "matchedAmount": 0,
+          "orders": {
+            "front": 2,
+            "len": 1,
+            "items": [
+              "C1i6k66ehKgq7TfeffZsakThYGdqPKWqhpfVdhhvK69J",
+              "57P1LYTJbi9mbShXYSpvGnxzYeQL2SF15L2pbCWJ2Us3",
+              "8yTCuvmaKKeouY2yTFXmS8NEpXdsHP7VbjuNQrHKyw6i"
+            ]
+          }
+        }
+      },
+```
+
 In addition to the market price summary, the matching pool account for that price point is also returned, offering `liquidityAmount` and `matchedAmount`. The sum of all the returned `liquidityAmount` values gives you all the liquidity available on the market.
 
 This data can then be used to form a matrix of current available odds and liquidity for users to match against.
@@ -149,3 +176,88 @@ This data can then be used to form a matrix of current available odds and liquid
 # In Practice
 
 To help explain some of the concepts outlined in this guide, the script [get_market_summary.ts](../examples/cli/src/get_market_summary.ts) has been provided to demonstrate parsing and mapping the response into its key data points.
+
+## Example 
+
+```
+  "pendingOrderSummary": [
+    {
+      "for": [
+        {
+          "outcome": "Crystal Palace",
+          "expectedPrice": 5.1,
+          "stake": 6
+        },
+        {
+          "outcome": "Crystal Palace",
+          "expectedPrice": 5.2,
+          "stake": 6
+        }
+      ],
+      "against": [
+        {
+          "outcome": "Crystal Palace",
+          "expectedPrice": 4.4,
+          "stake": 9
+        },
+        {
+          "outcome": "Crystal Palace",
+          "expectedPrice": 4.3,
+          "stake": 9
+        }
+      ]
+    },
+    ...
+],
+  "marketPriceSummary": [
+    {
+      "for": [
+        {
+          "outcome": "Crystal Palace",
+          "price": 5.1,
+          "liquidity": 5.6
+        },
+        {
+          "outcome": "Crystal Palace",
+          "price": 5.2,
+          "liquidity": 6
+        }
+      ],
+      "against": [
+        {
+          "outcome": "Crystal Palace",
+          "price": 4.4,
+          "liquidity": 8.6
+        },
+        {
+          "outcome": "Crystal Palace",
+          "price": 4.3,
+          "liquidity": 9
+        }
+      ]
+    },
+    ...
+]
+  "marketOutcomesSummary": [
+    {
+      "outcome": "Crystal Palace",
+      "latestMatchedPrice": 5.1,
+      "matchedTotal": 0.9
+    },
+    {
+      "outcome": "Draw",
+      "latestMatchedPrice": 0,
+      "matchedTotal": 0
+    },
+    {
+      "outcome": "Manchester United",
+      "latestMatchedPrice": 1.77,
+      "matchedTotal": 88
+    }
+  ],
+  "marketTitle": "Full Time Result",
+  "marketLock": "2023-01-18T20:00:00.000Z",
+  "liquidityTotal": 186.2,
+  "matchedTotal": 88.9,
+  "totalUnmatchedOrders": 9
+```
