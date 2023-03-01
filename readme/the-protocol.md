@@ -12,6 +12,21 @@ The Monaco Protocol has been fully audited by [sec3](https://www.sec3.dev/).
 
 The Monaco Protocol offers the ability to wager on binary-outcome event, it is agnostic to the nature of these events. Orders can be placed either `FOR` the outcome (it will happen) or to `AGAINST` it (it won't happen) at a specific price (odds) and stake (wager).
 
+# Architecture
+
+![Diagram of the market account and associated accounts](../media/images/architecture_overview_1.png)
+
+The concept of a market is broken down into three primary accounts:
+
+- A market account
+  - Core market information including title, type, status, lock time, outcome and linked event.
+- Outcome account
+  - One for each possible outcome on the market.
+  - Each containing a price ladder.
+- Outcome matching pools
+  - One for each possible resolution and price of a market (for example: price of 10 `FOR`, price of 10 `AGAINST`, price of 2 `FOR`).
+  - Contains matching queues to facilitate matching of orders.
+
 ## Markets
 
 - Outcomes
@@ -83,3 +98,16 @@ The Monaco Protocol offers the ability to wager on binary-outcome event, it is a
 - Operators are identified by a wallet publicKey.
 - All admin functions, apart from querying operators and roles, require the correct operator role.
 - Operator roles are assigned to wallets by the Monaco Protocol Foundation.
+
+## Events
+
+As previously stated, events are not yet an available on-chain account, however when they are they will contain data relating to the event the market is for. Such as:
+
+- Participants
+- Categorization
+- Event name
+- Start time
+- Event state
+- Results
+
+These event accounts will eventually act as the source of truth for settlement of markets. With the ideal scenario of having event accounts updated by oracle services.

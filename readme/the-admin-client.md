@@ -5,15 +5,17 @@
 The primary admin access point to the Protocol is the typeScript client. The client is published through the NPM package repository, with source code available on GitHub.
 
 * [Monaco Protocol Admin Client - NPM repository](https://www.npmjs.com/package/@monaco-protocol/admin-client)
-* [Monaco Protocol Admin Client - GitHub repository](https://github.com/MonacoProtocol/admin-client)
+* [Monaco Protocol Admin Client - GitHub repository](https://github.com/MonacoProtocol/protocol/tree/main/npm-admin-client)
 
 The client opens up the admin functionality of the Monaco Protocol. 
 
-* Create Markets
-* Settle Markets
-* Update Market Status
+* Create markets
+* Validate market structure
+* Settle markets
+* Set markets for closure
+* Update market status
 * Administer operator roles
-* Check operator roles
+* View operator roles
 
 ## Documentation
 
