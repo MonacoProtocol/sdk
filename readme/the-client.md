@@ -5,13 +5,13 @@
 The primary access point to the Protocol is the typeScript client. The client is published through the NPM package repository, with source code available on GitHub.
 
 * [Monaco Protocol Client - NPM repository](https://www.npmjs.com/package/@monaco-protocol/client)
-* [Monaco Protocol Client - GitHub repository](https://github.com/MonacoProtocol/client)
+* [Monaco Protocol Client - GitHub repository](https://github.com/MonacoProtocol/protocol/tree/main/npm-client)
 
 The client opens up consumer-facing functionality to the Monaco Protocol.
 
 * Get markets by status/event/wagering token
 * Place orders for markets
-* Get trades for markets and orders
+* Get orders, trades and current market prices
 * Cancel orders
 * Get market position for wallets
 * Get wallet token balances

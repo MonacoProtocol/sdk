@@ -2,11 +2,15 @@
 
 * [Monaco Protocol SDK](README.md)
   * [The Protocol](readme/the-protocol.md)
+  * [The Cranks](readme/the-cranks.md)
   * [The Client](readme/the-client.md)
   * [The Admin Client](readme/the-admin-client.md)
   * [The Dev Environment](readme/the-dev-environment.md)
   * [The Roadmap](readme/the-roadmap.md)
+  * [Built on The Monaco Protocol](readme/built-on-monaco.md)
+* [Deep Dives](readme/deep-dives.md)
+  * [Order Management](readme/order-management.md)
+  * [Market Management](readme/market-management.md)
   * [Working with BNs](readme/working-with-bns.md)
   * [Understanding Market Prices](readme/understanding-market-prices.md)
-  * [Built on The Monaco Protocol](readme/built-on-monaco.md)
   

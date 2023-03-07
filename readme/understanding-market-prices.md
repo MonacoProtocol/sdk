@@ -171,7 +171,7 @@ This translates to the market prices of:
 
 In addition to the market price summary, the matching pool account for that price point is also returned, offering `liquidityAmount` and `matchedAmount`. The sum of all the returned `liquidityAmount` values gives you all the liquidity available on the market.
 
-This data can then be used to form a matrix of current available odds and liquidity for users to match against.
+This data can then be used to form a matrix of current available odds and liquidity for wallets to match against.
 
 # In Practice
 
