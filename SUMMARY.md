@@ -9,8 +9,8 @@
   * [The Roadmap](readme/the-roadmap.md)
   * [Built on The Monaco Protocol](readme/built-on-monaco.md)
 * [Deep Dives](readme/deep-dives.md)
+  * [Protocol Fees](deep-dives/protocol-fees.md)
   * [Order Management](readme/order-management.md)
   * [Market Management](readme/market-management.md)
   * [Working with BNs](readme/working-with-bns.md)
   * [Understanding Market Prices](readme/understanding-market-prices.md)
-  
