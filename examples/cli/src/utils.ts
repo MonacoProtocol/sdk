@@ -84,14 +84,14 @@ export function marketStatusFromString(status: string) {
       return MarketStatus.Locked;
     case "settled":
       return MarketStatus.Settled;
-    case "complete":
-      return MarketStatus.Complete;
+    case "readyToClose":
+      return MarketStatus.ReadyToClose;
     case "readyForSettlement":
       return MarketStatus.ReadyForSettlement;
     case "initializing":
       return MarketStatus.Initializing;
     default:
-      throw "Available market statuses: open, locked, settled, complete, readyForSettlement, initializing";
+      throw "Available market statuses: open, locked, settled, readyToClose, readyForSettlement, initializing";
   }
 }
 
