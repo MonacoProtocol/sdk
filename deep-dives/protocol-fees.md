@@ -2,7 +2,7 @@
 
 Participants of the Monaco protocol incur SOL fees during market operations. These fees can be characterised as follows.
 
-## Gas Fees
+## Gas Fees (Permanent)
 
 All participants of the Solana blockchain (and thereby the Monaco Protocol) incur a fee every time a transaction occurs. This fee is known as a gas fee or a transaction fee and charged by the Solana network, the cost is 0.000005 SOL.
 
@@ -10,7 +10,7 @@ All participants of the Solana blockchain (and thereby the Monaco Protocol) incu
 
 **These fees are non-refundable and are incurred on a network level.**
 
-## Account Fees
+## Account Fees (Temporary and Refundable)
 
 Like all programs on solana, data is stored in accounts. In order to operate, the Monaco Protocol needs to create accounts at various stages in the lifecycle of a market. These accounts incur temporary SOL fees to cover it's existence on-chain, this is called rent exemption. The fee incurred depends on the size (in terms of data stored) of the account - this is fixed per account type.&#x20;
 
