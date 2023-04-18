@@ -46,7 +46,7 @@ async function getMarketSummary(marketPk: PublicKey) {
     return outcome.title;
   });
   const pendingOrders = parsedMarketPrices.pendingOrders.map((order) => {
-    return order.account;
+    return order.account
   });
 
   const pendingOrderSummary = mapOrdersToOutcomesAndForAgainst(

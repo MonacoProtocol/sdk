@@ -2,9 +2,9 @@ import dotenv = require("dotenv");
 import { PublicKey } from "@solana/web3.js";
 import { AnchorProvider, setProvider, Program } from "@project-serum/anchor";
 import {
-  MarketStatus,
-  OrderStatus,
-  ClientResponse
+  ClientResponse,
+  MarketStatusFilter,
+  OrderStatusFilter
 } from "@monaco-protocol/client";
 
 enum ENVS {
@@ -97,17 +97,15 @@ export function getProcessArgs(
 export function marketStatusFromString(status: string) {
   switch (status) {
     case "open":
-      return MarketStatus.Open;
+      return MarketStatusFilter.Open;
     case "locked":
-      return MarketStatus.Locked;
+      return MarketStatusFilter.Locked;
     case "settled":
-      return MarketStatus.Settled;
+      return MarketStatusFilter.Settled;
     case "readyToClose":
-      return MarketStatus.ReadyToClose;
+      return MarketStatusFilter.ReadyToClose;
     case "readyForSettlement":
-      return MarketStatus.ReadyForSettlement;
-    case "initializing":
-      return MarketStatus.Initializing;
+      return MarketStatusFilter.ReadyForSettlement;
     default:
       throw "Available market statuses: open, locked, settled, readyToClose, readyForSettlement, initializing";
   }
@@ -116,15 +114,15 @@ export function marketStatusFromString(status: string) {
 export function orderStatusFromString(status: string) {
   switch (status) {
     case "open":
-      return OrderStatus.Open;
+      return OrderStatusFilter.Open;
     case "matched":
-      return OrderStatus.Matched;
+      return OrderStatusFilter.Matched;
     case "settledWin":
-      return OrderStatus.SettledWin;
+      return OrderStatusFilter.SettledWin;
     case "settledLose":
-      return OrderStatus.SettledLose;
+      return OrderStatusFilter.SettledLose;
     case "cancelled":
-      return OrderStatus.Cancelled;
+      return OrderStatusFilter.Cancelled;
     default:
       throw "Available order statuses: open, matched, settledWin, settledLose, cancelled";
   }
