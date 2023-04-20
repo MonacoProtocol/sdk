@@ -2,7 +2,7 @@ import {
   getMarketPrices,
   getMintInfo,
   MarketOutcomeAccount,
-  MarketPrice,
+  MarketPrice
 } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { mapPricesToOutcomesAndForAgainst } from "./mappers/market_price_mapper";
@@ -34,13 +34,15 @@ async function getMarketSummary(marketPk: PublicKey) {
   const liquidityTotal = liquidityTotalFromParsedMarketPrices(
     parsedMarketPrices.marketPrices
   );
-  const marketOutcomesSummary = parsedMarketPrices.marketOutcomeAccounts.map((outcome) => {
-    return {
-      outcome: outcome.account.title,
-      latestMatchedPrice: outcome.account.latestMatchedPrice,
-      matchedTotal: outcome.account.matchedTotal
-    };
-  });
+  const marketOutcomesSummary = parsedMarketPrices.marketOutcomeAccounts.map(
+    (outcome) => {
+      return {
+        outcome: outcome.account.title,
+        latestMatchedPrice: outcome.account.latestMatchedPrice,
+        matchedTotal: outcome.account.matchedTotal
+      };
+    }
+  );
 
   const outcomeTitles = marketOutcomeAccounts.map((outcome) => {
     return outcome.title;

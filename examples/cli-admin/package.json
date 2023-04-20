@@ -16,6 +16,7 @@
     "closeMarket": "ts-node src/market_close.ts",
     "getMarket": "ts-node src/market_get.ts",
     "updateMarketStatus": "ts-node src/market_update_status.ts",
+    "format": "prettier --config .prettierrc 'src/**/*.(ts|js)' --write",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -24,6 +25,7 @@
     "@project-serum/anchor": "^0.25.0",
     "@solana/spl-token": "^0.3.5",
     "@solana/web3.js": "^1.53.0",
+    "dotenv": "^16.0.3",
     "ts-node": "^10.7.0"
   },
   "devDependencies": {

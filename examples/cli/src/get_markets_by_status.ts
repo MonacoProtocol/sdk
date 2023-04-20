@@ -1,6 +1,6 @@
 import {
   getMarketAccountsByStatus,
-  MarketStatus
+  MarketStatusFilter
 } from "@monaco-protocol/client";
 import {
   getProgram,
@@ -9,7 +9,7 @@ import {
   logResponse
 } from "./utils";
 
-async function getMarkets(status: MarketStatus) {
+async function getMarkets(status: MarketStatusFilter) {
   const program = await getProgram();
   const response = await getMarketAccountsByStatus(program, status);
   logResponse(response);

@@ -11,6 +11,7 @@
     "getMarketsByEvent": "ts-node src/get_markets_by_event.ts",
     "getMarketsByMintToken": "ts-node src/get_markets_by_mint_token.ts",
     "getMarket": "ts-node src/get_market.ts",
+    "getMarketMatchingPools": "ts-node src/get_market_matching_pools.ts",
     "getMarketOutcomes": "ts-node src/get_market_outcomes.ts",
     "getMarketOutcomeTitles": "ts-node src/get_market_outcome_titles.ts",
     "getMarketPrices": "ts-node src/get_market_prices.ts",
@@ -27,14 +28,15 @@
     "placeAgainstOrder": "ts-node src/place_against_order.ts",
     "cancelOrder": "ts-node src/cancel_order.ts",
     "cancelOrders": "ts-node src/cancel_orders_for_market.ts",
+    "format": "prettier --config .prettierrc 'src/**/*.(ts|js)' --write",
     "prepare": "husky install"
   },
   "dependencies": {
-    "-": "^0.0.1",
-    "@monaco-protocol/client": "^3.0.0",
+    "@monaco-protocol/client": "^4.0.0",
     "@project-serum/anchor": "^0.25.0",
     "@solana/spl-token": "^0.3.5",
     "@solana/web3.js": "^1.53.0",
+    "dotenv": "^16.0.3",
     "ts-node": "^10.7.0"
   },
   "devDependencies": {

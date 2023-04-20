@@ -1,35 +1,51 @@
+import dotenv = require("dotenv");
 import { PublicKey } from "@solana/web3.js";
 import { AnchorProvider, setProvider, Program } from "@project-serum/anchor";
 import {
-  ProtocolAddresses,
-  MarketStatus,
-  OrderStatus,
-  ClientResponse
+  ClientResponse,
+  MarketStatusFilter,
+  OrderStatusFilter
 } from "@monaco-protocol/client";
 
-export async function getProgram() {
-  const provider = AnchorProvider.env();
-  setProvider(provider);
-  const protocol = process.env.PROTOCOL_TYPE;
+enum ENVS {
+  DEVNET_EDGE = "devnet-edge",
+  DEVNET_RELEASE = "devnet-release",
+  MAINNET_RELEASE = "mainnet-release"
+}
 
-  let protocolAddress: PublicKey;
-  switch (protocol) {
-    case "stable":
-      protocolAddress = new PublicKey(ProtocolAddresses.DEVNET_STABLE);
+function getConfig() {
+  const environment = process.env.ENVIRONMENT;
+  const envConfig = { path: "./.env/.env" };
+  switch (environment) {
+    case ENVS.DEVNET_EDGE:
+      envConfig.path += `.${ENVS.DEVNET_EDGE}`;
+      dotenv.config(envConfig);
       break;
-    case "release":
-      protocolAddress = new PublicKey(ProtocolAddresses.RELEASE);
+    case ENVS.DEVNET_RELEASE:
+      envConfig.path += `.${ENVS.DEVNET_RELEASE}`;
+      dotenv.config(envConfig);
+      break;
+    case ENVS.MAINNET_RELEASE:
+      envConfig.path += `.${ENVS.MAINNET_RELEASE}`;
+      dotenv.config(envConfig);
       break;
     default:
-      log(
-        "⚠️  PROTOCOL_TYPE env variable not set ⚠️\n\nSet with:\n\nexport PROTOCOL_TYPE=stable\nexport PROTOCOL_TYPE=release"
-      );
+      log(`⚠️  ENVIRONMENT env variable not set ⚠️\n\nSet with:`);
+      Object.keys(ENVS).map((env) => log(`export ENVIRONMENT=${ENVS[env]}`));
       process.exit(1);
   }
+}
+
+export async function getProgram() {
+  getConfig();
+  const provider = AnchorProvider.env();
+  setProvider(provider);
+
+  let protocolAddress = new PublicKey(process.env.PROTOCOL_ADDRESS);
 
   const program = await Program.at(protocolAddress, provider);
 
-  log(`Protocol type: ${protocol}`);
+  log(`Environment: ${process.env.ENVIRONMENT}`);
   log(`RPC node: ${program.provider.connection.rpcEndpoint}`);
   log(`Wallet PublicKey: ${program.provider.publicKey}`);
 
@@ -79,17 +95,15 @@ export function getProcessArgs(
 export function marketStatusFromString(status: string) {
   switch (status) {
     case "open":
-      return MarketStatus.Open;
+      return MarketStatusFilter.Open;
     case "locked":
-      return MarketStatus.Locked;
+      return MarketStatusFilter.Locked;
     case "settled":
-      return MarketStatus.Settled;
+      return MarketStatusFilter.Settled;
     case "readyToClose":
-      return MarketStatus.ReadyToClose;
+      return MarketStatusFilter.ReadyToClose;
     case "readyForSettlement":
-      return MarketStatus.ReadyForSettlement;
-    case "initializing":
-      return MarketStatus.Initializing;
+      return MarketStatusFilter.ReadyForSettlement;
     default:
       throw "Available market statuses: open, locked, settled, readyToClose, readyForSettlement, initializing";
   }
@@ -98,15 +112,15 @@ export function marketStatusFromString(status: string) {
 export function orderStatusFromString(status: string) {
   switch (status) {
     case "open":
-      return OrderStatus.Open;
+      return OrderStatusFilter.Open;
     case "matched":
-      return OrderStatus.Matched;
+      return OrderStatusFilter.Matched;
     case "settledWin":
-      return OrderStatus.SettledWin;
+      return OrderStatusFilter.SettledWin;
     case "settledLose":
-      return OrderStatus.SettledLose;
+      return OrderStatusFilter.SettledLose;
     case "cancelled":
-      return OrderStatus.Cancelled;
+      return OrderStatusFilter.Cancelled;
     default:
       throw "Available order statuses: open, matched, settledWin, settledLose, cancelled";
   }

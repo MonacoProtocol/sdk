@@ -1,6 +1,6 @@
 import {
   getOrdersByStatusForProviderWallet,
-  OrderStatus
+  OrderStatusFilter
 } from "@monaco-protocol/client";
 import {
   getProgram,
@@ -9,7 +9,7 @@ import {
   logResponse
 } from "./utils";
 
-async function getBetOrders(status: OrderStatus) {
+async function getBetOrders(status: OrderStatusFilter) {
   const program = await getProgram();
   const response = await getOrdersByStatusForProviderWallet(program, status);
   logResponse(response);

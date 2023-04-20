@@ -1,6 +1,6 @@
 import {
   getMarketAccountsByStatusAndMintAccount,
-  MarketStatus
+  MarketStatusFilter
 } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
 import {
@@ -10,7 +10,10 @@ import {
   logResponse
 } from "./utils";
 
-async function getMarkets(mintToken: PublicKey, marketStatus: MarketStatus) {
+async function getMarkets(
+  mintToken: PublicKey,
+  marketStatus: MarketStatusFilter
+) {
   const program = await getProgram();
   const response = await getMarketAccountsByStatusAndMintAccount(
     program,
