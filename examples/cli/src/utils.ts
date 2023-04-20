@@ -10,13 +10,13 @@ import {
 enum ENVS {
   DEVNET_EDGE = "devnet-edge",
   DEVNET_RELEASE = "devnet-release",
-  MAINNET_RELEASE = "mainnet-release",
+  MAINNET_RELEASE = "mainnet-release"
 }
 
-function getConfig(){
+function getConfig() {
   const environment = process.env.ENVIRONMENT;
   const envConfig = { path: "./.env/.env" };
-  switch(environment){
+  switch (environment) {
     case ENVS.DEVNET_EDGE:
       envConfig.path += `.${ENVS.DEVNET_EDGE}`;
       dotenv.config(envConfig);
@@ -30,24 +30,22 @@ function getConfig(){
       dotenv.config(envConfig);
       break;
     default:
-      log(
-        `⚠️  ENVIRONMENT env variable not set ⚠️\n\nSet with:`
-      );
-      Object.keys(ENVS).map((env) => log(`export ENVIRONMENT=${ENVS[env]}`))
-      process.exit(1);      
+      log(`⚠️  ENVIRONMENT env variable not set ⚠️\n\nSet with:`);
+      Object.keys(ENVS).map((env) => log(`export ENVIRONMENT=${ENVS[env]}`));
+      process.exit(1);
   }
 }
 
 export async function getProgram() {
-  getConfig()
+  getConfig();
   const provider = AnchorProvider.env();
   setProvider(provider);
 
-  let protocolAddress = new PublicKey(process.env.PROTOCOL_ADDRESS)
+  let protocolAddress = new PublicKey(process.env.PROTOCOL_ADDRESS);
 
   const program = await Program.at(protocolAddress, provider);
 
-  log(`Environment: ${process.env.ENVIRONMENT}`)
+  log(`Environment: ${process.env.ENVIRONMENT}`);
   log(`RPC node: ${program.provider.connection.rpcEndpoint}`);
   log(`Wallet PublicKey: ${program.provider.publicKey}`);
 

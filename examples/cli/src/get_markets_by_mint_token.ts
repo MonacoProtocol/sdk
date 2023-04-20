@@ -10,7 +10,10 @@ import {
   logResponse
 } from "./utils";
 
-async function getMarkets(mintToken: PublicKey, marketStatus: MarketStatusFilter) {
+async function getMarkets(
+  mintToken: PublicKey,
+  marketStatus: MarketStatusFilter
+) {
   const program = await getProgram();
   const response = await getMarketAccountsByStatusAndMintAccount(
     program,

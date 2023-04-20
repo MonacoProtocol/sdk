@@ -28,6 +28,7 @@
     "placeAgainstOrder": "ts-node src/place_against_order.ts",
     "cancelOrder": "ts-node src/cancel_order.ts",
     "cancelOrders": "ts-node src/cancel_orders_for_market.ts",
+    "format": "prettier --config .prettierrc 'src/**/*.(ts|js)' --write",
     "prepare": "husky install"
   },
   "dependencies": {

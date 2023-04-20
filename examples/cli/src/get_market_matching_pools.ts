@@ -1,4 +1,4 @@
-import { getAllMarketMatchingPools  } from "@monaco-protocol/client";
+import { getAllMarketMatchingPools } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { getProgram, getProcessArgs, logResponse } from "./utils";
 

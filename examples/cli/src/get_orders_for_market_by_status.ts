@@ -15,8 +15,8 @@ async function getBetOrders(marketPk: PublicKey, status: OrderStatusFilter) {
     .filterByStatus(status)
     .fetch();
   response.data.orderAccounts.map((order) => {
-    order.account = parseOrderAccount(order.account, 9)
-  })
+    order.account = parseOrderAccount(order.account, 9);
+  });
   logResponse(response);
 }
 
