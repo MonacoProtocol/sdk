@@ -16,6 +16,7 @@
     "closeMarket": "ts-node src/market_close.ts",
     "getMarket": "ts-node src/market_get.ts",
     "updateMarketStatus": "ts-node src/market_update_status.ts",
+    "format": "prettier --config .prettierrc 'src/**/*.(ts|js)' --write",
     "prepare": "husky install"
   },
   "dependencies": {
