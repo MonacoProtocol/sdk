@@ -9,14 +9,38 @@ solana-keygen new -o wallet/example.json
 
 To help ensure this wallet isn't accidentally committed, the path to the example wallet dir `**/cli-admin/wallet/` is included in the [.gitignore](../../.gitignore) file for this repository.
 
+As a general reminder, never include a keypair in your own repository.
+
+# Install
+
 ```
 npm install
-export ANCHOR_WALLET=./wallet/example.json
-export ANCHOR_PROVIDER_URL=https://api.devnet.solana.com
-export PROTOCOL_TYPE=stable
 ```
 
-To connect to `mainnet` use `PROTOCOL_TYPE=release` and change your `ANCHOR_PROVIDER_URL` for a `mainnet` rpc node.
+# Setting Environment
+
+Environmental settings are configured in `.env` files in `.env/.env-*` there are three environments that you can connect to by exporting one of the following values:
+
+```
+export ENVIRONMENT=mainnet-release
+export ENVIRONMENT=devnet-edge
+export ENVIRONMENT=devnet-release
+```
+
+The examples in this repo use [anchor](https://github.com/coral-xyz/anchor) and each `.env` file sets an RPC-node with `ANCHOR_PROVIDER_URL`.
+
+- The default one for `devnet` is a public example RPC-node subject to rate-limiting.
+- The `mainnet` one is a placeholders and will need to be changed for a `mainnet` rpc node.
+- For any development beyond casual call inspection on `devnet` you should set yourself up with your own RPC-node.
+
+## RPC-Nodes
+
+Two providers you may wish to consider, who both offer free-tiers for development are:
+
+- [Helius](https://www.helius.xyz/)
+- [Quicknode](https://www.quicknode.com/)
+
+# Scripts
 
 - All example scripts have been added to the [package.json](package.json) for execution, to list them - `npm run`
 - Where arguments are needed, when you invoke a script, you will be informed what arguments are missing for example:
@@ -34,7 +58,7 @@ $ npm run getOperatorsByType
 When you run a script you will also be presented with information for debugging purposes:
 
 - The arguments provided
-- The set protocol type
+- The set environment
 - The set RPC node
 - The set wallet publicKey
 
