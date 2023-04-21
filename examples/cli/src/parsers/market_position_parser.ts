@@ -1,6 +1,7 @@
+import { MarketPosition } from "@monaco-protocol/client";
 import { parseTokenAmountBN } from "./token_parser";
 
-export function parseMarketPosition(marketPosition, mintDecimals: number) {
+export function parseMarketPosition(marketPosition: MarketPosition, mintDecimals: number) {
   marketPosition.marketOutcomeSums.forEach((outcomeSum, index) => {
     marketPosition.marketOutcomeSums[index] = parseTokenAmountBN(
       outcomeSum,
@@ -13,9 +14,5 @@ export function parseMarketPosition(marketPosition, mintDecimals: number) {
       mintDecimals
     );
   });
-  marketPosition.offset = parseTokenAmountBN(
-    marketPosition.offset,
-    mintDecimals
-  );
   return marketPosition;
 }
