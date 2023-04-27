@@ -3,37 +3,54 @@
 ## Summary
 
 * Development environment: [Solana Devnet Cluster](https://docs.solana.com/clusters#devnet)
-* Deployed protocol addresses: [Protocol Addresses](https://github.com/MonacoProtocol/client/blob/main/types/protocol.ts)
+* Deployed protocol addresses:
+  * `monacoUXKtUi6vKsQwaLyxmXKSievfNWEcYXTgkbCih` - `release`
+  * `mpDEVnZKneBb4w1vQsoTgMkNqnFe1rwW8qjmf3NsrAU` - `bleeding-edge`
+* `release` this version mirrors the current `mainnet` deploy and only changes in line with `mainnet` deploys
+* `bleeding-edge` this version contains the most recently merged changes to allow clients to work against upcoming changes to the protocol
 
-The primary protocol for development is listed as `DEVNET_STABLE` in the client. This is the most stable in-development version of the protocol. As the protocol evolves, more protocol deployments will be added for convenience, for example `DEV` and `RELEASE`
-
-{% hint style="danger" %}
-Only interact with protocol addresses shipped with the client as these are verified by the Monaco Protocol Foundation; or addresses of protocol instances you yourself have deployed.&#x20;
-{% endhint %}
+:warning: 
+Only interact with protocol addresses shipped with the client as these are verified by the Monaco Protocol Foundation; or addresses of protocol instances you yourself have deployed. :warning: 
 
 ## Test Markets
 
-Whilst an [admin client is available for you to make your own markets](https://www.npmjs.com/package/@monaco-protocol/admin-client), it is highly encouraged that until you are at the point where you absolutely need to make your own markets, that you make use of the test markets created daily on the protocol.
+Whilst an [admin client is available for you to make your own markets](https://www.npmjs.com/package/@monaco-protocol/admin-client), it is highly recommended that until you are at the point where you absolutely need to make your own markets, that you make use of the test markets created daily on the protocol.
+
+Automated test markets are managed daily on `release` on `devnet`. Any destructive actions (settlement and closure) only occur for markets created by the automation authority.
 
 ### Creation
 
-- Two test markets are created each day at `12:30 UTC`
-- These test markets have 2 outcomes each
+- Multiple sporting markets are created at `11:00 UTC` daily
+- They are set to lock `24+ hours` after creation
+
+### Seeding
+
+- All open markets are seeded at `11:15 UTC` daily
+- Prices are added for each outcome on a market to a depth of 3 price points both `FOR` and `AGAINST` outcomes
+- Seeding includes adding trading activity (matched orders)
 
 ### Settlement
 
-- The previous days markets will settle daily at `12:30 UTC`
-- Markets will settle with a winning outcome index of `0` meaning the first outcome on a marketAccount will always win
+- Settlement occurs daily at `11:30 UTC`
+- Settlement is for the previous days markets
+- Markets will settle with a winning outcome index of `0`
+  - This means the first outcome on a market will always win
+
+### Closure
+
+- Market accounts are closed daily at `11:45 UTC`
+- Only markets that were settled `3+ days` ago are closed
+- Closure returns SOl used for rent and removes all accounts associated with a market from chain
 
 ### Test Token
 
-Markets are created to use the token [Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH](https://solscan.io/token/Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH?cluster=devnet) this is used on Devnet in place of a token such as USDT.&#x20;
+Markets are created to use the token `WINS` [Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH](https://solscan.io/token/Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH?cluster=devnet) this is used on Devnet in place of a token such as `USDT`
 
 You can request an airdrop through the DevHub:
 
 * [Airdrop Request](https://github.com/MonacoProtocol/sdk/discussions/8)
 
-The protocol is built in such a way that, once admin-functionality is available, markets can be created to use any token so that you may create your own test token through the recommended, [strata protocol](https://app.strataprotocol.com/launchpad/manual/new).
+The protocol is built in such a way that for those with the admin role, markets can be created to use any token so that you may create your own test token through the recommended, [strata protocol](https://app.strataprotocol.com/launchpad/manual/new).
 
 ### Devnet Solana
 
