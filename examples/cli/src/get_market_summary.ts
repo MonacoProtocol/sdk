@@ -1,4 +1,5 @@
 import {
+  findEscrowPda,
   getMarketPrices,
   getMintInfo,
   MarketOutcomeAccount,
@@ -8,17 +9,23 @@ import { PublicKey } from "@solana/web3.js";
 import { mapPricesToOutcomesAndForAgainst } from "./mappers/market_price_mapper";
 import { mapOrdersToOutcomesAndForAgainst } from "./mappers/order_mapper";
 import { parseMarketPricesAndPendingOrders } from "./parsers/market_prices_and_pending_orders";
-import { getProgram, getProcessArgs, logJson } from "./utils";
+import { getProgram, getProcessArgs, logJson, log } from "./utils";
+import { AnchorProvider } from "@project-serum/anchor";
 
 async function getMarketSummary(marketPk: PublicKey) {
   const program = await getProgram();
-  const response = await getMarketPrices(program, marketPk);
+  const provider = program.provider as AnchorProvider
+  const escrowPda = await findEscrowPda(program, marketPk)
+  const [marketPrices, escrow] = await Promise.all([
+    getMarketPrices(program, marketPk),
+    provider.connection.getParsedAccountInfo(escrowPda.data.pda)
+  ])
   const mintDetails = await getMintInfo(
     program,
-    response.data.market.mintAccount
+    marketPrices.data.market.mintAccount
   );
   const parsedMarketPrices = parseMarketPricesAndPendingOrders(
-    response.data,
+    marketPrices.data,
     mintDetails.data.decimals,
     true,
     true
@@ -68,7 +75,8 @@ async function getMarketSummary(marketPk: PublicKey) {
     marketLock: new Date(parsedMarketPrices.market.marketLockTimestamp * 1000),
     liquidityTotal: liquidityTotal,
     matchedTotal: matchedTotal,
-    totalUnmatchedOrders: parsedMarketPrices.pendingOrders.length
+    totalUnmatchedOrders: parsedMarketPrices.pendingOrders.length,
+    totalInEscrow: escrow.value.data['parsed']['info']['tokenAmount']['uiAmount'],
   });
 }
 
