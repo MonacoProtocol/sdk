@@ -40,8 +40,25 @@ The concept of a market is broken down into three primary accounts:
   - Markets are created with a lock time set by a unix timestamp - to the second - in `UTC`. Once this time has elapsed, orders can no longer be placed on the market.
 - Market Title/Type
   - Each market has a human-readable title and a machine-readable type.
+- Market Lock Order Behaviour
+  - (Not yet implemented) what should occur to unmatched orders when a market locks (either cancelled or nothing).
 - Event
   - Markets can be linked with an event, this event is an on-chain record of the real-world event the market is associated with. The event will act as the source of truth for outcomes. **Note:** the service supporting events is yet to be released, but markets can still be created and settled independently of their existence. 
+
+### In-Play Markets
+
+All markets contain in-play focused flags that allow for orders to be placed during an event. In-play markets are facilitated by off-chain cranking.
+
+- In-play Enabled
+  - Flag to showing if the market is an in-play market.
+- In-play
+  - Flag showing the the market is currently in play.
+- In-play Order Delay
+  - How many seconds must elapse before an order on an in play market can be matched.
+- Event Start Order Behaviour
+  - What should occur to unmatched orders when an in-play market moved to in play (either cancelled or nothing).
+- Event Start Timestamp
+  - Timestamp a market will go in-play.
 
 ## Orders
 
@@ -77,6 +94,11 @@ The concept of a market is broken down into three primary accounts:
 - This trade account indicates the matching price and the orders involved in the trade.
 - Trades can be viewed on a market level or an order level.
 
+## Voiding
+
+- When a market is marked to be voided all stakes/risks will be returned to wallets.
+- Voiding is facilitated by off-chain cranking.
+
 ## Settlement
 
 - When an outcome is passed to a market, the protocol will then process orders for settlement.
@@ -98,6 +120,13 @@ The concept of a market is broken down into three primary accounts:
 - Operators are identified by a wallet publicKey.
 - All admin functions, apart from querying operators and roles, require the correct operator role.
 - Operator roles are assigned to wallets by the Monaco Protocol Foundation.
+
+## Monaco Protocol Commission
+
+- Currently set at 0%.
+- Allows for commission to be charged on unique wallets.
+- Commission is a % of net winnings on a market.
+- Commission rate and implementation will be determined by the Monaco Protocol community as it affects all traders in the ecosystem.
 
 ## Events
 
