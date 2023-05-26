@@ -12,8 +12,9 @@ The client opens up the admin functionality of the Monaco Protocol.
 * Create markets
 * Validate market structure
 * Settle markets
+* Void markets
 * Set markets for closure
-* Update market status
+* Manage market times
 * Administer operator roles
 * View operator roles
 
