@@ -128,6 +128,12 @@ All markets contain in-play focused flags that allow for orders to be placed dur
 - Commission is a % of net winnings on a market.
 - Commission rate and implementation will be determined by the Monaco Protocol community as it affects all traders in the ecosystem.
 
+## Market Closure
+
+- Operators can chose to close markets at the end of their lifecycle.
+- Closing a market will trigger an off-chain crank that will close all markets associated with a market (order, matching pools, trades etc).
+- The closure process returns SOL used for rent to the wallet that initialized the account.
+
 ## Events
 
 As previously stated, events are not yet an available on-chain account, however when they are they will contain data relating to the event the market is for. Such as:
