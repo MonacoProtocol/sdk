@@ -16,7 +16,7 @@ Like all programs on solana, data is stored in accounts. In order to operate, th
 
 
 
-Once a market operator has settled a market, they can then mark it for closure. This will return all SOL to the original paying wallet.&#x20;
+**Once a market operator has settled a market, they can then mark it for closure**. The closure crank will then pick up the market and close all accounts. This will return all SOL to the original paying wallet, **refunding all rent fees to it**.
 
 ### Order Placement Fees
 
