@@ -25,15 +25,15 @@ When placing an order, the protocol opens accounts in order to take and match th
 * **Order Account**&#x20;
   * **Description -** Account created on-chain to store your order
   * **Frequency -** Occurs every time you place an order
-  * **Cost -** 0.00175392 SOL
+  * **Cost -** 0.00231768 SOL
 * **Market Position Account**
   * **Description -** An account opened up on-chain to hold your net position in a given market, i.e. if you place 3 backs and 2 lays in the same match winner market, this position will hold your net profit or loss
   * **Frequency -** One time per market, only charged the first time you place an order on that market
-  * **Cost -** Varies with the size of the market (e.g. 3 way market is \~.0019 SOL, 4-way market is \~0.002 SOL)
+  * **Cost -** Varies with the size of the market (e.g. 2 way market is \~.0087 SOL, 4-way market is \~0.009 SOL)
 * **Market Matching Pool Account**
   * **Description -** This is an account created on-chain to store the orders which are to be matched at a specific price point for a specific prediction, e.g. BACK USA at 2.0 will have a market matching pool account, LAY USA at 2.0 will have a different market matching pool account
   * **Frequency -** Variable but infrequent, the user is only charged if the market matching pool account is NOT already created, i.e. this only occurs if a specific order type has not been placed already across all users at a specific price point for a specific prediction (i.e. first order @ price @ outcome BACK/LAY)
-  * **Cost -** 0.02360832 SOL
+  * **Cost -** 0.03500184
 
 ### Market Fees
 
@@ -42,7 +42,7 @@ Market creators also encounter fees to cover rent exemption.
 * **Market Account**
   * **Description -** the base account for a betting market
   * **Frequency -** per market
-  * **Cost** - 0.00603432 SOL
+  * **Cost** - 0.0061248 SOL
 * **Market Outcome Account**
   * **Description -** account holding information about a possible outcome on a market, including the price ladder
   * **Frequency -** one account per outcome on a market
