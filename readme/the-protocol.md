@@ -4,9 +4,10 @@ The Monaco Protocol is a liquidity matching program to be deployed on the Solana
 
 # Fully Audited
 
-The Monaco Protocol has been fully audited by [sec3](https://www.sec3.dev/).
+Every release of The Monaco Protocol is fully audited by [sec3](https://www.sec3.dev/).
 
-- [Sec3 November 2022 Audit](../media/pdf/sec3_audit_the_monaco_protocol_nov_2022.pdf)
+- [Initial Audit](../media/pdf/sec3_audit_the_monaco_protocol_nov_2022.pdf)
+- [All Audit Reports](https://github.com/MonacoProtocol/protocol/tree/develop/audit/sec3)
 
 # What The Protocol Does
 

@@ -37,7 +37,7 @@ The Monaco Protocol is a decentralized liquidity network for exchange-based appl
 
 ## Is the Protocol audited?
 
-- Every protocol release is audited by [sec3](https://www.sec3.dev/).
+- Every release is audited by [sec3](https://www.sec3.dev/).
 - Full reports are available in the protocol repository at https://github.com/MonacoProtocol/protocol/tree/main/audit/sec3/
 
 ## The Protocol on Mainnet
