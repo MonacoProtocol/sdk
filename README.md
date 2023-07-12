@@ -6,6 +6,8 @@ Everything you need know about the Monaco Protocol can be found here. This is al
 - [DevHub](https://github.com/MonacoProtocol/sdk/discussions/6)
 - [Client Examples](examples/README.md)
 - [Q&A](https://github.com/MonacoProtocol/sdk/discussions/categories/q-a)
+- [Blog](https://medium.com/@MonacoProtocol)
+- [Discord](https://discord.gg/8mR7bbBMP6)
 
 Any troubles, issues, questions, ideas you have - anything - raise them in discussions and the community will help you out.
 
