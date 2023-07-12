@@ -22,7 +22,7 @@ The client opens up the admin functionality of the Monaco Protocol.
 
 Documentation for the client can be found in the client repository itself with the majority of documentation auto-generated from docstrings within the code itself. For convenience, the docs are also exposed via a GitBook linked to the repo.
 
-* [Admin Client Docs GitBook](https://monacoprotocol.gitbook.io/the-monaco-protocol-admin-client/)
+* [Admin Client Docs GitBook](https://monacoprotocol.gitbook.io/the-monaco-protocol/npm-admin-client)
 
 ## Examples
 

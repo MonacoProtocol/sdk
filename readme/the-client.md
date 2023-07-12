@@ -20,7 +20,7 @@ The client opens up consumer-facing functionality to the Monaco Protocol.
 
 Documentation for the client can be found in the client repository itself with the majority of documentation auto-generated from docstrings within the code itself. For convenience, the docs are also exposed via a GitBook linked to the repo.
 
-* [Client Docs GitBook](https://monacoprotocol.gitbook.io/monaco-protocol-client/)
+* [Client Docs GitBook](https://monacoprotocol.gitbook.io/the-monaco-protocol/npm-client)
 
 ## Examples
 
