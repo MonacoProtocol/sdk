@@ -26,7 +26,7 @@ The Monaco Protocol is a decentralized liquidity network for exchange-based appl
 - Helps provide greater liquidity for participants, reduce spreads, and offer lower prices.
 - Lowers the take rates of institutions and intermediary.
 - Reduces settlement times, increases transparency, and improves capital efficiency.
-  - Incorporates the ability to determine the outcome of events in a decentralised fashion based upon third party oracles.- 
+  - Incorporates the ability to determine the outcome of events in a decentralised fashion based upon third party oracles.
 
 ## Why Solana?
 
