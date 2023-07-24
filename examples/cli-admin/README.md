@@ -33,12 +33,9 @@ The examples in this repo use [anchor](https://github.com/coral-xyz/anchor) and 
 - The `mainnet` one is a placeholders and will need to be changed for a `mainnet` rpc node.
 - For any development beyond casual call inspection on `devnet` you should set yourself up with your own RPC-node.
 
-## RPC-Nodes
+## RPC-Node
 
-Two providers you may wish to consider, who both offer free-tiers for development are:
-
-- [Helius](https://www.helius.xyz/)
-- [Quicknode](https://www.quicknode.com/)
+Make sure you have your own RPC Node set up, check out [Getting Started - RPC Node](../README.md#getting-started---rpc-node) for more info.
 
 # Scripts
 
