@@ -1,7 +1,7 @@
 import { getMarketPosition } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { getProgram, getProcessArgs, logResponse } from "./utils";
-import { AnchorProvider } from "@project-serum/anchor";
+import { AnchorProvider } from "@coral-xyz/anchor";
 
 async function getMarketPositionForProvider(marketPk: PublicKey) {
   const program = await getProgram();
