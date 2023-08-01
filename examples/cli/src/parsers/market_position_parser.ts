@@ -8,8 +8,8 @@ export function parseMarketPosition(marketPosition: MarketPosition, mintDecimals
       mintDecimals
     );
   });
-  marketPosition.outcomeMaxExposure.forEach((outcomeMaxExposure, index) => {
-    marketPosition.outcomeMaxExposure[index] = parseTokenAmountBN(
+  marketPosition.unmatchedExposures.forEach((outcomeMaxExposure, index) => {
+    marketPosition.unmatchedExposures[index] = parseTokenAmountBN(
       outcomeMaxExposure,
       mintDecimals
     );

@@ -10,7 +10,7 @@ import { mapPricesToOutcomesAndForAgainst } from "./mappers/market_price_mapper"
 import { mapOrdersToOutcomesAndForAgainst } from "./mappers/order_mapper";
 import { parseMarketPricesAndPendingOrders } from "./parsers/market_prices_and_pending_orders";
 import { getProgram, getProcessArgs, logJson, log } from "./utils";
-import { AnchorProvider } from "@project-serum/anchor";
+import { AnchorProvider } from "@coral-xyz/anchor";
 
 async function getMarketSummary(marketPk: PublicKey) {
   const program = await getProgram();

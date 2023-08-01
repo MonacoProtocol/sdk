@@ -1,6 +1,6 @@
 import dotenv = require("dotenv");
 import { PublicKey } from "@solana/web3.js";
-import { AnchorProvider, setProvider, Program } from "@project-serum/anchor";
+import { AnchorProvider, setProvider, Program } from "@coral-xyz/anchor";
 import {
   ClientResponse,
   MarketStatusFilter,

@@ -1,4 +1,4 @@
-import { BN } from "@project-serum/anchor";
+import { BN } from "@coral-xyz/anchor";
 import { MarketAccount } from "@monaco-protocol/client";
 
 export function parseMarketAccount(market: MarketAccount) {
