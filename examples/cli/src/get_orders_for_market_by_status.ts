@@ -1,12 +1,12 @@
 import { Orders, OrderStatusFilter } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
-import { parseOrderAccount } from "./parsers/order_parser";
 import {
   getProgram,
   getProcessArgs,
   orderStatusFromString,
   logResponse
 } from "./utils";
+import { parseResponseData } from "./parsers/parsers";
 
 async function getBetOrders(marketPk: PublicKey, status: OrderStatusFilter) {
   const program = await getProgram();
@@ -14,9 +14,7 @@ async function getBetOrders(marketPk: PublicKey, status: OrderStatusFilter) {
     .filterByMarket(marketPk)
     .filterByStatus(status)
     .fetch();
-  response.data.orderAccounts.map((order) => {
-    order.account = parseOrderAccount(order.account, 9);
-  });
+  response.data = parseResponseData(response.data);
   logResponse(response);
 }
 

@@ -8,10 +8,12 @@ import {
   orderStatusFromString,
   logResponse
 } from "./utils";
+import { parseResponseData } from "./parsers/parsers";
 
 async function getBetOrders(status: OrderStatusFilter) {
   const program = await getProgram();
   const response = await getOrdersByStatusForProviderWallet(program, status);
+  response.data = parseResponseData(response.data);
   logResponse(response);
 }
 

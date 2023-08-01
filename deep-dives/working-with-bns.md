@@ -89,7 +89,7 @@ Whereby the stake is multiplied by 10 to the power of the mint decimals.
 
 # Parsing BNs
 
-As numbers are an important part of an exchange protocol, examples for parsing responses can be found in the CLI examples at [../examples/cli/src/parsers](../examples/cli/src/parsers/). There is also an example script that parses the marketPrices response in [../examples/cli/src/get_market_summary.ts](../examples/cli/src/get_market_summary.ts) the market prices response returns all the data needed to generate a market page for an exchange:
+As numbers are an important part of an exchange protocol, examples for parsing response data can be found in the CLI examples at [../examples/cli/src/parsers](../examples/cli/src/parsers/). Each example request parses BNs by default to numbers. There is also an example script that parses the marketPrices response in [../examples/cli/src/get_market_summary.ts](../examples/cli/src/get_market_summary.ts) the market prices response returns all the data needed to generate a market page for an exchange:
 
 - Market info
 - Pending orders on the market

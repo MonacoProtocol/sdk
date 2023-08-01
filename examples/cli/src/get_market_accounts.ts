@@ -1,6 +1,7 @@
 import { getMarketAccounts } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { getProgram, getProcessArgs, logResponse } from "./utils";
+import { parseResponseData } from "./parsers/parsers";
 
 async function getAllMarketAccounts(
   marketPk: PublicKey,
@@ -16,6 +17,7 @@ async function getAllMarketAccounts(
     marketOutcomeIndex,
     price
   );
+  response.data = parseResponseData(response.data)
   logResponse(response);
 }
 
