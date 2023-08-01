@@ -8,9 +8,9 @@ import {
 import { PublicKey } from "@solana/web3.js";
 import { mapPricesToOutcomesAndForAgainst } from "./mappers/market_price_mapper";
 import { mapOrdersToOutcomesAndForAgainst } from "./mappers/order_mapper";
-import { parseMarketPricesAndPendingOrders } from "./parsers/market_prices_and_pending_orders";
-import { getProgram, getProcessArgs, logJson, log } from "./utils";
+import { getProgram, getProcessArgs, logJson } from "./utils";
 import { AnchorProvider } from "@coral-xyz/anchor";
+import { parseResponseData } from "./parsers/parsers";
 
 async function getMarketSummary(marketPk: PublicKey) {
   const program = await getProgram();
@@ -24,12 +24,7 @@ async function getMarketSummary(marketPk: PublicKey) {
     program,
     marketPrices.data.market.mintAccount
   );
-  const parsedMarketPrices = parseMarketPricesAndPendingOrders(
-    marketPrices.data,
-    mintDetails.data.decimals,
-    true,
-    true
-  );
+  const parsedMarketPrices = parseResponseData(marketPrices.data, mintDetails.data.decimals);
   const marketOutcomeAccounts = parsedMarketPrices.marketOutcomeAccounts.map(
     (marketOutcomeAccount) => {
       return marketOutcomeAccount.account;
