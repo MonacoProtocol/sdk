@@ -14,3 +14,4 @@
   * [Market Management](readme/market-management.md)
   * [Working with BNs](readme/working-with-bns.md)
   * [Understanding Market Prices](readme/understanding-market-prices.md)
+  * [Fund Management](deep-dives/fund-management.md)
