@@ -15,3 +15,5 @@
   * [Working with BNs](deep-dives/working-with-bns.md)
   * [Understanding Market Prices](deep-dives/understanding-market-prices.md)
   * [Fund Management](deep-dives/fund-management.md)
+* [Hackathons](hackathons/README.md)
+  * [OPOS Hackathon 2023](hackathons/opos-hackathon-2023.md)
