@@ -14,7 +14,7 @@ This Hackathon is void wherever restricted by, without limitation, filing or reg
 
 The Organiser is allowed to exclude Participants from (further) participation when, according to, and to the sole discretion of the Organiser, Participants do not act in accordance with this Agreement and/or when Participants adversely affect the Hackathon or behave in an unseemly manner or display disturbing behaviour.
 
-Individuals from the following countries are not eligible to participate: **Afghanistan, Belarus, Burundi, Central African Republic, Cote d'Ivoire (Ivory Coast), Cuba, Democratic Republic of the Congo, Guinea, Guinea-Bissau, Iran, Iraq, Korea, D.P.R. (North Korea), Libya, Mali, Burma, Pakistan, Russia, Sudan, Somalia, South Sudan, Syria, Tunisia, Venezuela, Yemen or Zimbabwe**.
+Individuals from the following countries are **not** eligible to participate: **Afghanistan, Belarus, Burundi, Central African Republic, Cote d'Ivoire (Ivory Coast), Cuba, Democratic Republic of the Congo, Guinea, Guinea-Bissau, Iran, Iraq, Korea, D.P.R. (North Korea), Libya, Mali, Burma, Pakistan, Russia, Sudan, Somalia, South Sudan, Syria, Tunisia, Venezuela, Yemen or Zimbabwe**.
 
 ## Submission
 
@@ -28,9 +28,9 @@ All code developed as part of the Hackathon must be fresh, meaning that the port
 
 A panel of judges for each track will judge and select the winners by evaluating each Submission immediately after its demonstration using a combination of judging criteria. Each Submission will be judged, and final decisions of judges made, based on the judges' overall assessment of the following, non-exclusive, criteria:
 
-* Quality of the Idea. Creativity, originality, and code quality
-* Potential Value. The extent to which the solution can be scaled and reach significant adoption
-* Implementation. How well the idea was executed by the developers and the extent to which technology features of the Monaco Protocol was leveraged.
+* **Quality of the Idea**. Creativity, originality, and code quality
+* **Potential Value**. The extent to which the solution can be scaled and reach significant adoption
+* **Implementation**. How well the idea was executed by the developers and the extent to which technology features of the Monaco Protocol was leveraged.
 
 The selection of the winning Submission will be at the sole direction of the judges and the decision(s) of the judges are final and not open to objection or appeal.
 
