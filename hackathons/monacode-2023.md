@@ -200,4 +200,4 @@ Your first bet, that big win, the crazy last-minute loss, sometimes you want the
 
 ## What are the Terms & Conditions?&#x20;
 
-Please see General Terms and Conditions of Participation of this hackathon.
+Please see General Terms and Conditions of Participation of this hackathon [here](monacode-2023/general-terms-and-conditions-of-participation.md).

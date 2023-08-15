@@ -4,7 +4,7 @@ Each participant, whether as an individual or collectively as a team of members 
 
 ## The Hackathon
 
-The Monaco Protocol Foundation, a Gibraltar foundation (the “**Organiser**”), has organized the Monaco Protocol 2023 Hackathon (the “**Hackathon**”). Rules of Participation and FAQs for the Hackathon (“**Rules**”), including, but not limited to, registration, submission requirements, ideas, tracks, prizes, dates, etc., are published here. These General Terms and Conditions of Participation (“**Terms**”) are incorporated by reference into the Rules, and collectively, govern your Participation in the Hackathon. Collectively, the Terms and Rules are hereafter referred to as the “**Agreement**.”
+The Monaco Protocol Foundation, a Gibraltar foundation (the “**Organiser**”), has organized the Monaco Protocol 2023 Hackathon (the “**Hackathon**”). Rules of Participation and FAQs for the Hackathon (“**Rules**”), including, but not limited to, registration, submission requirements, ideas, tracks, prizes, dates, etc., are published [here](general-terms-and-conditions-of-participation.md). These General Terms and Conditions of Participation (“**Terms**”) are incorporated by reference into the Rules, and collectively, govern your Participation in the Hackathon. Collectively, the Terms and Rules are hereafter referred to as the “**Agreement**.”
 
 ## Eligibility and Registration
 
