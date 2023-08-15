@@ -18,3 +18,4 @@
 * [Hackathons](hackathons/README.md)
   * [OPOS Hackathon 2023](hackathons/opos-hackathon-2023.md)
   * [Monacode 2023](hackathons/monacode-2023.md)
+* [General Terms and Conditions of Participation](general-terms-and-conditions-of-participation.md)
