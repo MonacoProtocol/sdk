@@ -23,16 +23,9 @@ There are two different tracks for the hackathon; the first track is for all pro
 
 ### What are the prizes?
 
-#### Betting Exchange & Sportsbooks Track
-
-Top prize $5,000 USDT (plus, three (3) hours of workshops\*)
-
-2nd place $2,000 USDT (plus, one (1) one-hour workshop\*)
-
-#### All Other Projects
-
-Top prize $2,000 USDT (plus, one (1) one-hour workshop\*)\
-2nd place $1,000 USDT (plus, one (1) one-hour workshop\*)
+* **Top prize** $5,000 USDT (plus, three (3) hours of workshops\*)
+* **2nd place** $3,000 USDT (plus, one (1) one-hour workshop\*)
+* **3rd place** $2,000 USDT (plus, one (1) one-hour workshop\*)
 
 
 
@@ -111,11 +104,17 @@ Any RPC node provider you like, however if you're looking for a place to get sta
 
 ## How will projects be judged?
 
-Projects will be judged by members of the Monaco Protocol and Solana Foundation teams on a variety of factors, including but not limited to: functionality, usefulness, uniqueness, user experience, integration with the Monaco Protocol, commerciality (can this project be a viable business), quality of code, and bonus points awarded if the project is open-sourced.&#x20;
+Projects will be judged by members of the Monaco Protocol and Solana Foundation teams on a variety of factors, including but not limited to: functionality, usefulness, uniqueness, user experience, quality of code, and integration with the Monaco Protocol. Other key judging factors include the following:&#x20;
 
 
 
-Winners of the event will be announced at Breakpoint 2023, at an IRL event and streamed online. More details on this event will be shared with all participants soon.&#x20;
+* Open-sourced: Is the project open-sourced?
+* Liquidity Creating: Does your product bring liquidity onto the protocol? (examples of this include: prediction markets, sportsbooks, programmatic trading & seeding tools, etc.)"
+* Commerciality: Can this project be a viable business?
+
+
+
+Winners of the event will be announced at Breakpoint 2023, at an IRL event and streamed online. More details on this event will be shared with all participants soon.
 
 
 
