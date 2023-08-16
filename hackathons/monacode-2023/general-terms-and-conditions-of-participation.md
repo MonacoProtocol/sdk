@@ -26,7 +26,7 @@ All code developed as part of the Hackathon must be fresh, meaning that the port
 
 ## Judging
 
-A panel of judges for each track will judge and select the winners by evaluating each Submission immediately after its demonstration using a combination of judging criteria. Each Submission will be judged, and final decisions of judges made, based on the judges' overall assessment of the following, non-exclusive, criteria:
+A panel of judges will judge and select the winner(s) by evaluating each Submission immediately after its demonstration using a combination of judging criteria. Each Submission will be judged, and final decisions of judges made, based on the judges' overall assessment of the following, non-exclusive, criteria:
 
 * **Quality of the Idea**. Creativity, originality, and code quality
 * **Potential Value**. The extent to which the solution can be scaled and reach significant adoption
