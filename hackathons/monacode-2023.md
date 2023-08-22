@@ -2,17 +2,13 @@
 
 The Monacode hackathon is a global, online hackathon for the Solana and wider web3 community with the goal of expanding and improving the prediction market & sports betting experience on the Monaco Protocol.&#x20;
 
-
-
 ## What is the Monaco Protocol?
 
-The Monaco Protocol is an open source decentralized liquidity network for exchange-based applications built on the Solana blockchain. It serves as crucial infrastructure upon which third-party applications for wagering on binary outcome events can be built while accessing a shared liquidity pool. \
-
+The Monaco Protocol is an open source decentralized liquidity network for exchange-based applications built on the Solana blockchain. It serves as crucial infrastructure upon which third-party applications for wagering on binary outcome events can be built while accessing a shared liquidity pool.
 
 ## What has already been built on the Monaco Protocol?
 
-With total matched bets exceeding $3,000,000 to date, dozens of projects have already been deployed using the Monaco Protocol as its backbone. The most noticeable being the BetDEX Exchange, a peer-to-peer non-custodial sports betting exchange; PureBet, a betting aggregation engine; and DisBet, a Discord bot that places wagers directly on the Monaco Protocol.\
-
+With total matched bets exceeding $3,000,000 to date, dozens of projects have already been deployed using the Monaco Protocol as its backbone. The most noticeable being the BetDEX Exchange, a peer-to-peer non-custodial sports betting exchange; PureBet, a betting aggregation engine; and DisBet, a Discord bot that places wagers directly on the Monaco Protocol.
 
 ### What are the prizes?
 
@@ -20,37 +16,25 @@ With total matched bets exceeding $3,000,000 to date, dozens of projects have al
 * **2nd place** $3,000 USDT (plus, one (1) one-hour workshop\*)
 * **3rd place** $2,000 USDT (plus, one (1) one-hour workshop\*)
 
-
-
-\*All non-cash prizes may be modified or withheld at Monaco Protocol Foundation’s discretion
-
-
+\*All non-cash prizes may be modified or withheld at Monaco Protocol Foundation’s discretion.
 
 ## How long is the hackathon?
 
 This hackathon will last from **Sept 4 - Oct 23, 2023**. Great products take time to build. The length of this hackathon is to encourage teams to build high-quality applications with long term viability. These seven weeks should allow for enough time to brainstorm ideas, gather your team, formulate a business idea, run, test & iterate your project.&#x20;
 
-
-
 **Official Kickoff:** Monday Sept 4th 15:00 UTC
 
 **Submission Deadline:** Monday Oct 24th 00:00 UTC
-
-
 
 ## Do I need to register first before submitting a project?
 
 \
 Yes, please register by filling out this [google form](https://forms.gle/tQdtKqqctsvcHias7) - you can update your submission at any point by revisiting the form.
 
-\
-Which projects are eligible to win a prize?
--------------------------------------------
+## Which projects are eligible to win a prize?
 
 \
-This hackathon is exclusive for projects which are built on the Monaco Protocol. Projects will only be judged on the code produced during the duration of the hackathon (Sept. 4 - Oct 23, 2023).
-
-
+This hackathon is exclusive for projects which are built on the Monaco Protocol. Projects will only be judged on the code produced during the duration of the hackathon.
 
 ## What resources are available to builders?
 
@@ -68,13 +52,11 @@ This hackathon is exclusive for projects which are built on the Monaco Protocol.
 
 ### Kick-off and Office Hours
 
-We will also be hosting a **kick-off event in Discord on Monday Sept, 4th, at 15:00 - 15:45 UTC**, to answer all your questions. We will also offer weekly office hours **every subsequent Monday 15:00 - 15:30 UTC** right the way up to submission closure. \
+We will also be hosting a **kick-off event in Discord on Monday Sept, 4th, at 15:00 - 15:45 UTC**, to answer all your questions. We will also offer weekly office hours **every Monday 15:00 - 15:30 UTC.**
 
+## 1:1 Sessions
 
-### 1:1 Sessions
-
-If you want to discuss your project with a member of the Monaco Protocol team in a 1:1 session, you can email hackathon@monacoprotocol.xyz\
-
+If you want to discuss your project with a member of the Monaco Protocol team in a 1:1 session, you can email hackathon@monacoprotocol.xyz
 
 ## Where can I learn more about the SDK?
 
@@ -86,29 +68,19 @@ If you want to discuss your project with a member of the Monaco Protocol team in
 * And why not check out the [market seeder tool](https://github.com/MonacoProtocol/market-seeder) to see how you can programmatically add liquidity to betting markets?
 * And of course, hop on over to Discord or leave a message on DevHub if you have any question at all - every question helps us make the SDK even better, so they are all welcome and encouraged.
 
-
-
 ## What RPC Infrastructure can we use?
 
 Any RPC node provider you like, however if you're looking for a place to get started, check out our [guide on getting up and running with helius.dev](https://github.com/MonacoProtocol/sdk/tree/main/examples#getting-started---rpc-node):
-
-
 
 ## How will projects be judged?
 
 Projects will be judged by members of the Monaco Protocol foundation on a variety of factors, including but not limited to: functionality, usefulness, uniqueness, user experience, quality of code, and integration with the Monaco Protocol. Other key judging factors include the following:&#x20;
 
-
-
 * **Quality of the Idea:** Creativity, originality, and code quality
 * **Potential Value:** The extent to which the solution can be scaled and reach significant adoption
 * **Implementation:** How well the idea is executed by the developers and the extent to which technology features of the Monaco Protocol was leveraged.
 
-
-
 Winners of the event will be announced at Breakpoint 2023, at an IRL event and streamed online. More details on this event will be shared with all participants soon.
-
-
 
 ## Do I need a licence to build on the Monaco Protocol?
 
