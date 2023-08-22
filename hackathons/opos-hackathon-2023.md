@@ -8,7 +8,7 @@ The [Monaco Protocol](https://www.monacoprotocol.xyz/) is a decentralized liquid
 What has already been built on the Monaco Protocol?
 ---------------------------------------------------
 
-With total matched bets exceeding $2,000,000 to date, dozens of projects have already been deployed using the Monaco Protocol as its backbone. The most noticeable being the [BetDEX Betting Exchange](https://www.betdex.com/); and [PureBet](https://www.purebet.io/), a betting aggregation engine; as well as DisBet, a Discord bot that places wagers directly on the Protocol.
+With total matched bets exceeding $3,000,000 to date, dozens of projects have already been deployed using the Monaco Protocol as its backbone. The most noticeable being the [BetDEX Betting Exchange](https://www.betdex.com/); and [PureBet](https://www.purebet.io/), a betting aggregation engine; as well as DisBet, a Discord bot that places wagers directly on the Protocol.
 
 
 

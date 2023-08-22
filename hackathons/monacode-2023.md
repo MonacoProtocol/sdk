@@ -11,14 +11,7 @@ The Monaco Protocol is an open source decentralized liquidity network for exchan
 
 ## What has already been built on the Monaco Protocol?
 
-With total matched bets exceeding $2,000,000 to date, dozens of projects have already been deployed using the Monaco Protocol as its backbone. The most noticeable being the BetDEX Exchange, a peer-to-peer non-custodial sports betting exchange; PureBet, a betting aggregation engine; and DisBet, a Discord bot that places wagers directly on the Monaco Protocol.\
-
-
-## Are there multiple tracks for the hackathon?
-
-There are two different tracks for the hackathon; the first track is for all projects that fall under the category of betting exchanges & sportsbooks. The second track is for all other projects.
-
-\
+With total matched bets exceeding $3,000,000 to date, dozens of projects have already been deployed using the Monaco Protocol as its backbone. The most noticeable being the BetDEX Exchange, a peer-to-peer non-custodial sports betting exchange; PureBet, a betting aggregation engine; and DisBet, a Discord bot that places wagers directly on the Monaco Protocol.\
 
 
 ### What are the prizes?
@@ -41,7 +34,7 @@ This hackathon will last from **Sept 4 - Oct 23, 2023**. Great products take tim
 
 **Official Kickoff:** Monday Sept 4th 15:00 UTC
 
-**Submission Deadline:** Monday Oct 23rd 15:30 UTC
+**Submission Deadline:** Monday Oct 24th 00:00 UTC
 
 
 
@@ -104,13 +97,13 @@ Any RPC node provider you like, however if you're looking for a place to get sta
 
 ## How will projects be judged?
 
-Projects will be judged by members of the Monaco Protocol and Solana Foundation teams on a variety of factors, including but not limited to: functionality, usefulness, uniqueness, user experience, quality of code, and integration with the Monaco Protocol. Other key judging factors include the following:&#x20;
+Projects will be judged by members of the Monaco Protocol foundation on a variety of factors, including but not limited to: functionality, usefulness, uniqueness, user experience, quality of code, and integration with the Monaco Protocol. Other key judging factors include the following:&#x20;
 
 
 
-* Open-sourced: Is the project open-sourced?
-* Liquidity Creating: Does your product bring liquidity onto the protocol? (examples of this include: prediction markets, sportsbooks, programmatic trading & seeding tools, etc.)"
-* Commerciality: Can this project be a viable business?
+* **Quality of the Idea:** Creativity, originality, and code quality
+* **Potential Value:** The extent to which the solution can be scaled and reach significant adoption
+* **Implementation:** How well the idea is executed by the developers and the extent to which technology features of the Monaco Protocol was leveraged.
 
 
 
@@ -123,79 +116,6 @@ Winners of the event will be announced at Breakpoint 2023, at an IRL event and s
 The Monaco Protocol itself is simply the infrastructure and matching algorithm upon which other third-party applications can be built on, and thus is not subject to any licensing obligations. However, some of the applications built on top of the Monaco Protocol may be subject to certain licensing, depending on the application’s use and jurisdiction. The builders/developers of each individual application must assess and determine what, if any, laws, licensing and other regulatory requirements are applicable to the individual application.&#x20;
 
 For any additional questions, or to request the opportunity to discuss the experiences of other builders on the Monaco Protocol in this regard (in their discretion), please contact hello@monacoprotocol.xyz.&#x20;
-
-
-
-## Builder Ideas
-
-\
-While participants are encouraged to develop any projects of their choosing, here are some ideas to get you started:
-
-#### Betting exchange or other prediction markets
-
-Use the Monaco Protocol in its pureset form to offer bets on anything from sport to politics to weather.&#x20;
-
-#### Sportsbook
-
-Leverage the liquidity pools to offer a more traditional sportsbook experience.
-
-#### Parlays/Accumulators
-
-Central limit order books are a great platform for binary outcome wagers, yet they are limited in their ability to provide accumulator or parlay bets. Are there solutions which could allow parlay bets on decentralized CLOB platforms while maintaining high liquidity?&#x20;
-
-#### Free-Bet Token Wrapper
-
-Onboard and retain users by offering them a token which can be used to place a bet in lieu of USDT, on a USDT denominated market? (eg.a free one-time, risk-free, promotional bet where the user loses only the token if they lose the wager, but wins USDT if they win).&#x20;
-
-#### Bounded AMM's
-
-Build an automated market maker (AMM) on top of the Monaco Protocol to provide additional liquidity to the protocol?
-
-#### Social betting
-
-Is there a way to allow you and your friends to form a ‘syndicate’ and bet or form predictions in a transparent manner?
-
-#### Enhance the sports betting UX
-
-Could the UX be simplified to attract non-crypto natives to on-chain betting? How would that look for a sports betting user? How do you explain ‘self-custody’ or gas fees?&#x20;
-
-#### Market Making Tools
-
-Tools that can be created to allow users to inject liquidity into a programmatic manner onto a market. What inputs would be needed for the user (e.g. depth, volume, etc.)? How would the tools deal with price movements in the overall markets? How will it deal with liability?&#x20;
-
-#### Oracle Integration
-
-Integrate a price oracle into the Protocol for faster and a more streamlined market creation and market settlement process.
-
-#### Analytics Dashboards
-
-Dashboards to show protocol statistics like open liquidity, matched volume, total orders, P\&L exposure, etc.
-
-#### VR/Mixed Reality Integration
-
-Ready Player One?! Recreate the feel of a bookmakers shop or introduce the perfect 2nd screen experience for watching the game at home using mixed reality.
-
-#### Tracking Bonus Abuse
-
-Products to track users that are abusing certain rules, regulations or guidelines of operators? (Wash Trading, Wallets collusion, Etc.)
-
-#### Leverage Illiquid Assets
-
-Can a smart contract be created to hold NFT’s as collateral and lend based on the escrow?&#x20;
-
-#### Analytical tools&#x20;
-
-Tools to send instantaneous alerts on ‘high ROI’ wallet movements or ‘whale’ movements to subscribers; or a “smart money” tool to track wallets that have a higher propensity to win than average.
-
-#### Transferable Bets
-
-Got a long shot bet you want to gift to a friend? How can you fully transfer ownership of an order to send it to another wallet?
-
-#### NFT Betslip
-
-Your first bet, that big win, the crazy last-minute loss, sometimes you want the betslip for prosperity. How can you take key information from an order and save your betting memories forever?
-
-
 
 ## What are the Terms & Conditions?&#x20;
 
