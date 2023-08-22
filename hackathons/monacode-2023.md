@@ -41,7 +41,7 @@ This hackathon will last from **Sept 4 - Oct 23, 2023**. Great products take tim
 ## Do I need to register first before submitting a project?
 
 \
-Yes, please register by filling out this [google form](https://docs.google.com/forms/d/e/1FAIpQLSfpUayeFWcnJLZGjijnQ\_T4kFCzDUVmm4JWIGnodZ\_pUE3DLQ/viewform) - you can update your submission at any point by revisiting the form.
+Yes, please register by filling out this [google form](https://forms.gle/tQdtKqqctsvcHias7) - you can update your submission at any point by revisiting the form.
 
 \
 Which projects are eligible to win a prize?
@@ -81,8 +81,7 @@ If you want to discuss your project with a member of the Monaco Protocol team in
 * [Start Here](https://github.com/MonacoProtocol/sdk/discussions/6) on DevHub is a great place to start and act as your base of operations. It provides a quick overview of where you need to go to get the right information.
 * If this is your first time working on Solana, you’ll want to set yourself up with an RPC node so check out this [getting started guide](https://github.com/MonacoProtocol/sdk/tree/main/examples#getting-started---rpc-node) for getting a node through [https://www.helius.dev/](https://www.helius.dev/).
 * Check out the [CLI examples](https://github.com/MonacoProtocol/sdk/tree/main/examples/cli) to get up and running quickly once you have your node set up, just point at the right environment and go!
-*
-  * With it you can view markets, market summaries, and place or cancel bets.
+* With it you can view markets, market summaries, and place or cancel bets.
 * For understanding some of the nuances of the protocol, be sure to check out [the deep dives](https://github.com/MonacoProtocol/sdk/tree/main/deep-dives).
 * And why not check out the [market seeder tool](https://github.com/MonacoProtocol/market-seeder) to see how you can programmatically add liquidity to betting markets?
 * And of course, hop on over to Discord or leave a message on DevHub if you have any question at all - every question helps us make the SDK even better, so they are all welcome and encouraged.
