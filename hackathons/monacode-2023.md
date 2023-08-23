@@ -20,7 +20,7 @@ With total matched bets exceeding $3,000,000 to date, dozens of projects have al
 
 ## How long is the hackathon?
 
-This hackathon will last from **Sept 4 - Oct 23, 2023**. Great products take time to build. The length of this hackathon is to encourage teams to build high-quality applications with long term viability. These seven weeks should allow for enough time to brainstorm ideas, gather your team, formulate a business idea, run, test & iterate your project.&#x20;
+This hackathon will last from **Sept 4th - Oct 24th @ 00:00 UTC**. Great products take time to build. The length of this hackathon is to encourage teams to build high-quality applications with long term viability. These seven weeks should allow for enough time to brainstorm ideas, gather your team, formulate a business idea, run, test & iterate your project.&#x20;
 
 **Official Kickoff:** Monday Sept 4th 15:00 UTC
 
