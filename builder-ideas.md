@@ -77,3 +77,7 @@ Got a long shot bet you want to gift to a friend? How can you fully transfer own
 ### NFT Betslip
 
 Your first bet, that big win, the crazy last-minute loss, sometimes you want the betslip for prosperity. How can you take key information from an order and save your betting memories forever?
+
+### Gamified/Interactive Builder Tutorial
+
+Help empower the next-generation of Monaco Protocol builders by creating new learning paths for them so that they can hit the ground running, and build faster.
