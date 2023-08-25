@@ -126,12 +126,13 @@ Please see General Terms and Conditions of Participation of this hackathon [here
 * [https://www.dialect.to/](https://www.dialect.to/)
 * [https://twitter.com/saydialect](https://twitter.com/saydialect)
 
+### Paradigm
+
+* What They Do: Investment Firm
+* [https://www.paradigm.xyz/](https://www.paradigm.xyz/)
+
 ### Multicoin Capital
 
 * What They Do: Investment Firm
 * [https://multicoin.capital/](https://multicoin.capital/)
 
-### Paradigm
-
-* What They Do: Investment Firm
-* [https://www.paradigm.xyz/](https://www.paradigm.xyz/)
