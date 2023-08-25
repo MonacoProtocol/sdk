@@ -12,7 +12,7 @@ With total matched bets exceeding $3,000,000 to date, dozens of projects have al
 
 ### What are the prizes?
 
-* **Top prize** $5,000 USDT (plus, three (3) hours of workshops, and Introduction + Meeting with Multicoin Capital\*)
+* **Top prize** $5,000 USDT (plus, three (3) hours of workshops, and Introduction + Meeting with Paradigm + Meeting with Multicoin Capital\*)
 * **2nd place** $3,000 USDT (plus, one (1) one-hour workshop\*)
 * **3rd place** $2,000 USDT (plus, one (1) one-hour workshop\*)
 
