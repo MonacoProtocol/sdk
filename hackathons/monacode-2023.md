@@ -112,7 +112,7 @@ Please see General Terms and Conditions of Participation of this hackathon [here
 
 * What They Do: Security and research firm providing audits and tools
 * [https://www.sec3.dev/](https://www.sec3.dev/)
-* [https://twitter.com/sec3dev?lang=en](https://twitter.com/sec3dev?lang=en)
+* [https://twitter.com/sec3dev](https://twitter.com/sec3dev)
 
 ### Flipside&#x20;
 
@@ -126,13 +126,26 @@ Please see General Terms and Conditions of Participation of this hackathon [here
 * [https://www.dialect.to/](https://www.dialect.to/)
 * [https://twitter.com/saydialect](https://twitter.com/saydialect)
 
+### Switchboard
+
+* What They Do: Oracle service
+* [https://switchboard.xyz/](https://switchboard.xyz/)
+* [https://twitter.com/switchboardxyz](https://twitter.com/switchboardxyz)
+
 ### Paradigm
 
 * What They Do: Investment Firm
 * [https://www.paradigm.xyz/](https://www.paradigm.xyz/)
+* [https://twitter.com/paradigm](https://twitter.com/paradigm)
 
 ### Multicoin Capital
 
 * What They Do: Investment Firm
 * [https://multicoin.capital/](https://multicoin.capital/)
+* [https://twitter.com/multicoincap](https://twitter.com/multicoincap)
 
+### BetDEX
+
+* What They Do: Betting Exchange built on the Monaco Protocol
+* [https://www.betdex.com/](https://www.betdex.com/)
+* [https://twitter.com/BetDEXLabs](https://twitter.com/BetDEXLabs)
