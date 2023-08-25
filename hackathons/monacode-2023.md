@@ -26,14 +26,16 @@ This hackathon will last from **Sept 4th - Oct 24th @ 00:00 UTC**. Great product
 
 **Submission Deadline:** Monday Oct 24th 00:00 UTC
 
-## Do I need to register first before submitting a project?
+## Do I need to register?
 
-\
-Yes, please register by filling out this [google form](https://forms.gle/tQdtKqqctsvcHias7) - you can update your submission at any point by revisiting the form.
+Yes, please register by filling out this [google form](https://forms.gle/tQdtKqqctsvcHias7).
+
+## How Do I Submit My Project?
+
+Guidelines for submitting projects will be published during the course of the hackathon.
 
 ## Which projects are eligible to win a prize?
 
-\
 This hackathon is exclusive for projects which are built on the Monaco Protocol. Projects will only be judged on the code produced during the duration of the hackathon.
 
 ## What resources are available to builders?
