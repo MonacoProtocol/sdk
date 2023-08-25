@@ -16,7 +16,7 @@
   * [Understanding Market Prices](deep-dives/understanding-market-prices.md)
   * [Fund Management](deep-dives/fund-management.md)
 * [Hackathons](hackathons/README.md)
-  * [OPOS Hackathon 2023](hackathons/opos-hackathon-2023.md)
   * [Monacode 2023](hackathons/monacode-2023.md)
     * [General Terms and Conditions of Participation](hackathons/monacode-2023/general-terms-and-conditions-of-participation.md)
+  * [OPOS Hackathon 2023](hackathons/opos-hackathon-2023.md)
 * [Builder Ideas](builder-ideas.md)
