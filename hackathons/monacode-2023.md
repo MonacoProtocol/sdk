@@ -91,3 +91,45 @@ For any additional questions, or to request the opportunity to discuss the exper
 ## What are the Terms & Conditions?&#x20;
 
 Please see General Terms and Conditions of Participation of this hackathon [here](monacode-2023/general-terms-and-conditions-of-participation.md).
+
+## Partners
+
+### Helius&#x20;
+
+* What They Do: RPC Nodes, APIs, Webhooks, and Data.
+* [https://www.helius.dev/](https://www.helius.dev/)
+* [https://twitter.com/heliuslabs](https://twitter.com/heliuslabs)
+
+### Squads&#x20;
+
+* What They Do: Developer and treasury asset management&#x20;
+* [https://squads.so/](https://squads.so/)
+* [https://twitter.com/SquadsProtocol](https://twitter.com/SquadsProtocol)
+
+### Sec3
+
+* What They Do: Security and research firm providing audits and tools
+* [https://www.sec3.dev/](https://www.sec3.dev/)
+* [https://twitter.com/sec3dev?lang=en](https://twitter.com/sec3dev?lang=en)
+
+### Flipside&#x20;
+
+* What They Do: Onchain data for analysts, protocols, builders.
+* [https://flipsidecrypto.xyz/](https://flipsidecrypto.xyz/)
+* [https://twitter.com/flipsidecrypto](https://twitter.com/flipsidecrypto?ref\_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
+
+### Dialect&#x20;
+
+* What They Do: Mobile smart messaging
+* [https://www.dialect.to/](https://www.dialect.to/)
+* [https://twitter.com/saydialect](https://twitter.com/saydialect)
+
+### Multicoin Capital
+
+* What They Do: Investment Firm
+* [https://multicoin.capital/](https://multicoin.capital/)
+
+### Paradigm
+
+* What They Do: Investment Firm
+* [https://www.paradigm.xyz/](https://www.paradigm.xyz/)
