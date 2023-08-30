@@ -54,7 +54,7 @@ This hackathon is exclusive for projects which are built on the Monaco Protocol.
 
 ### Kick-off and Office Hours
 
-We will also be hosting a **kick-off event in Discord on Monday Sept, 4th, at 15:00 - 15:45 UTC**, to answer all your questions. We will also offer weekly office hours **every Monday 15:00 - 15:30 UTC.**
+We will also be hosting a **kick-off event on X-Spaces (Twitter) on Monday Sept, 4th, at 15:00 - 15:45 UTC**, to answer all your questions. We will also offer weekly office hours **every Monday 15:00 - 15:30 UTC.**
 
 ## 1:1 Sessions
 
