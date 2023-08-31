@@ -1,12 +1,8 @@
 # Getting Started
 
-This repository contains a solana wallet keypair located in [/wallet/example.json](./wallet/example.json) in order to run the example scripts with minimal setup. Please be aware that this keypair is public and should never be used on `Mainnet`. Never include a keypair in your own repository.
+This repository contains a solana wallet keypair located in [/wallet/example.json](./wallet/example.json) in order to run the example scripts with minimal setup. Please be aware that this keypair is public and should never be used on `Mainnet`. Never include a keypair in your own repository. You can read more about CLI wallets [here](https://docs.solana.com/wallet-guide/cli).
 
 The publicKey for this wallet is `5BZWY6XWPxuWFxs2jagkmUkCoBWmJ6c4YEArr83hYBWk`
-
-To aid testing matching orders, a secondary wallet is included [/wallet/example_secondary.json](./wallet/example_secondary.json).
-
-The publicKey for this wallet is `GJFYdSWwcVzpmAQastTpN8j16EKLUtC7mGvqeE5gszL4`
 
 :warning: As a reminder, these wallet keyPairs are stored within the repository for educational purposes only. Never include a keypair in your own repository. :warning:
 
