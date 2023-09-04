@@ -15,6 +15,7 @@
   * [Working with BNs](deep-dives/working-with-bns.md)
   * [Understanding Market Prices](deep-dives/understanding-market-prices.md)
   * [Fund Management](deep-dives/fund-management.md)
+  * [Anatomy of an Exchange](deep-dives/anatomy-of-an-exchange.md)
 * [Hackathons](hackathons/README.md)
   * [Monacode 2023](hackathons/monacode-2023.md)
     * [General Terms and Conditions of Participation](hackathons/monacode-2023/general-terms-and-conditions-of-participation.md)
