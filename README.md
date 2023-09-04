@@ -29,7 +29,7 @@ The Monaco Protocol is a decentralized betting engine that offers global liquidi
 * Inplay betting with betting delay.
 * Settlement straight to the winning wallet.
 * Every release is fully audited by [sec3](https://www.sec3.dev/).
-  * Each audit is publicly available at https://github.com/MonacoProtocol/protocol/tree/main/audit/sec3/
+  * Each audit is publicly available on [GitHub](https://github.com/MonacoProtocol/protocol/tree/main/audit/sec3/).
 * Ability to charge product commission without impacting low-fee promises.
 * Regular improvements in the protocol, tooling and the whole Monaco Protocol ecosystems.
 * Basically all the benefits of an open-source, decentralized, ready-to-use, betting engine!
