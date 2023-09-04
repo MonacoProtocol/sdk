@@ -12,6 +12,7 @@ BetDEX is the first application built on the Monaco Protocol. It is a decentrali
 Purebet is a decentralised sports betting protocol, liquidity aggregator, and DeGam ecosystem that makes use of liquidity on the Monaco Protocol.
 
 - [purebet.io](https://www.purebet.io/)
+- [swipe.purebet.io](https://swipe.purebet.io/)
 - [Docs](https://purebetprotocol.gitbook.io/purebet/about-purebet/why-purebet)
 
 # Disbet

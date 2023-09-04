@@ -15,32 +15,32 @@ Any troubles, issues, questions, ideas you have - anything - raise them in discu
 
 ## Introduction
 
-The Monaco Protocol is a decentralized liquidity network for exchange-based applications built on the Solana blockchain. It serves as crucial infrastructure upon which third-party applications for wagering on binary outcome events can be built while accessing a shared liquidity pool.
+The Monaco Protocol is a decentralized betting engine that offers global liquidity on prediction markets. It is the key infrastructure needed to offer exchange-based and prediction-book applications, allowing operators to focus on incredible user experiences rather than paying for access to traditional black-box iGaming platforms.
 
-### Benefits of The Monaco Protocol
+### What The Monaco Protocol Gives You
 
+* Global liquidity - operators can share liquidity not fight for fragments. 
 * Fully non-custodial.
-  * Funds are held in escrow and paid out to the trader wallet on settlement.
-* Streamlines the wagering process.
-  * Traders can specify the highest price that they are willing to take on a particular market outcome.
-  * Incorporates the concept of smart matching / exposure in directly correlated outcomes to ensure that the smart contract only takes the minimum amount necessary from a given trader’s wallet to safely cover that trader’s maximum exposure across all of the trades that trader has placed in a set of directly correlated outcomes.
-  * Traders can cancel unmatched or partially matches orders at any given moment.
-* Helps provide greater liquidity for participants, reduce spreads, and offer lower prices.
-* Lowers the take rates of institutions and intermediary.
-* Reduces settlement times, increases transparency, and improves capital efficiency.
-  * Incorporates the ability to determine the outcome of events in a decentralised fashion based upon third party oracles.
+* Single outcome binary markets.
+* Best-price matching.
+* Partial matching.
+* Order cancellation on unmatched amounts.
+* Smart risk management - unmatched risk can be used to fulfil new orders.
+* Inplay betting with betting delay.
+* Settlement straight to the winning wallet.
+* Every release is fully audited by [sec3](https://www.sec3.dev/).
+  * Each audit is publicly available at https://github.com/MonacoProtocol/protocol/tree/main/audit/sec3/
+* Ability to charge product commission without impacting low-fee promises.
+* Regular improvements in the protocol, tooling and the whole Monaco Protocol ecosystems.
+* Basically all the benefits of an open-source, decentralized, ready-to-use, betting engine!
 
-### Why Solana?
+### Leveraging the Power of Solana
 
-* High throughput and low costs are key pillars for any exchange-based mechanism.
-  * These are the foundation for building amazing user experiences.
-* The chain offers theoretical TPS speeds of up to 50,000/s which cost a fraction of a cent.
-* Counter-party risk is eliminated as funds are controlled by the fully-audited protocol program.
-
-### Is the Protocol audited?
-
-* Every release is audited by [sec3](https://www.sec3.dev/).
-* Full reports are available in the protocol repository at https://github.com/MonacoProtocol/protocol/tree/main/audit/sec3/
+* Solana has an extremely innovative builders ecosystem that can flip the script when it comes to "how things are always done".
+* The stability and throughput of the chain keeps on improving even as it on-boards more users.
+* With a theoretical TPS of 50,000/s Solana offers the necessary speeds for a true exchange UX.
+* Low fees mean you're paying fractions of a cent rather than more than your bet is worth on transactions.
+* Counter-party risk is eliminated thanks to funds being managed by the fully-audited protocol.
 
 ### The Protocol on Mainnet
 
@@ -57,4 +57,4 @@ The Monaco Protocol is a decentralized liquidity network for exchange-based appl
 
 ### What is the relationship between BetDEX Labs, Inc. and the Monaco Protocol?
 
-* BetDEX Labs, Inc. is an early and key contributor to the Monaco Protocol.
+* BetDEX Labs, Inc. is an early and continued key contributor to the Monaco Protocol.
