@@ -155,7 +155,8 @@ Market position informs the user of their matched exposure on a market, or to pu
 - Market Outcome Sums: A list of numbers that map 1:1 with the outcomes for example:
   -  Sums of [100, -100, -100]
   -  Mean that if outcome 0 is successful, the user will get 100 in returns
-  -  However, if outcome 1 or 2 is successful, they will lose 100 
+  -  However, if outcome 1 or 2 is successful, they will lose 100
+- Paid: Settlement is driven by market positions, so you can display whether or not a position has been fully settled on a market
 
 # Order Management
 
