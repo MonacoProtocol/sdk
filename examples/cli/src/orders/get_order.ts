@@ -1,7 +1,7 @@
 import { getOrder } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
-import { getProgram, getProcessArgs, logResponse } from "./utils";
-import { parseResponseData } from "./parsers/parsers";
+import { getProgram, getProcessArgs, logResponse } from "../utils/utils";
+import { parseResponseData } from "../parsers/parsers";
 
 async function getBetOrderbyPk(betOrderPk: PublicKey) {
   const program = await getProgram();
