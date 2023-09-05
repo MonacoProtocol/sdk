@@ -8,8 +8,8 @@ import {
   getProcessArgs,
   marketStatusFromString,
   logResponse
-} from "./utils";
-import { parseResponseData } from "./parsers/parsers";
+} from "../utils/utils";
+import { parseResponseData } from "../parsers/parsers";
 
 async function getMarkets(
   mintToken: PublicKey,

@@ -1,6 +1,6 @@
 import { getMarketOutcomeTitlesByMarket } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
-import { getProgram, getProcessArgs } from "./utils";
+import { getProgram, getProcessArgs } from "../utils/utils";
 
 async function marketOutcomeTitles(marketPk: PublicKey) {
   const program = await getProgram();

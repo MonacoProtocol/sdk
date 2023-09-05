@@ -6,11 +6,11 @@ import {
   MarketPrice
 } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
-import { mapPricesToOutcomesAndForAgainst } from "./mappers/market_price_mapper";
-import { mapOrdersToOutcomesAndForAgainst } from "./mappers/order_mapper";
-import { getProgram, getProcessArgs, logJson } from "./utils";
+import { mapPricesToOutcomesAndForAgainst } from "../mappers/market_price_mapper";
+import { mapOrdersToOutcomesAndForAgainst } from "../mappers/order_mapper";
+import { getProgram, getProcessArgs, logJson } from "../utils/utils";
 import { AnchorProvider } from "@coral-xyz/anchor";
-import { parseResponseData } from "./parsers/parsers";
+import { parseResponseData } from "../parsers/parsers";
 
 async function getMarketSummary(marketPk: PublicKey) {
   const program = await getProgram();

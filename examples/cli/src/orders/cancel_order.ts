@@ -1,6 +1,6 @@
 import { cancelOrder } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
-import { getProgram, getProcessArgs, logResponse } from "./utils";
+import { getProgram, getProcessArgs, logResponse } from "../utils/utils";
 
 async function cancelOrderbyPk(orderPk: PublicKey) {
   const program = await getProgram();
