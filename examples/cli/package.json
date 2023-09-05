@@ -28,6 +28,10 @@
     "placeAgainstOrder": "ts-node src/orders/place_against_order.ts",
     "cancelOrder": "ts-node src/orders/cancel_order.ts",
     "cancelOrders": "ts-node src/orders/cancel_orders_for_market.ts",
+    "getAllProducts": "ts-node src/products/get_all_products.ts",
+    "getAllProductsByAuthority": "ts-node src/products/get_all_products_by_authority.ts",
+    "getAllProductsByPayer": "ts-node src/products/get_all_products_by_payer.ts",
+    "getAllProductBalancesByMint": "ts-node src/products/get_all_product_balances_by_mint.ts",
     "format": "prettier --config .prettierrc 'src/**/*.(ts|js)' --write",
     "prepare": "husky install"
   },
