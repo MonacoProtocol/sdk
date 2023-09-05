@@ -1,7 +1,6 @@
-import { createProduct, updateProductCommissionRate } from "@monaco-protocol/client";
+import { updateProductCommissionRate } from "@monaco-protocol/client";
 import { getProgram, getProcessArgs, logResponse, ProtocolTypes } from "../utils/utils";
 import { parseResponseData } from "../parsers/parsers";
-import { PublicKey } from "@solana/web3.js";
 
 async function updateRate(newRate: number) {
   const program = await getProgram(ProtocolTypes.MONACO_PRODUCT);
