@@ -35,6 +35,7 @@
     "createProduct": "ts-node src/products/create_product.ts",
     "updateProductRate": "ts-node src/products/update_product_rate.ts",
     "updateProductEscrow": "ts-node src/products/update_product_escrow.ts",
+    "updateProductAuth": "ts-node src/products/update_product_auth.ts",
     "format": "prettier --config .prettierrc 'src/**/*.(ts|js)' --write",
     "prepare": "husky install"
   },
