@@ -32,7 +32,7 @@ When a product is set up, an escrow account is provided - this is a wallet to wh
 
 # Protocol Commission
 
-The level of protocol commission is set by the Solana Foundation and can be viewed on chain at all times at the address `B2uE5XiUWh3W2euca55K9mhjcDnkjNADFUSb2f5v7RGC`
+The level of protocol commission is set by the Monaco Protocol Foundation and can be viewed on chain at all times at the address `B2uE5XiUWh3W2euca55K9mhjcDnkjNADFUSb2f5v7RGC`
 
 - [View on Solana Explorer](https://explorer.solana.com/address/B2uE5XiUWh3W2euca55K9mhjcDnkjNADFUSb2f5v7RGC/anchor-account)
 
