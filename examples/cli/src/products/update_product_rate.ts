@@ -11,5 +11,5 @@ async function updateRate(newRate: number) {
   logResponse(response);
 }
 
-const args = getProcessArgs(["newRate"], "npm run createProduct");
+const args = getProcessArgs(["newRate"], "npm run updateProductRate");
 updateRate(parseFloat(args.newRate));
