@@ -7,8 +7,8 @@ import {
   getProcessArgs,
   orderStatusFromString,
   logResponse
-} from "./utils";
-import { parseResponseData } from "./parsers/parsers";
+} from "../utils/utils";
+import { parseResponseData } from "../parsers/parsers";
 
 async function getBetOrders(status: OrderStatusFilter) {
   const program = await getProgram();

@@ -1,11 +1,11 @@
 import { PublicKey } from "@solana/web3.js";
 import { createOrderUiStake } from "@monaco-protocol/client";
-import { getProgram, getProcessArgs, logResponse } from "./utils";
+import { getProgram, getProcessArgs, logResponse } from "../utils/utils";
 
 async function placeOrder(marketPk: PublicKey) {
   const program = await getProgram();
   const marketOutcomeIndex = 0;
-  const forOutcome = false;
+  const forOutcome = true;
   const price = 2;
   const stake = 1;
   const response = await createOrderUiStake(
@@ -19,5 +19,5 @@ async function placeOrder(marketPk: PublicKey) {
   logResponse(response);
 }
 
-const args = getProcessArgs(["marketPk"], "npm run placeAgainstOrder");
+const args = getProcessArgs(["marketPk"], "npm run placeForOrder");
 placeOrder(new PublicKey(args.marketPk));
