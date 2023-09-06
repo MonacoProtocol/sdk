@@ -7,6 +7,7 @@
   * [The Admin Client](readme/the-admin-client.md)
   * [The Dev Environment](readme/the-dev-environment.md)
   * [The Roadmap](readme/the-roadmap.md)
+  * [Commission](readme/commission.md)
   * [Built on The Monaco Protocol](readme/built-on-monaco.md)
 * [Deep Dives](deep-dives/deep-dives.md)
   * [Protocol Fees](deep-dives/protocol-fees.md)
