@@ -16,5 +16,5 @@ async function updateAuth() {
   logResponse(response);
 }
 
-getProcessArgs([], "npm run updateProductEscrow");
+getProcessArgs([], "npm run updateProductAuth");
 updateAuth();
