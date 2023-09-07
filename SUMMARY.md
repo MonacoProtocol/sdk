@@ -8,6 +8,7 @@
   * [The Dev Environment](readme/the-dev-environment.md)
   * [The Roadmap](readme/the-roadmap.md)
   * [Built on The Monaco Protocol](readme/built-on-monaco.md)
+  * [Events Program](readme/events-program.md)
 * [Deep Dives](deep-dives/deep-dives.md)
   * [Protocol Fees](deep-dives/protocol-fees.md)
   * [Order Management](deep-dives/order-management.md)
