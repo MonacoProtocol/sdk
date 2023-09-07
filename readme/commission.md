@@ -6,10 +6,14 @@ There are two types of commission when we talk about the protocol:
 
 - Protocol
   - A base-level commission charged on all winning orders placed on the protocol.
+  - Set by The Monaco Protocol Foundation.
+  - Funds from this commission are used support the development and maintenance of the protocol and ecosystem tooling.
   - This is **currently set to 0%**.
 - Product
-  - A commission level recorded at the time of order placement.
+  - A commission level recorded on an order level.
   - Charged only on winning orders.
+  - Charged in addition to protocol commission.
+  - Funds from this commission go to the product operator.
   - Optional on all orders.
   - This can also **be set to 0%**.
 
@@ -48,7 +52,7 @@ Commission rates can be changed at any time by the authority in charge of the pr
 
 ## Commission Strategy
 
- Passing through a product on order creation gives multiple benefits.
+Passing through a product on order creation gives multiple benefits.
 
  - You can charge commission.
  - You can charge variable commission.
@@ -63,6 +67,57 @@ For variable commission, if we return to our original examples:
 - And a PRODUCT_Z_ZERO product with a commission rate of 0%
 
 With their interface they could then chose which product key to pass through at order placement in order to apply variable commission rates.
+
+## Payout Structure
+
+Product commission payout is based on three primary factors:
+
+- The Protocol Commission rate.
+- The amount of risk handled by a product for the market being paid out on.
+  - This handles the case where a wallet may have placed orders via multiple products.
+- The total profit on a winning market position for a wallet.
+
+### Example 1
+
+- $100 total profit on a market position.
+- 1% Protocol commission.
+- 5% PRODUCT_X commission.
+- PRODUCT_X handled 100% of the risk.
+
+#### PRODUCT_X Fees
+
+- The fee pot is $100 as the product handled all the risk.
+- The Protocol takes 1% of the $100: $1
+-  PRODUCT_X takes 5% of the $100: $5
+
+#### Wallet Payout
+
+- After fees the wallet will receive: $94
+
+### Example 2
+
+- $1000 total profit on a market position.
+- 1% Protocol commission.
+- 1% PRODUCT_Z commission.
+- 2% PRODUCT_Y commission.
+- Both PRODUCT_Z and PRODUCT_Y handled 50% of the risk.
+
+#### PRODUCT_Z Fees
+
+- The fee pot would be $500 as the product handled 50% of the risk.
+- The Protocol takes 1% of the $500: $5
+- PRODUCT_Z takes 1% of the $500: $5
+
+
+#### PRODUCT_Y Fees
+
+- The fee pot would be $500 as the product handled 50% of the risk.
+- The Protocol takes 1% of the $500: $5
+- PRODUCT_Y takes 2% of the $500: $10
+
+#### Wallet Payout
+
+- After fees the wallet will receive: $975
 
 ## Passing Product on Order Placement
 
