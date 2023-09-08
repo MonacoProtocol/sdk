@@ -1,13 +1,23 @@
 # Events Program
 
-**Please note:** the following describes an in-development, un-audited program **protocol-event** that enhances the experience of working with The Monaco Protocol.
-
 Repository: [protocol-event](https://github.com/MonacoProtocol/protocol-event)
 
-The Monaco Protocol Events Program is a program deployed to Solana mainnet that provides additional context around betting markets. The program does not need to be used, but it does greatly enhance the experience by providing onchain data relating to the event against which a market is set.
+The Monaco Protocol Events Program is a program deployed to Solana mainnet that provides additional context around betting markets. The program does not need to be used, but it does greatly enhance the experience by providing onchain data relating to the event against which a market is set. For example:
 
-The Events Program offers levels of categorization that are detailed below.
+- There are markets on The Monaco Protocol titled:
+  - "Full Time Result".
+  - "Over/Under 2.5 Goals".
+  - "First Team to Score".
+- They are all linked to the same onchain event published through the events program.
+- By querying that event we can see that the event is:
+  - "Aduana Stars vs Bechem United".
+  - The event starts on 5th September 2023 at 21:00 UTC.
+  - The participants are "Aduana Stars" and "Bechem United".
+  - It is has the event group of "Ghana Premier League".
+  - It is in the sub category of "Football".
+  - It is in the category of "Sports".
 
+# Categorization Structure
 
 ```
 ├── Category
@@ -78,8 +88,10 @@ These represent the entities (individual or collective) competing in the event.
 
 Participants are linked to a **Sub Category** and multiple participants can be linked to a multiple events. It is possible to have individual and collective participants linked to an event.
 
-# Creating, Updating, Closing
+# Administration of Accounts
 
-The program is trustless meaning that anyone can create their own accounts through the event service. The authority that performed creation is the only one that can perform updates.
+The program is trustless meaning:
 
-Similarly, the authority has the ability to close their accounts should they wish to recover rent costs.
+- Any wallet can create their own accounts.
+- Only the creation authority can update the account.
+- Only the creation authority can close the account to recover rent costs.
