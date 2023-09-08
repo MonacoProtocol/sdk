@@ -78,8 +78,8 @@ These represent the entities (individual or collective) competing in the event.
 
 Participants are linked to a **Sub Category** and multiple participants can be linked to a multiple events. It is possible to have individual and collective participants linked to an event.
 
-# Creation, Updating, Closing
+# Creating, Updating, Closing
 
-Anyone can create their own accounts through the event service. The authority that performed creation is the only one that can perform updates on those accounts.
+The program is trustless meaning that anyone can create their own accounts through the event service. The authority that performed creation is the only one that can perform updates.
 
 Similarly, the authority has the ability to close their accounts should they wish to recover rent costs.
