@@ -54,6 +54,10 @@ Integrate a price oracle into the Protocol for faster and a more streamlined mar
 
 Dashboards to show protocol statistics like open liquidity, matched volume, total orders, P\&L exposure, etc.
 
+### Chat Bots
+
+Get bet info or place bets directly from your favourite chat platform. Running the bot as a community? Set up a Monaco Protocol Product and earn commission on winning positions placed through your bot.
+
 ### VR/Mixed Reality Integration
 
 Ready Player One?! Recreate the feel of a bookmakers shop or introduce the perfect 2nd screen experience for watching the game at home using mixed reality.
