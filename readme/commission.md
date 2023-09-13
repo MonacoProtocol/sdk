@@ -1,17 +1,17 @@
 # Commission
 
-In order to help create sustainable business models, the Monaco Protocol allows for the charging of commission. Please note that **commission is only charged on winning orders.** 
+In order to help create sustainable business models, the Monaco Protocol allows for the charging of commission. Please note that **commission is only charged on winning market positions.** 
 
 There are two types of commission when we talk about the protocol:
 
 - Protocol
-  - A base-level commission charged on all winning orders placed on the protocol.
+  - A base-level commission charged on all winning market positions placed on the protocol.
   - Set by The Monaco Protocol Foundation.
   - Funds from this commission are used support the development and maintenance of the protocol and ecosystem tooling.
   - This is **currently set to 0%**.
 - Product
   - A commission level recorded on an order level.
-  - Charged only on winning orders.
+  - Charged only on winning market positions.
   - Charged in addition to protocol commission.
   - Funds from this commission go to the product operator.
   - Optional on all orders.
