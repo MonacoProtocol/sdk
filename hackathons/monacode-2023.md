@@ -82,7 +82,7 @@ Projects will be judged by members of the Monaco Protocol foundation on a variet
 * **Potential Value:** The extent to which the solution can be scaled and reach significant adoption
 * **Implementation:** How well the idea is executed by the developers and the extent to which technology features of the Monaco Protocol was leveraged.
 
-Winners of the event will be announced at Breakpoint 2023, at an IRL event and streamed online. More details on this event will be shared with all participants soon.
+Winners of the event will be announced at Breakpoint 2023, at an IRL event and streamed online. More details on this event here: [https://lu.ma/g7d6hcu9](https://lu.ma/g7d6hcu9)
 
 ## Do I need a licence to build on the Monaco Protocol?
 
