@@ -120,6 +120,12 @@ Please see General Terms and Conditions of Participation of this hackathon [here
 * [https://flipsidecrypto.xyz/](https://flipsidecrypto.xyz/)
 * [https://twitter.com/flipsidecrypto](https://twitter.com/flipsidecrypto?ref\_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
 
+### Shyft
+
+* What They Do: Web3 APIs to enable builders on Solana.
+* [https://shyft.to/](https://shyft.to/)
+* [https://twitter.com/Shyft\_to](https://twitter.com/Shyft\_to)
+
 ### Dialect&#x20;
 
 * What They Do: Mobile smart messaging
