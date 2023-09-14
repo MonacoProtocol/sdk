@@ -82,7 +82,13 @@ Projects will be judged by members of the Monaco Protocol foundation on a variet
 * **Potential Value:** The extent to which the solution can be scaled and reach significant adoption
 * **Implementation:** How well the idea is executed by the developers and the extent to which technology features of the Monaco Protocol was leveraged.
 
-Winners of the event will be announced at Breakpoint 2023, at an IRL event and streamed online. More details on this event here: [https://lu.ma/g7d6hcu9](https://lu.ma/g7d6hcu9)
+Winners of the event will be announced at Breakpoint 2023, at an IRL event and streamed online.
+
+## Where do I register for the Breakpoint event?
+
+Our Breakpoint event is co-hosted with our friends over at BetDEX. It takes place on Wednesday 1st November at 17:00 CET at the [Café de Jaren in Amsterdam](https://www.google.com/maps/search/?api=1\&query=Caf%C3%A9%20de%20Jaren\&query\_place\_id=ChIJoa4hjb8JxkcRehItw0EaWz8). We're calling it a happy hour but it goes on for three. We'd love to see you there!
+
+Register: [https://lu.ma/g7d6hcu9](https://lu.ma/g7d6hcu9)
 
 ## Do I need a licence to build on the Monaco Protocol?
 
