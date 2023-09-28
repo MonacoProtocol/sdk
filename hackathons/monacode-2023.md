@@ -84,6 +84,44 @@ Projects will be judged by members of the Monaco Protocol foundation on a variet
 
 Winners of the event will be announced at Breakpoint 2023, at an IRL event and streamed online.
 
+## The Judges
+
+### Varun Sudhakar
+
+_Co-founder and CEO of BetDEX Labs, formerly made poor bets at FanDuel._
+
+#### What Excites Them About The Protocol
+
+* Sports betting is a massive industry waiting to be disrupted due to the predatory practices of the incumbents. Web 3 provides the rails to do this with a transparent liquidity pool which is decentralized, permissionless and open-sourced; Solana is the only blockchain possible of handling this volume on-chain.
+
+#### Favourite Use Case
+
+* Too many to list, but a few ones that stand out are a) sport betting exchanges / books, b) on-chain collateralized lending to lever up your bets, c) syndicate betting with on-chain proofs of your record, d) analytical tools to spot on-chain 'whale' bets and more, e) transferable bets.... (_editor: he continues to list an entire alphabet of use cases so dm him if you want to hear more or if you have some cool ideas_)
+
+### 0xMert\_
+
+_Co-founder and CEO of Helius, founder of LamportDAO — formerly built APIs at Coinbase — dev community maxi._
+
+#### What Excites Them About The Protocol
+
+* Sports betting is one of the best use cases for decentralized finance and the capital efficiency due to order books on Solana make it a no-brainer.
+
+#### Favourite Use Case
+
+* Losing money betting on the Bengals.
+
+### Stuart Tonner
+
+_Co-founder and CTO of BetDEX Labs, previously of FanDuel fame working on the engineering side of the fence._
+
+#### What Excites Them About The Protocol
+
+* Building a transparent, decentralized betting exchange that can be used by anyone in the world - having an open platform where innovation and user experience is the priority.
+
+#### Favourite Use Case
+
+* Simple tools that enable users to have understand their position and make informed decisions about how they want to play. Visualisation tools and analytics that enable users to follow their bets and get realtime information around performance. Small, simple, fun apps that users to enjoy playing against others in a fair way.
+
 ## Where do I register for the Breakpoint event?
 
 Our Breakpoint event is co-hosted with our friends over at BetDEX. It takes place on Wednesday 1st November at 17:00 CET at the [Café de Jaren in Amsterdam](https://www.google.com/maps/search/?api=1\&query=Caf%C3%A9%20de%20Jaren\&query\_place\_id=ChIJoa4hjb8JxkcRehItw0EaWz8). We're calling it a happy hour but it goes on for three. We'd love to see you there!
