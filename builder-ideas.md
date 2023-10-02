@@ -36,7 +36,7 @@ Could the UX be simplified to attract non-crypto natives to on-chain betting? Ho
 
 Tools that can be created to allow users to inject liquidity into a programmatic manner onto a market. What inputs would be needed for the user (e.g. depth, volume, etc.)? How would the tools deal with price movements in the overall markets? How will it deal with liability?&#x20;
 
-To get started, check out our [example seeder](https://github.com/MonacoProtocol/seed-calculator) in The Monaco Protocol GitHub, built using our [seed-calculator ](https://github.com/MonacoProtocol/seed-calculator)package.
+To get started, check out our [example seeder](https://github.com/MonacoProtocol/market-seeder) in The Monaco Protocol GitHub, built using our [seed-calculator](https://github.com/MonacoProtocol/seed-calculator)package.
 
 ### Bounded AMM's
 
