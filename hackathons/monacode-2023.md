@@ -8,7 +8,7 @@ The Monaco Protocol is an open source decentralized liquidity network for exchan
 
 ## What has already been built on the Monaco Protocol?
 
-With total matched bets exceeding $5,000,000 to date, dozens of projects have already been deployed using the Monaco Protocol as its backbone. The most noticeable being the BetDEX Exchange, a peer-to-peer non-custodial sports betting exchange; PureBet, a betting aggregation engine; and DisBet, a Discord bot that places wagers directly on the Monaco Protocol.
+With total matched bets exceeding $5,500,000 to date, dozens of projects have already been deployed using the Monaco Protocol as its backbone. The most noticeable being the BetDEX Exchange, a peer-to-peer non-custodial sports betting exchange; PureBet, a betting aggregation engine; and DisBet, a Discord bot that places wagers directly on the Monaco Protocol.
 
 ### What are the prizes?
 
