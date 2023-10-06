@@ -1,13 +1,13 @@
 import { findPriceLadderPda } from "@monaco-protocol/admin-client";
 import { getProgram, getProcessArgs } from "../utils";
 
-async function getLadder(priceLadderName: string) {
+async function getLadder() {
   const program = await getProgram();
-  const pda = findPriceLadderPda(program, priceLadderName);
+  const pda = findPriceLadderPda(program, 'DEFAULT_PRICE_LADDER');
   const response = await program.account.priceLadder.fetch(pda.data.pda);
   console.log(JSON.stringify(response));
 }
 
-const args = getProcessArgs(["priceLadderName"], "npm run getLadder");
-getLadder(args.priceLadderName);
+getProcessArgs([], "npm run getDefaultLadder");
+getLadder();
 

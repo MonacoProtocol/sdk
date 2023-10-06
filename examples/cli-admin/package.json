@@ -12,6 +12,7 @@
     "createLadder": "ts-node src/price_ladder/create_ladder_account.ts",
     "addPricesToLadder": "ts-node src/price_ladder/add_prices_to_ladder.ts",
     "getLadder": "ts-node src/price_ladder/get_ladder.ts",
+    "getDefaultLadder": "ts-node src/price_ladder/get_default_ladder.ts",
     "openMarket": "ts-node src/market_open.ts",
     "createMarket": "ts-node src/market_create.ts",
     "createMarketVerbose": "ts-node src/market_create_verbose.ts",
