@@ -9,6 +9,9 @@
     "checkRoles": "ts-node src/operator_check_roles.ts",
     "addMarketOperator": "ts-node src/operator_add_market_operator.ts",
     "getOperatorsByType": "ts-node src/operator_get_operators.ts",
+    "createLadder": "ts-node src/price_ladder/create_ladder_account.ts",
+    "addPricesToLadder": "ts-node src/price_ladder/add_prices_to_ladder.ts",
+    "getLadder": "ts-node src/price_ladder/get_ladder.ts",
     "openMarket": "ts-node src/market_open.ts",
     "createMarket": "ts-node src/market_create.ts",
     "createMarketVerbose": "ts-node src/market_create_verbose.ts",
@@ -20,8 +23,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@monaco-protocol/admin-client": "^7.0.0",
-    "@monaco-protocol/client": "^8.0.0",
+    "@monaco-protocol/admin-client": "8.0.0-dev.1696499849",
+    "@monaco-protocol/client": "^9.0.0-dev.1696499849",
     "bs58": "^4.0.1",
     "@coral-xyz/anchor": "~0.27.0",
     "@solana/spl-token": "^0.3.5",
