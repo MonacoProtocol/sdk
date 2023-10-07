@@ -1,13 +1,12 @@
 import { PublicKey, Keypair } from "@solana/web3.js";
 import {
-  createMarketWithOutcomesAndPriceLadder,
-  MarketType,
-  DEFAULT_PRICE_LADDER,
+  createMarket,
+  initialiseOutcomes,
   checkOperatorRoles
 } from "@monaco-protocol/admin-client";
-import { getProgram, log, getProcessArgs, logResponse } from "./utils";
+import { getProgram, log, getProcessArgs, logResponse, FULL_PRICE_LADDER_ACCOUNT } from "./utils";
 
-async function createMarket(mintToken: PublicKey) {
+async function createVerboseMarket(mintToken: PublicKey) {
   const program = await getProgram();
   const checkRoles = await checkOperatorRoles(
     program,
@@ -24,29 +23,42 @@ async function createMarket(mintToken: PublicKey) {
   const eventPk = eventAccountKeyPair.publicKey;
 
   const marketName = "Example Market";
-  const type = MarketType.EventResultWinner;
   const marketLock = 32503680000;
   const outcomes = ["Red", "Blue"];
-  const priceLadder = DEFAULT_PRICE_LADDER;
-  const batchSize = 40;
 
-  const response = await createMarketWithOutcomesAndPriceLadder(
+  log(`Creating market ⏱`);
+  const marketResponse = await createMarket(
     program,
     marketName,
-    type,
+    'SDK_WINNER',
+    '',
+    '',
     mintToken,
     marketLock,
-    eventPk,
-    outcomes,
-    priceLadder,
-    batchSize
+    eventPk
   );
-  logResponse(response);
-  if (response.success) {
-    log(`MarketAccount: ${response.data.marketPk.toString()}`);
-    log(`TransactionId: ${response.data.tnxId}`);
-  }
+  logResponse(marketResponse);
+  if (marketResponse.success)
+    log(`Market ${marketResponse.data.marketPk.toString()} created ✅`);
+  else return;
+
+  const marketPk = marketResponse.data.marketPk;
+
+  log(`Initialising market outcomes ⏱`);
+  const initialiseOutcomePoolsResponse = await initialiseOutcomes(
+    program,
+    marketPk,
+    outcomes,
+    FULL_PRICE_LADDER_ACCOUNT
+  );
+
+  logResponse(initialiseOutcomePoolsResponse);
+  if (initialiseOutcomePoolsResponse.success)
+    log(`Outcomes added to market ✅`);
+  else return;
+
+  log(`Market ${marketPk.toString()} creation complete ✨`);
 }
 
 const args = getProcessArgs(["mintToken"], "npm run createMarket");
-createMarket(new PublicKey(args.mintToken));
+createVerboseMarket(new PublicKey(args.mintToken));

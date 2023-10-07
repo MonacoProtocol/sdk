@@ -9,6 +9,8 @@ enum ENVS {
   MAINNET_RELEASE = "mainnet-release"
 }
 
+export const FULL_PRICE_LADDER_ACCOUNT = new PublicKey('GaaHFcwCRUQbpn54rvD96BHjhfFibMDWG8a5dYc9ar97')
+
 function getConfig() {
   const environment = process.env.ENVIRONMENT;
   const envConfig = { path: "./.env/.env" };
