@@ -8,7 +8,7 @@ There are two types of commission when we talk about the protocol:
   - A base-level commission charged on all winning market positions placed on the protocol.
   - Set by The Monaco Protocol Foundation.
   - Funds from this commission are used support the development and maintenance of the protocol and ecosystem tooling.
-  - This is **currently set to 0%**.
+  - This will be **1% as of October 24th**
 - Product
   - A commission level recorded on an order level.
   - Charged only on winning market positions.
