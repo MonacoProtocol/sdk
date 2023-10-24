@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Monaco Protocol SDK](README.md)
+* [Monaco Protocol](README.md)
   * [The Protocol](readme/the-protocol.md)
   * [The Cranks](readme/the-cranks.md)
   * [The Client](readme/the-client.md)
