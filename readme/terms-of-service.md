@@ -1,12 +1,10 @@
+---
+description: Monaco Protocol Terms Of Service
+---
+
 # Terms of Service
 
-Monaco Protocol Terms Of Service
-
-
-
 Last Updated: 24 October 2023
-
-
 
 Please read these terms carefully and keep a copy of them for your reference. Please also note that there may be specific terms or conditions applicable to you as a user in a given jurisdiction, as detailed below. Please refer to our Privacy Notice, for information about how we collect, use, share and otherwise process information about you.
 
