@@ -6,7 +6,7 @@ description: Monaco Protocol Terms Of Service
 
 Last Updated: 24 October 2023
 
-Please read these terms carefully and keep a copy of them for your reference. Please also note that there may be specific terms or conditions applicable to you as a user in a given jurisdiction, as detailed below. Please refer to our Privacy Notice, for information about how we collect, use, share and otherwise process information about you.
+Please read these terms carefully and keep a copy of them for your reference. Please also note that there may be specific terms or conditions applicable to you as a user in a given jurisdiction, as detailed below. Please refer to our [Privacy Notice](https://docs.monacoprotocol.xyz/readme/privacy-notice), for information about how we collect, use, share and otherwise process information about you.
 
 Agreement to Terms. These Terms of Service (“Terms”) are a binding contract between you, an individual user or site visitor, whether personally or on behalf of an entity (“user,” “you,” “your”) and the Monaco Protocol Foundation, a Gibraltar Foundation (the “Foundation,” “we,” “us” or “our”), concerning use of the Foundation’s services (the “Service”), including the[ www.monacoprotocol.xyz](http://www.monacoprotocol.xyz) website as well as any other media form, media channel, or mobile website related, linked, or otherwise connected thereto (collectively, the “Site”). BY ACCESSING OR USING THE SERVICE, YOU AGREE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THE TERMS. IF YOU DO NOT AGREE, PLEASE DO NOT USE THE SERVICE OR SITE.
 

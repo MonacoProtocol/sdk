@@ -8,7 +8,7 @@ Last Updated: 26 October 2023
 
 Please read this Privacy Notice carefully and make sure that you fully understand its contents
 
-This Privacy Notice is designed to help you understand how the Monaco Protocol Foundation, a Gibraltar Foundation, (“Monaco Protocol”, “we”, “us,” or “our”) collects, uses, processes, and shares your personal information, and but also how you can access, update or otherwise take control of your personal information and exercise your privacy rights. This Privacy Notice is subject as well to our Terms of Service.
+This Privacy Notice is designed to help you understand how the Monaco Protocol Foundation, a Gibraltar Foundation, (“Monaco Protocol”, “we”, “us,” or “our”) collects, uses, processes, and shares your personal information, and but also how you can access, update or otherwise take control of your personal information and exercise your privacy rights. This Privacy Notice is subject as well to our [Terms of Service](https://docs.monacoprotocol.xyz/readme/terms-of-service).
 
 Introduction.
 
