@@ -1,4 +1,4 @@
-import { findPriceLadderPda, getOrCreateMarketType } from "@monaco-protocol/admin-client";
+import { getOrCreateMarketType } from "@monaco-protocol/admin-client";
 import { getProgram, getProcessArgs, logResponse } from "../utils";
 
 async function marketType() {
@@ -6,7 +6,6 @@ async function marketType() {
   const marketTypeName = 'SDK_WINNER'
   const requiresDiscriminator = false;
   const requiresValue = false;
-  const pda = findPriceLadderPda(program, marketTypeName);
   const response = await getOrCreateMarketType(program, marketTypeName, requiresDiscriminator, requiresValue);
   logResponse(response);
 }
