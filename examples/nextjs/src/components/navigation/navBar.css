@@ -1,0 +1,41 @@
+.navbar {
+    background-color: #4209a4;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    height: 7.5rem;
+    z-index: 1000;
+  }
+  
+  .navbar-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .navbar-list li {
+    display: inline;
+  }
+  
+  .navbar-list a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar-list a:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar-list .wallet-btn-container {
+    flex-grow: 1;
+    text-align: right; 
+  }
+
+  .navbar-clock {
+    flex-grow: 1;
+    text-align: right;   
+  }
