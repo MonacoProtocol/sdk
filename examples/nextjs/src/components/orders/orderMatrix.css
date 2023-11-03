@@ -1,0 +1,83 @@
+.order-matrix {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.order-matrix thead {
+    background-color: #5e0059;
+    color: #fff;
+}
+
+.order-matrix th,
+.order-matrix td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: center;
+    width: 15%
+}
+
+.order-matrix tr:nth-child(even) {
+    background-color: #333;
+}
+
+td.price-cell-risked,
+td.price-cell-against,
+td.price-cell-payout
+td.price-cell-for {
+    width: 10%
+}
+
+.matrix-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.matrix-header {
+    width: 100%;
+    height: 20%;
+    flex-direction: column;
+    display: flex;
+}
+
+.order-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.matrix-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.for, 
+.against {
+    flex: 1;
+    padding-left: 10px;
+    box-sizing: border-box; 
+    position: relative;
+}
+
+.cancel-order-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    text-shadow: 1px 1px 1px rgba(57, 2, 239, 0.1);
+  }
+  
+  .cancel-order-button:hover {
+    background-color: rgba(255, 0, 0, 0.541);
+  }
+  
+  .cancel-order-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.413);
+}
+  

@@ -1,0 +1,44 @@
+.price-matrix {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .price-matrix thead {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .price-matrix th,
+  .price-matrix td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: center;
+  }
+  
+  .price-matrix tr:nth-child(even) {
+    background-color: #5e0059;
+  }
+
+.price-matrix tr.winning{
+    background-color: #049d04;
+}
+    
+  .price-matrix .outcome-name {
+    text-align: left;
+    width: 25%;
+  }
+
+  td.price-cell-empty,
+  td.price-cell-against,
+  td.price-cell-for {
+    width: 10%
+}
+
+  td.price-cell-for:hover {
+    background-color: rgb(0, 47, 187)
+}
+
+  td.price-cell-against:hover {
+    background-color: rgb(220, 70, 0)
+}

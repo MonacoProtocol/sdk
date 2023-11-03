@@ -1,0 +1,12 @@
+.transactionsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 16px;
+    padding: 16px;
+    color: #f8f8f8;
+    border-radius: 8px;
+    width: 800px;
+    margin: auto;
+  }
+  
