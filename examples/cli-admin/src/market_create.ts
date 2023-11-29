@@ -30,9 +30,7 @@ async function createVerboseMarket(mintToken: PublicKey) {
   const marketResponse = await createMarket(
     program,
     marketName,
-    'SDK_WINNER',
-    '',
-    '',
+    'EventResultWinner',
     mintToken,
     marketLock,
     eventPk
@@ -49,7 +47,7 @@ async function createVerboseMarket(mintToken: PublicKey) {
     program,
     marketPk,
     outcomes,
-    FULL_PRICE_LADDER_ACCOUNT
+    FULL_PRICE_LADDER_ACCOUNT()
   );
 
   logResponse(initialiseOutcomePoolsResponse);

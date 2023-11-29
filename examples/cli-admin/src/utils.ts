@@ -9,7 +9,15 @@ enum ENVS {
   MAINNET_RELEASE = "mainnet-release"
 }
 
-export const FULL_PRICE_LADDER_ACCOUNT = new PublicKey('GaaHFcwCRUQbpn54rvD96BHjhfFibMDWG8a5dYc9ar97')
+export const FULL_PRICE_LADDER_ACCOUNT = (): PublicKey => {
+  return process.env.ENVIRONMENT === ENVS.DEVNET_EDGE
+    ? new PublicKey(
+        "F55HKFGvA563FsK9WsVGFGE2Xej7KfUcPMNi1GMBoX4k",
+      )
+    : new PublicKey(
+        "GGBay2i5Kut37XVNfVLSDuoCyyAELLtNHqMxU2YhRRUK",
+      );
+};
 
 function getConfig() {
   const environment = process.env.ENVIRONMENT;
