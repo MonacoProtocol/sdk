@@ -100,6 +100,8 @@ export function getProcessArgs(
   return values;
 }
 
+export const SDK_PRODUCT = new PublicKey('bwCvZn6Hs4v51tvwFdAtAyJXzLddjgUMnQn2SehXmhF')
+
 export function marketStatusFromString(status: string) {
   switch (status) {
     case "open":

@@ -1,14 +1,14 @@
 import { PublicKey } from "@solana/web3.js";
-import { createOrderUiStake } from "@monaco-protocol/client";
-import { getProgram, getProcessArgs, logResponse } from "../utils/utils";
+import { createOrderUiStake, getMarketOutcomesByMarket } from "@monaco-protocol/client";
+import { getProgram, getProcessArgs, logResponse, SDK_PRODUCT } from "../utils/utils";
 
-async function placeOrder(marketPk: PublicKey) {
+export async function placeOrder(marketPk: PublicKey, forOutcome: boolean = true) {
   const program = await getProgram();
   const marketOutcomeIndex = 0;
-  const forOutcome = true;
   const price = 2;
   const stake = 1;
-  const sdkExampleProductPk = new PublicKey('bwCvZn6Hs4v51tvwFdAtAyJXzLddjgUMnQn2SehXmhF')
+  // temp as any due to missing field on type
+  const market = await getMarketOutcomesByMarket(program, marketPk) as any;
   const response = await createOrderUiStake(
     program,
     marketPk,
@@ -16,7 +16,8 @@ async function placeOrder(marketPk: PublicKey) {
     forOutcome,
     price,
     stake,
-    sdkExampleProductPk
+    market.data.marketOutcomeAccounts[marketOutcomeIndex].account.prices,
+    SDK_PRODUCT
   );
   logResponse(response);
 }
