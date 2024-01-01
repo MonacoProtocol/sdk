@@ -3,6 +3,7 @@ import React from 'react';
 import { IProduct } from '@/database/types';
 import { findPublicKeyFromAccountsByName } from '@/utils/mappers/transactions';
 
+import AccountInfoComponent from './accountList';
 import ExplorerLinkComponent from '../navigation/explorerLink';
 
 interface Account {
@@ -38,6 +39,7 @@ const ProcessCommissionInstructionComponent: React.FC<Props> = ({ accounts, prod
           tokenAccounts={true}
         />{' '}
       </p>
+      <AccountInfoComponent accounts={accounts} />
     </div>
   );
 };

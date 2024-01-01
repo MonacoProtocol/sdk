@@ -61,6 +61,14 @@ Order placement allows:
 - View potential profit
 - Select product to enter via and view potential commission rates of that product
 
+### Market Seeder
+
+Accessible from within market, affords the ability to, for each market outcome:
+
+- Select a true price, spread, steps and depth (up to 3), apply liquidity to that outcome
+- Select to seed both sides of the outcome, either side, or none
+- Select back and lay returns
+
 ### Wallet Insight
 
 A view to see all orders for the provided wallet this view gives:
@@ -107,14 +115,14 @@ See all products set up via the monaco protocol product program. Products are sp
 
 To get started you will first need an RPC node. Checkout out our [guide in the SDK](https://github.com/MonacoProtocol/sdk/tree/main/examples#getting-started---rpc-node) to get started.
 
-Once you have an RPC node you will want to add it to `DEFAULT_RPC` in [src/config/appSettings.ts](/src/config/appSettings.ts) before running your local server.
+Once you have an RPC node you will want to add it to `DEFAULT_RPC` in [src/config/appSettings.ts](./src/config/appSettings.ts) before running your local server.
 
 ## Approved Wallets
 
 This feature is so that, if you deploy the app, you have some rudimentary control over who can access and therefore protect your RPC endpoint from overuse. If you are using approved wallets, then a user has to connect one of the wallets through their wallet browser extension. If they do not then they will always be redirected to the home page before any requests are made.
 
-- Set `USE_APPROVED_WALLETS` in [src/config/appSettings.ts](/src/config/appSettings.ts) to false
-- Add your wallet public key (as a string) to [src/config/approvedWallets.ts](/src/config/approvedWallets.ts)
+- Set `USE_APPROVED_WALLETS` in [src/config/appSettings.ts](./src/config/appSettings.ts) to false
+- Add your wallet public key (as a string) to [src/config/approvedWallets.ts](./src/config/approvedWallets.ts)
 
 ## Running Your Server
 

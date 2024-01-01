@@ -1,5 +1,7 @@
 import React from 'react';
 
+import AccountInfoComponent from './accountList';
+
 interface Account {
   name: string;
   publicKey: string;
@@ -19,10 +21,11 @@ interface Props {
   accounts: Account[];
 }
 
-const SettleMarketInstructionComponent: React.FC<Props> = ({ decoded }) => {
+const SettleMarketInstructionComponent: React.FC<Props> = ({ decoded, accounts }) => {
   return (
     <div>
       <p>Settle Market | Winning Outcome Index: {decoded.data.winningOutcomeIndex}</p>
+      <AccountInfoComponent accounts={accounts} />
     </div>
   );
 };

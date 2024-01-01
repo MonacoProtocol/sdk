@@ -1,4 +1,4 @@
-import { BorshCoder, Instruction, Program } from '@coral-xyz/anchor';
+import { BorshCoder, Idl, Instruction, Program } from '@coral-xyz/anchor';
 import { PublicKey, ConfirmedSignatureInfo, ParsedTransactionWithMeta } from '@solana/web3.js';
 
 import { DEFAULT_TRANSACTIONS_LIMIT } from '@/config/appSettings';
@@ -64,36 +64,68 @@ type ParsedTransaction = {
 export const fetchParsedTransactionsForAccount = async (
   program: Program,
   account: PublicKey,
+  idls: Idl[],
 ): Promise<ParsedTransaction[]> => {
-  if (program.idl) {
-    const tnxs = await fetchTransactionsForAccount(program, account);
-    const idl = program.idl;
-    const coder = new BorshCoder(idl);
-    const decodedIxs = tnxs.map((tnx) => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const instructions = tnx?.transaction.message.instructions.map((ix: any) => {
-        const decodedIx = coder.instruction.decode(ix.data, 'base58');
-        const idlInstruction = decodedIx?.name
-          ? idl.instructions.find((instruction) => instruction.name === decodedIx.name)
-          : undefined;
+  console.log('Fetching transactions');
+  const transactions = await fetchTransactionsForAccount(program, account);
+  console.log('Decoding transactions');
+  const decodedTransactions = [] as ParsedTransaction[];
+  let decodeSuccess = false;
+  let attempts = 0;
+  if (program.idl) idls.unshift(program.idl);
+  while (!decodeSuccess || attempts < idls.length) {
+    for (const idl of idls) {
+      try {
+        const decoded = decodeTransactions(transactions, idl);
+        if (decoded) {
+          decodedTransactions.push(...decoded);
+          decodeSuccess = true;
+          attempts = idls.length;
+          break;
+        }
+      } catch (e) {
+        attempts++;
+      }
+    }
+  }
+  return decodedTransactions;
+};
+
+const decodeTransactions = (
+  transactions: ParsedTransactionWithMeta[] | null[],
+  idl: Idl,
+): ParsedTransaction[] => {
+  try {
+    if (transactions) {
+      const coder = new BorshCoder(idl);
+      const decodedIxs = transactions.map((tnx) => {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const mappedAccounts = ix.accounts.map((account: any, i: number) => {
-          return {
-            name: idlInstruction?.accounts[i].name,
-            publicKey: account.toBase58(),
-          };
+        const instructions = tnx?.transaction.message.instructions.map((ix: any) => {
+          const decodedIx = coder.instruction.decode(ix.data, 'base58');
+          const idlInstruction = decodedIx?.name
+            ? idl.instructions.find((instruction) => instruction.name === decodedIx.name)
+            : undefined;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const mappedAccounts = ix.accounts.map((account: any, i: number) => {
+            return {
+              name: idlInstruction?.accounts[i].name,
+              publicKey: account.toBase58(),
+            };
+          });
+          return { decoded: decodedIx, accounts: mappedAccounts };
         });
-        return { decoded: decodedIx, accounts: mappedAccounts };
+        return {
+          instructions,
+          signatures: tnx?.transaction.signatures,
+          blockTime: tnx?.blockTime,
+          slot: tnx?.slot,
+        } as unknown as ParsedTransaction;
       });
-      return {
-        instructions,
-        signatures: tnx?.transaction.signatures,
-        blockTime: tnx?.blockTime,
-        slot: tnx?.slot,
-      } as unknown as ParsedTransaction;
-    });
-    return decodedIxs;
-  } else {
-    return [];
+      return decodedIxs;
+    } else {
+      return [];
+    }
+  } catch (e) {
+    throw new Error(`Error decoding transactions with idl ${idl.version}`);
   }
 };

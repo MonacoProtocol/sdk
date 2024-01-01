@@ -6,6 +6,7 @@ import { formatNumberForDisplay } from '@/utils/display';
 import { findPublicKeyFromAccountsByName } from '@/utils/mappers/transactions';
 import { integerToUiValue } from '@/utils/parsers';
 
+import AccountInfoComponent from './accountList';
 import ExplorerLinkComponent from '../navigation/explorerLink';
 
 interface Account {
@@ -76,6 +77,7 @@ const CreateOrderInstructionComponent: React.FC<OrderInstructionProps> = ({
         tokenAccounts={false}
       />{' '}
       <p />
+      <AccountInfoComponent accounts={accounts} />
     </div>
   );
 };

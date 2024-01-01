@@ -2,6 +2,7 @@ import React from 'react';
 
 import { findPublicKeyFromAccountsByName } from '@/utils/mappers/transactions';
 
+import AccountInfoComponent from './accountList';
 import ExplorerLinkComponent from '../navigation/explorerLink';
 
 interface Account {
@@ -63,6 +64,7 @@ const MatchOrderInstructionComponent: React.FC<Props> = ({ accounts }) => {
           tokenAccounts={false}
         />{' '}
       </p>
+      <AccountInfoComponent accounts={accounts} />
     </div>
   );
 };

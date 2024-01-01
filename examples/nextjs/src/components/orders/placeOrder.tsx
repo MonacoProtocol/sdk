@@ -5,20 +5,18 @@ import appSettings from '@/config/appSettings';
 import { MappedMarketStatus, OPEN_MARKET_STATUSES } from '@/const/markets';
 import { DEFAULT_PRICE_LADDER, ForAgainst } from '@/const/orders';
 import { useProgram } from '@/context/ProgramContext';
-import { IMarketOutcome, IProduct } from '@/database/types';
+import { IMarket, IMarketOutcome, IProduct } from '@/database/types';
 import { fetchBalance } from '@/endpoints/balance/fetchBalance';
 import placeOrder, { OrderDetails } from '@/endpoints/orders/placeOrder';
 import { formatNumberForDisplay, sentenceCase } from '@/utils/display';
 import { getStoredSettings } from '@/utils/settings';
 
 interface PlaceOrderProps {
-  market: string;
+  market: IMarket;
   marketOutcomes: IMarketOutcome[];
   isLoading: boolean;
   orderFromMatrix: OrderDetails;
   products: IProduct[];
-  marketStatus: string;
-  suspended: boolean;
 }
 
 const PlaceOrderComponent: React.FC<PlaceOrderProps> = ({
@@ -27,18 +25,16 @@ const PlaceOrderComponent: React.FC<PlaceOrderProps> = ({
   isLoading,
   products,
   orderFromMatrix,
-  marketStatus,
-  suspended,
 }) => {
   const [order, setOrder] = useState<OrderDetails>({
-    market: market,
+    market: market.publicKey,
     outcome: 0,
     forOutcome: true,
     price: 2.0,
     stake: getStoredSettings().active.default_stake,
   });
   const [allProducts] = useState<IProduct[]>(products);
-  const [status] = useState<string>(marketStatus);
+  const [status] = useState<string>(market.marketStatus);
   const [productTitles, setProductTitles] = useState<string[]>([]);
   const [solBalance, setSolBalance] = useState<number>(0);
   const [tokenBalance, setTokenBalance] = useState<number>(0);
@@ -72,7 +68,7 @@ const PlaceOrderComponent: React.FC<PlaceOrderProps> = ({
     ) {
       updateOrder(orderFromMatrix);
     }
-  }, [orderFromMatrix, order]);
+  }, [orderFromMatrix]);
 
   useEffect(() => {
     const titles = products.map((product) => product.productTitle);
@@ -86,6 +82,7 @@ const PlaceOrderComponent: React.FC<PlaceOrderProps> = ({
 
   const handlePlaceOrder = async () => {
     if (programContext.program) {
+      console.log('place order', order);
       await placeOrder(programContext.program as Program, order);
     }
   };
@@ -104,7 +101,7 @@ const PlaceOrderComponent: React.FC<PlaceOrderProps> = ({
         <br />
         USDC: {loadingBalance ? '...loading' : formatNumberForDisplay(tokenBalance)}
         <p />
-        {!suspended && OPEN_MARKET_STATUSES.includes(status as MappedMarketStatus) && (
+        {!market.suspended && OPEN_MARKET_STATUSES.includes(status as MappedMarketStatus) && (
           <div>
             <h2>Place Order</h2>
             <hr />
@@ -202,7 +199,7 @@ const PlaceOrderComponent: React.FC<PlaceOrderProps> = ({
             <button onClick={handlePlaceOrder}>Place Order</button>
           </div>
         )}
-        {suspended ||
+        {market.suspended ||
           (!OPEN_MARKET_STATUSES.includes(status as MappedMarketStatus) && (
             <h3>Market Not Taking Orders</h3>
           ))}

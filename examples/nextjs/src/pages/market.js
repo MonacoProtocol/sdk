@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 
 import MarketPositionComponent from '@/components/markets/marketPosition';
 import PlaceOrderComponent from '@/components/orders/placeOrder';
+import SeederComponent from '@/components/seeder/seeder';
 import { useProgram } from '@/context/ProgramContext';
 import { getLocalEventForMarket } from '@/database/endpoints/events';
 import { storeEvents } from '@/endpoints/events/fetchEvents';
@@ -118,7 +119,7 @@ function MarketPage() {
     };
 
     fetchData();
-  }, [router.query, OrderMatrixForAgainstComponent]);
+  }, [router.query]);
 
   const handleInputChange = (e) => {
     setInputKey(e.target.value);
@@ -142,7 +143,12 @@ function MarketPage() {
         <EventComponent event={eventData} isLoading={isLoadingEvent} />
         {marketPublicKey && market ? (
           <>
-            <MarketComponent key={`market-${marketPublicKey}`} market={market} loading={loading} />
+            <MarketComponent
+              key={`market-${marketPublicKey}`}
+              market={market}
+              priceSummary={priceSummary}
+              loading={loading}
+            />
             <PriceMatrixComponent
               priceSummary={priceSummary}
               marketOutcomes={marketOutcomes}
@@ -153,6 +159,8 @@ function MarketPage() {
               loading={loading}
             />
             <div>
+              <SeederComponent marketOutcomes={marketOutcomes} market={market} loading={loading} />
+              <p />
               {uniquePurchasers.map((purchaser) => (
                 <>
                   <hr />
@@ -193,11 +201,10 @@ function MarketPage() {
         <button onClick={handleSubmit}>Load Market</button>
         <p />
         <PlaceOrderComponent
-          market={marketPublicKey}
+          market={market}
           marketOutcomes={marketOutcomes}
           products={products}
           isLoading={loading}
-          marketStatus={market.marketStatus}
           orderFromMatrix={{
             market: marketPublicKey,
             outcome: selectedOutcome,

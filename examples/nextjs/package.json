@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@coral-xyz/anchor": "^0.27.0",
-    "@monaco-protocol/client": "^8.0.0",
+    "@monaco-protocol/client": "^9.0.0",
+    "@monaco-protocol/seed-calculator": "^0.1.0",
     "@solana/spl-token": "^0.3.8",
     "@solana/wallet-adapter-react": "^0.15.34",
     "@solana/wallet-adapter-react-ui": "^0.9.33",
