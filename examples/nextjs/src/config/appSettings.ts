@@ -3,7 +3,7 @@ import { AppSettingsProps } from '@/types/settings';
 const DEFAULT_RPC = 'YOUR_RPC_NODE_URL';
 export const USE_APPROVED_WALLETS = true;
 export const DEFAULT_MINT_DECIMALS = 6;
-export const DEFAULT_TRANSACTIONS_LIMIT = 1000;
+export const DEFAULT_TRANSACTIONS_LIMIT = 250;
 
 const appSettings: AppSettingsProps = {
   active: {

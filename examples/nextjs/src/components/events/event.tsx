@@ -21,14 +21,17 @@ const EventComponent: React.FC<EventProps> = ({ event, isLoading, markets }) => 
   return (
     <>
       {event ? (
-        <div className="eventHeader">
-          <p>
-            {event.subcategoryTitle} | {event.eventGroupTitle}
-          </p>
-          <h3>{event.eventName}</h3>
-          {eventStart} - {eventEnd}
-          <p />
-        </div>
+        <>
+          <hr />
+          <div className="eventHeader">
+            <p>
+              {event.subcategoryTitle} | {event.eventGroupTitle}
+            </p>
+            <h3>{event.eventName}</h3>
+            {eventStart} - {eventEnd}
+            <p />
+          </div>
+        </>
       ) : (
         <div className="eventHeader">Unknown Event</div>
       )}

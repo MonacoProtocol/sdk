@@ -1,0 +1,34 @@
+.selected-seeds-table {
+    width: 60%;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+.selected-seeds-table thead {
+    background-color: #333333;
+    color: #fff;
+  }
+
+  .selected-seeds-table td {
+    width:15.15%;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: center;
+  }
+  
+  .selected-seeds-table th {
+    background-color: #333333;
+    color: #fff;
+    border: 1px solid #ddd;
+  }
+  
+  .selected-seeds-table tr:nth-child(even) {
+    background-color: #5e0059;
+  }
+  
+  .selected-seeds-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  

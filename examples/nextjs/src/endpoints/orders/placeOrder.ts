@@ -27,6 +27,7 @@ export const placeOrder = async (program: Program, OrderDetails: OrderDetails) =
       OrderDetails.forOutcome,
       OrderDetails.price,
       OrderDetails.stake as number,
+      new PublicKey('GGBay2i5Kut37XVNfVLSDuoCyyAELLtNHqMxU2YhRRUK'), // DEFAULT_PRICE_LADDER account
       productPk,
     );
     if (orderResponse.success) {

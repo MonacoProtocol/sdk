@@ -3,7 +3,7 @@ import { SettingCategory } from '@/types/settings';
 
 export const getStoredSettings = () => {
   if (typeof window === 'undefined') return appSettings;
-  else return JSON.parse(localStorage.getItem('settings')) || appSettings;
+  else return { ...appSettings, ...JSON.parse(localStorage.getItem('settings')) } || appSettings;
 };
 
 export const saveSettings = (settings) => {

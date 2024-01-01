@@ -12,6 +12,7 @@ export type ActiveSettingsProps = {
     cache_events: number;
     cache_products: number;
   };
+  seederSettings?: SeederSettings;
 };
 
 type AddressProps = {
@@ -49,4 +50,24 @@ export enum SettingCategory {
   PROGRAM_ADDRESSES = 'programAddresses',
   MINTS = 'mints',
   SAVED_WALLETS = 'savedWallets',
+}
+
+export interface SeederSettings {
+  enabled: boolean;
+  truePrice: string;
+  spread: string;
+  steps: string;
+  depth1: string;
+  depth2: string;
+  depth3: string;
+  sides: string;
+  backToWin: string;
+  layToLose: string;
+}
+
+export enum SeederSides {
+  FOR_AGAINST = 'For/Against',
+  FOR = 'For',
+  AGAINST = 'Against',
+  NEITHER = 'Neither',
 }

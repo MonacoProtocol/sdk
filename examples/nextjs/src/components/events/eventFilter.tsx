@@ -25,7 +25,7 @@ const EventFilterComponent: React.FC<EventFilterProps> = ({
   const [eventGroups, setEventGroups] = useState<Record<string, string[]>>({});
   const [selectedEventGroup, setSelectedEventGroup] = useState<string[]>([]);
   const [eventGroupFilter, setEventGroupFilter] = useState<string>('');
-  const [eventStatus, setEventStatus] = useState(EventStatus.ALL.valueOf());
+  const [eventStatus, setEventStatus] = useState(EventStatus.NOT_STARTED.valueOf());
 
   useEffect(() => {
     if (events.length > 0) {
@@ -67,7 +67,7 @@ const EventFilterComponent: React.FC<EventFilterProps> = ({
     setSelectedCategory(e.target.value);
     setSelectedEventGroup(eventGroups[e.target.value]);
     setEventGroupFilter(eventGroups[e.target.value][0]);
-    setEventStatus(EventStatus.ALL.valueOf());
+    setEventStatus(EventStatus.NOT_STARTED.valueOf());
   };
 
   const handleEventGroupChange = (e: React.ChangeEvent<HTMLSelectElement>) => {

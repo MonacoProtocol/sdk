@@ -3,6 +3,7 @@ import React from 'react';
 import { IProduct } from '@/database/types';
 import { convertTimestampToDateString } from '@/utils/time';
 
+import AccountInfoComponent from './accountList';
 import CancelOrderInstructionComponent from './cancelOrderInstructionComponent';
 import CreateOrderInstructionComponent from './createOrderInstructionComponent';
 import MatchOrderInstructionComponent from './matchOrderInstructionComponent';
@@ -107,7 +108,10 @@ const TransactionComponent: React.FC<Props> = ({
               />
             )}
             {!Object.values(MappedInstructions).includes(instruction.decoded.name) && (
-              <p>{instruction.decoded.name}</p>
+              <>
+                <p>{instruction.decoded.name}</p>
+                <AccountInfoComponent accounts={instruction.accounts} />
+              </>
             )}
           </div>
         ))}

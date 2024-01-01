@@ -3,17 +3,20 @@ import React from 'react';
 
 import { MappedMarketStatus } from '@/const/markets';
 import { IMarket } from '@/database/types';
-import { truncateString } from '@/utils/display';
-import { generateExplorerLink } from '@/utils/navigation';
+import { formatNumberForDisplay } from '@/utils/display';
+import { OutcomePricesSummary } from '@/utils/mappers/marketPrices';
 import { convertTimestampToDateString } from '@/utils/time';
+
+import ExplorerLinkComponent from '../navigation/explorerLink';
 
 interface MarketProps {
   market: IMarket;
   isLoading: boolean;
+  priceSummary?: OutcomePricesSummary;
   viewMore?: boolean;
 }
 
-const MarketComponent: React.FC<MarketProps> = ({ market, isLoading, viewMore }) => {
+const MarketComponent: React.FC<MarketProps> = ({ market, isLoading, viewMore, priceSummary }) => {
   if (!market || isLoading) {
     return null;
   } else {
@@ -29,14 +32,19 @@ const MarketComponent: React.FC<MarketProps> = ({ market, isLoading, viewMore })
         <h3>
           Market: {market.title} {inplayMarket ? inplay : ''}
         </h3>{' '}
-        {marketLock} {settled} | {''}
-        <a
-          href={generateExplorerLink(market.publicKey, true)}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {truncateString(market.publicKey)}
-        </a>
+        {marketLock} {settled} |{' '}
+        <ExplorerLinkComponent
+          publicKey={market.publicKey}
+          anchorAccount={true}
+          tokenAccounts={false}
+        />{' '}
+        |{' '}
+        {priceSummary ? (
+          <span>
+            Liquidity: {formatNumberForDisplay(priceSummary.liquidityAmount)} | Traded{' '}
+            {formatNumberForDisplay(priceSummary.matchedAmount)}
+          </span>
+        ) : null}
         <p />
         {viewMore ? (
           <Link

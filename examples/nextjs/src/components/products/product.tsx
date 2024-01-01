@@ -14,7 +14,13 @@ const ProductComponent: React.FC<ProductProps> = ({ product, isLoading }) => {
   return (
     <>
       <div>
-        <h3>{product.productTitle}</h3>
+        <h3>{product.productTitle}</h3>{' '}
+        <ExplorerLinkComponent
+          publicKey={product.publicKey}
+          anchorAccount={true}
+          tokenAccounts={false}
+        />
+        <p />
         Commission rate: {product.commissionRate}% <br />
         Escrow Account:{' '}
         <ExplorerLinkComponent

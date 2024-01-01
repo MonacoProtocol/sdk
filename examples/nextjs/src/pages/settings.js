@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 
 import SavedWalletsComponent from '@/components/settings/savedWallets';
+import VersionComponent from '@/components/settings/viewVersion';
 import appSettings from '@/config/appSettings';
 import { useProgram } from '@/context/ProgramContext';
 import db from '@/database/database';
 import useWalletRedirect from '@/hooks/walletRedirect';
+import { getStoredSeederSettings } from '@/utils/seeder/seederSettings';
 
 import { LoadingComponent } from '../components/navigation/loading';
 import ActiveSettingsDisplay from '../components/settings/activeSettings';
@@ -19,6 +21,7 @@ import {
 
 function Settings() {
   const [currentSettings, setCurrentSettings] = useState(appSettings);
+  const [seederSettings] = useState(getStoredSeederSettings());
   const [loading, setLoading] = useState(true);
   const [selectedSetting, setSelectedSetting] = useState('defaultStake');
   const [settingValue, setSettingValue] = useState('');
@@ -162,7 +165,8 @@ function Settings() {
         </p>
       </div>
       <div className="right-container">
-        <ActiveSettingsDisplay active={currentSettings.active} />
+        <VersionComponent />
+        <ActiveSettingsDisplay active={currentSettings.active} seederSettings={seederSettings} />
       </div>
     </div>
   );

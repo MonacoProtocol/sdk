@@ -11,12 +11,17 @@ export function sentenceCase(string: string) {
 }
 
 export function formatNumberForDisplay(number: number, solana = false) {
-  const formatted = `${number.toLocaleString('en-US', {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  })}`;
-  if (solana) {
-    return `◎ ${formatted}`;
+  try {
+    const formatted = `${number.toLocaleString('en-US', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    })}`;
+    if (solana) {
+      return `◎ ${formatted}`;
+    }
+    return `$ ${formatted}`;
+  } catch (e) {
+    console.log(e);
+    return number;
   }
-  return `$ ${formatted}`;
 }
