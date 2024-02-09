@@ -8,6 +8,7 @@ export function parseResponseData(
   bnMintKeys: string[] = bigNumberMintKeys,
   bnMintArrays: string[] = bigNumberMintArrays,
 ): any {
+  if (!responseData) return responseData;
   for (const [key, value] of Object.entries(responseData)) {
     if (value === null || value === undefined) {
       // no op

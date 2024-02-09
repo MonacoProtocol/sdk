@@ -36,17 +36,25 @@ function getConfig() {
   }
 }
 
-export async function getProgram() {
+export enum ProtocolTypes {
+  MONACO_PROTOCOL = "monaco-protocol",
+  MONACO_PRODUCT = "monaco-product"
+}
+
+export async function getProgram(protocolType: ProtocolTypes = ProtocolTypes.MONACO_PROTOCOL) {
   getConfig();
   const provider = AnchorProvider.env();
   setProvider(provider);
 
   let protocolAddress = new PublicKey(process.env.PROTOCOL_ADDRESS);
 
+  if (protocolType === ProtocolTypes.MONACO_PRODUCT) protocolAddress = new PublicKey(process.env.PROTOCOL_PRODUCT_ADDRESS);
+
   const program = await Program.at(protocolAddress, provider);
 
   log(`Environment: ${process.env.ENVIRONMENT}`);
-  log(`RPC node: ${program.provider.connection.rpcEndpoint}`);
+  log(`Protocol Type: ${protocolType}`);
+  log(`RPC Node: ${program.provider.connection.rpcEndpoint}`);
   log(`Wallet PublicKey: ${program.provider.publicKey}`);
 
   return program;
@@ -91,6 +99,8 @@ export function getProcessArgs(
   logJson(values);
   return values;
 }
+
+export const SDK_PRODUCT = new PublicKey('bwCvZn6Hs4v51tvwFdAtAyJXzLddjgUMnQn2SehXmhF')
 
 export function marketStatusFromString(status: string) {
   switch (status) {

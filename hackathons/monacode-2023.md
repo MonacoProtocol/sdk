@@ -8,7 +8,7 @@ The Monaco Protocol is an open source decentralized liquidity network for exchan
 
 ## What has already been built on the Monaco Protocol?
 
-With total matched bets exceeding $3,500,000 to date, dozens of projects have already been deployed using the Monaco Protocol as its backbone. The most noticeable being the BetDEX Exchange, a peer-to-peer non-custodial sports betting exchange; PureBet, a betting aggregation engine; and DisBet, a Discord bot that places wagers directly on the Monaco Protocol.
+With total matched bets exceeding $6,000,000 to date, dozens of projects have already been deployed using the Monaco Protocol as its backbone. The most noticeable being the BetDEX Exchange, a peer-to-peer non-custodial sports betting exchange; PureBet, a betting aggregation engine; and DisBet, a Discord bot that places wagers directly on the Monaco Protocol.
 
 ### What are the prizes?
 
@@ -82,7 +82,51 @@ Projects will be judged by members of the Monaco Protocol foundation on a variet
 * **Potential Value:** The extent to which the solution can be scaled and reach significant adoption
 * **Implementation:** How well the idea is executed by the developers and the extent to which technology features of the Monaco Protocol was leveraged.
 
-Winners of the event will be announced at Breakpoint 2023, at an IRL event and streamed online. More details on this event will be shared with all participants soon.
+Winners of the event will be announced at Breakpoint 2023, at an IRL event and streamed online.
+
+## The Judges
+
+### Varun Sudhakar
+
+_Co-founder and CEO of BetDEX Labs, formerly made poor bets at FanDuel._
+
+#### What Excites Them About The Protocol
+
+* Sports betting is a massive industry waiting to be disrupted due to the predatory practices of the incumbents. Web 3 provides the rails to do this with a transparent liquidity pool which is decentralized, permissionless and open-sourced; Solana is the only blockchain possible of handling this volume on-chain.
+
+#### Favourite Use Case
+
+* Too many to list, but a few ones that stand out are a) sport betting exchanges / books, b) on-chain collateralized lending to lever up your bets, c) syndicate betting with on-chain proofs of your record, d) analytical tools to spot on-chain 'whale' bets and more, e) transferable bets.... (_editor: he continues to list an entire alphabet of use cases so dm him if you want to hear more or if you have some cool ideas_)
+
+### 0xMert\_
+
+_Co-founder and CEO of Helius, founder of LamportDAO — formerly built APIs at Coinbase — dev community maxi._
+
+#### What Excites Them About The Protocol
+
+* Sports betting is one of the best use cases for decentralized finance and the capital efficiency due to order books on Solana make it a no-brainer.
+
+#### Favourite Use Case
+
+* Losing money betting on the Bengals.
+
+### Stuart Tonner
+
+_Co-founder and CTO of BetDEX Labs, previously of FanDuel fame working on the engineering side of the fence._
+
+#### What Excites Them About The Protocol
+
+* Building a transparent, decentralized betting exchange that can be used by anyone in the world - having an open platform where innovation and user experience is the priority.
+
+#### Favourite Use Case
+
+* Simple tools that enable users to have understand their position and make informed decisions about how they want to play. Visualisation tools and analytics that enable users to follow their bets and get realtime information around performance. Small, simple, fun apps that users to enjoy playing against others in a fair way.
+
+## Where do I register for the Breakpoint event?
+
+Our Breakpoint event is co-hosted with our friends over at BetDEX. It takes place on Wednesday 1st November at 17:00 CET at the [Café de Jaren in Amsterdam](https://www.google.com/maps/search/?api=1\&query=Caf%C3%A9%20de%20Jaren\&query\_place\_id=ChIJoa4hjb8JxkcRehItw0EaWz8). We're calling it a happy hour but it goes on for three. We'd love to see you there!
+
+Register: [https://lu.ma/g7d6hcu9](https://lu.ma/g7d6hcu9)
 
 ## Do I need a licence to build on the Monaco Protocol?
 
@@ -119,6 +163,12 @@ Please see General Terms and Conditions of Participation of this hackathon [here
 * What They Do: Onchain data for analysts, protocols, builders.
 * [https://flipsidecrypto.xyz/](https://flipsidecrypto.xyz/)
 * [https://twitter.com/flipsidecrypto](https://twitter.com/flipsidecrypto?ref\_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
+
+### Shyft
+
+* What They Do: Web3 APIs to enable builders on Solana.
+* [https://shyft.to/](https://shyft.to/)
+* [https://twitter.com/Shyft\_to](https://twitter.com/Shyft\_to)
 
 ### Dialect&#x20;
 

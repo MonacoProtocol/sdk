@@ -1,0 +1,54 @@
+.market-position {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.market-position thead {
+    background-color: #5e0059;
+    color: #fff;
+}
+
+.market-position th,
+.market-position td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: center;
+}
+
+.market-position tr:nth-child(even) {
+    background-color: #333;
+}
+
+.market-position tr.profit{
+    background-color: #049d04;
+}
+
+.market-position tr.loss{
+    background-color: #ce0000;
+}
+
+.market-position-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.position-header {
+    width: 100%;
+    height: 20%;
+    flex-direction: column;
+    display: flex;
+}
+
+.position-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.position-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+}

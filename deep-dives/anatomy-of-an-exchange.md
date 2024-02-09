@@ -16,7 +16,7 @@ The thing on which the results of, or stats from, determine the outcome of the m
 - EventGroup: Halo
 - Title: Red vs Blue
 - Participants: Red, Blue
-- Event Start: 21st September 2050 09:00 UTC
+- Event Start: 21st September 2025 09:00 UTC
 - Event Estimated End: 21st September 2025 11:00 UTC
 
 # Market
@@ -37,7 +37,7 @@ Markets can be set to lock during the event, or to stay open as an `inplay` mark
 - Inplay: True
 - Inplay Order Delay: 3
 - Number of Outcomes: 3
-- Event Start: 21st September 2050 09:00 UTC
+- Event Start: 21st September 2025 09:00 UTC
 - Market lock time: 21st September 2025 11:00 UTC
 - Suspended: false
 - Published: true

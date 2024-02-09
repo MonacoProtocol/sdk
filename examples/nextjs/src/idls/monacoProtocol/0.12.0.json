@@ -1,0 +1,2717 @@
+{
+  "version": "0.12.0",
+  "name": "monaco_protocol",
+  "instructions": [
+    {
+      "name": "createOrder",
+      "accounts": [
+        {
+          "name": "order",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketPosition",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "purchaser",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "purchaserToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketMatchingPool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOutcome",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketEscrow",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "distinctSeed",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": {
+            "defined": "OrderData"
+          }
+        }
+      ]
+    },
+    {
+      "name": "createOrderV2",
+      "accounts": [
+        {
+          "name": "order",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketPosition",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "purchaser",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "purchaserToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketMatchingPool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOutcome",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "priceLadder",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": true
+        },
+        {
+          "name": "marketEscrow",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "product",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "distinctSeed",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": {
+            "defined": "OrderData"
+          }
+        }
+      ]
+    },
+    {
+      "name": "moveMarketMatchingPoolToInplay",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "marketMatchingPool",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "processDelayExpiredOrders",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "marketMatchingPool",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "cancelOrder",
+      "accounts": [
+        {
+          "name": "order",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "purchaser",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "purchaserTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketMatchingPool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketEscrow",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketPosition",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "cancelPreplayOrderPostEventStart",
+      "accounts": [
+        {
+          "name": "order",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "purchaser",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "purchaserToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketMatchingPool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketEscrow",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketPosition",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "settleOrder",
+      "accounts": [
+        {
+          "name": "order",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "purchaser",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "settleMarketPosition",
+      "accounts": [
+        {
+          "name": "purchaserTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "commissionPaymentQueue",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketEscrow",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketPosition",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "protocolConfig",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "voidMarketPosition",
+      "accounts": [
+        {
+          "name": "purchaserTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketEscrow",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketPosition",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "voidOrder",
+      "accounts": [
+        {
+          "name": "order",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "authoriseAdminOperator",
+      "accounts": [
+        {
+          "name": "authorisedOperators",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "adminOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "operator",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "authoriseOperator",
+      "accounts": [
+        {
+          "name": "authorisedOperators",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "adminOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "adminOperators",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "operatorType",
+          "type": "string"
+        },
+        {
+          "name": "operator",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "removeAuthorisedOperator",
+      "accounts": [
+        {
+          "name": "authorisedOperators",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "adminOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "adminOperators",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "operatorType",
+          "type": "string"
+        },
+        {
+          "name": "operator",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "matchOrders",
+      "accounts": [
+        {
+          "name": "orderAgainst",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tradeAgainst",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketPositionAgainst",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketMatchingPoolAgainst",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "orderFor",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tradeFor",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketPositionFor",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketMatchingPoolFor",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOutcome",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "crankOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "purchaserTokenAccountFor",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "purchaserTokenAccountAgainst",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketEscrow",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "createMarketType",
+      "accounts": [
+        {
+          "name": "marketType",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "requiresDiscriminator",
+          "type": "bool"
+        },
+        {
+          "name": "requiresValue",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "createPriceLadder",
+      "accounts": [
+        {
+          "name": "priceLadder",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "distinctSeed",
+          "type": "string"
+        },
+        {
+          "name": "maxNumberOfPrices",
+          "type": "u16"
+        }
+      ]
+    },
+    {
+      "name": "addPricesToPriceLadder",
+      "accounts": [
+        {
+          "name": "priceLadder",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "pricesToAdd",
+          "type": {
+            "vec": "f64"
+          }
+        }
+      ]
+    },
+    {
+      "name": "removePricesFromPriceLadder",
+      "accounts": [
+        {
+          "name": "priceLadder",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "pricesToRemove",
+          "type": {
+            "vec": "f64"
+          }
+        }
+      ]
+    },
+    {
+      "name": "increasePriceLadderSize",
+      "accounts": [
+        {
+          "name": "priceLadder",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "maxNumberOfPrices",
+          "type": "u16"
+        }
+      ]
+    },
+    {
+      "name": "closePriceLadder",
+      "accounts": [
+        {
+          "name": "priceLadder",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "createMarket",
+      "accounts": [
+        {
+          "name": "existingMarket",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": true
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "escrow",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "commissionPaymentQueue",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketType",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "marketOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "eventAccount",
+          "type": "publicKey"
+        },
+        {
+          "name": "marketTypeDiscriminator",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "marketTypeValue",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "maxDecimals",
+          "type": "u8"
+        },
+        {
+          "name": "marketLockTimestamp",
+          "type": "i64"
+        },
+        {
+          "name": "eventStartTimestamp",
+          "type": "i64"
+        },
+        {
+          "name": "inplayEnabled",
+          "type": "bool"
+        },
+        {
+          "name": "inplayOrderDelay",
+          "type": "u8"
+        },
+        {
+          "name": "eventStartOrderBehaviour",
+          "type": {
+            "defined": "MarketOrderBehaviour"
+          }
+        },
+        {
+          "name": "marketLockOrderBehaviour",
+          "type": {
+            "defined": "MarketOrderBehaviour"
+          }
+        }
+      ]
+    },
+    {
+      "name": "initializeMarketOutcome",
+      "accounts": [
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "outcome",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "priceLadder",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": true
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "title",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "addPricesToMarketOutcome",
+      "accounts": [
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "outcome",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "outcomeIndex",
+          "type": "u16"
+        },
+        {
+          "name": "newPrices",
+          "type": {
+            "vec": "f64"
+          }
+        }
+      ]
+    },
+    {
+      "name": "updateMarketTitle",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "title",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "updateMarketLocktime",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "lockTime",
+          "type": "i64"
+        }
+      ]
+    },
+    {
+      "name": "updateMarketEventStartTime",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "eventStartTime",
+          "type": "i64"
+        }
+      ]
+    },
+    {
+      "name": "updateMarketEventStartTimeToNow",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "moveMarketToInplay",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "openMarket",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "settleMarket",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "winningOutcomeIndex",
+          "type": "u16"
+        }
+      ]
+    },
+    {
+      "name": "completeMarketSettlement",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "voidMarket",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "completeMarketVoid",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "publishMarket",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "unpublishMarket",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "suspendMarket",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "unsuspendMarket",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "setMarketReadyToClose",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketEscrow",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "marketOperator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "transferMarketEscrowSurplus",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "marketEscrow",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketAuthorityToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketOperator",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "authorisedOperators",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "processCommissionPayment",
+      "accounts": [
+        {
+          "name": "productEscrowToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "commissionEscrow",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "AccountInfo as owner can be PDA of any account type"
+          ]
+        },
+        {
+          "name": "product",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "market",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "marketEscrow",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "commissionPaymentsQueue",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "closeOrder",
+      "accounts": [
+        {
+          "name": "order",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "purchaser",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "closeTrade",
+      "accounts": [
+        {
+          "name": "trade",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "closeMarketPosition",
+      "accounts": [
+        {
+          "name": "marketPosition",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "purchaser",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "closeMarketMatchingPool",
+      "accounts": [
+        {
+          "name": "marketMatchingPool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "closeMarketOutcome",
+      "accounts": [
+        {
+          "name": "marketOutcome",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "closeMarket",
+      "accounts": [
+        {
+          "name": "market",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "marketEscrow",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "commissionPaymentQueue",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Market",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "publicKey"
+          },
+          {
+            "name": "eventAccount",
+            "type": "publicKey"
+          },
+          {
+            "name": "mintAccount",
+            "type": "publicKey"
+          },
+          {
+            "name": "marketStatus",
+            "type": {
+              "defined": "MarketStatus"
+            }
+          },
+          {
+            "name": "inplayEnabled",
+            "type": "bool"
+          },
+          {
+            "name": "inplay",
+            "type": "bool"
+          },
+          {
+            "name": "marketType",
+            "type": "publicKey"
+          },
+          {
+            "name": "marketTypeDiscriminator",
+            "type": {
+              "option": "string"
+            }
+          },
+          {
+            "name": "marketTypeValue",
+            "type": {
+              "option": "string"
+            }
+          },
+          {
+            "name": "version",
+            "type": "u8"
+          },
+          {
+            "name": "decimalLimit",
+            "type": "u8"
+          },
+          {
+            "name": "published",
+            "type": "bool"
+          },
+          {
+            "name": "suspended",
+            "type": "bool"
+          },
+          {
+            "name": "marketOutcomesCount",
+            "type": "u16"
+          },
+          {
+            "name": "marketWinningOutcomeIndex",
+            "type": {
+              "option": "u16"
+            }
+          },
+          {
+            "name": "marketLockTimestamp",
+            "type": "i64"
+          },
+          {
+            "name": "marketSettleTimestamp",
+            "type": {
+              "option": "i64"
+            }
+          },
+          {
+            "name": "eventStartOrderBehaviour",
+            "type": {
+              "defined": "MarketOrderBehaviour"
+            }
+          },
+          {
+            "name": "marketLockOrderBehaviour",
+            "type": {
+              "defined": "MarketOrderBehaviour"
+            }
+          },
+          {
+            "name": "inplayOrderDelay",
+            "type": "u8"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "unsettledAccountsCount",
+            "type": "u32"
+          },
+          {
+            "name": "unclosedAccountsCount",
+            "type": "u32"
+          },
+          {
+            "name": "escrowAccountBump",
+            "type": "u8"
+          },
+          {
+            "name": "eventStartTimestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MarketMatchingPool",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "market",
+            "type": "publicKey"
+          },
+          {
+            "name": "marketOutcomeIndex",
+            "type": "u16"
+          },
+          {
+            "name": "forOutcome",
+            "type": "bool"
+          },
+          {
+            "name": "price",
+            "type": "f64"
+          },
+          {
+            "name": "payer",
+            "type": "publicKey"
+          },
+          {
+            "name": "liquidityAmount",
+            "type": "u64"
+          },
+          {
+            "name": "matchedAmount",
+            "type": "u64"
+          },
+          {
+            "name": "inplay",
+            "type": "bool"
+          },
+          {
+            "name": "orders",
+            "type": {
+              "defined": "Cirque"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "MarketOutcome",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "market",
+            "type": "publicKey"
+          },
+          {
+            "name": "index",
+            "type": "u16"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "latestMatchedPrice",
+            "type": "f64"
+          },
+          {
+            "name": "matchedTotal",
+            "type": "u64"
+          },
+          {
+            "name": "prices",
+            "type": {
+              "option": "publicKey"
+            }
+          },
+          {
+            "name": "priceLadder",
+            "type": {
+              "vec": "f64"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "MarketPosition",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "purchaser",
+            "type": "publicKey"
+          },
+          {
+            "name": "market",
+            "type": "publicKey"
+          },
+          {
+            "name": "paid",
+            "type": "bool"
+          },
+          {
+            "name": "marketOutcomeSums",
+            "type": {
+              "vec": "i128"
+            }
+          },
+          {
+            "name": "unmatchedExposures",
+            "type": {
+              "vec": "u64"
+            }
+          },
+          {
+            "name": "payer",
+            "type": "publicKey"
+          },
+          {
+            "name": "matchedRisk",
+            "type": "u64"
+          },
+          {
+            "name": "matchedRiskPerProduct",
+            "type": {
+              "vec": {
+                "defined": "ProductMatchedRiskAndRate"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "MarketType",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "requiresDiscriminator",
+            "type": "bool"
+          },
+          {
+            "name": "requiresValue",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AuthorisedOperators",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "publicKey"
+          },
+          {
+            "name": "operatorList",
+            "type": {
+              "vec": "publicKey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Order",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "purchaser",
+            "type": "publicKey"
+          },
+          {
+            "name": "market",
+            "type": "publicKey"
+          },
+          {
+            "name": "marketOutcomeIndex",
+            "type": "u16"
+          },
+          {
+            "name": "forOutcome",
+            "type": "bool"
+          },
+          {
+            "name": "orderStatus",
+            "type": {
+              "defined": "OrderStatus"
+            }
+          },
+          {
+            "name": "product",
+            "type": {
+              "option": "publicKey"
+            }
+          },
+          {
+            "name": "stake",
+            "type": "u64"
+          },
+          {
+            "name": "voidedStake",
+            "type": "u64"
+          },
+          {
+            "name": "expectedPrice",
+            "type": "f64"
+          },
+          {
+            "name": "creationTimestamp",
+            "type": "i64"
+          },
+          {
+            "name": "delayExpirationTimestamp",
+            "type": "i64"
+          },
+          {
+            "name": "stakeUnmatched",
+            "type": "u64"
+          },
+          {
+            "name": "payout",
+            "type": "u64"
+          },
+          {
+            "name": "payer",
+            "type": "publicKey"
+          },
+          {
+            "name": "productCommissionRate",
+            "type": "f64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MarketPaymentsQueue",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "market",
+            "type": "publicKey"
+          },
+          {
+            "name": "paymentQueue",
+            "type": {
+              "defined": "PaymentQueue"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "PriceLadder",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "publicKey"
+          },
+          {
+            "name": "maxNumberOfPrices",
+            "type": "u16"
+          },
+          {
+            "name": "prices",
+            "type": {
+              "vec": "f64"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Trade",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "purchaser",
+            "type": "publicKey"
+          },
+          {
+            "name": "market",
+            "type": "publicKey"
+          },
+          {
+            "name": "order",
+            "type": "publicKey"
+          },
+          {
+            "name": "oppositeTrade",
+            "type": "publicKey"
+          },
+          {
+            "name": "marketOutcomeIndex",
+            "type": "u16"
+          },
+          {
+            "name": "forOutcome",
+            "type": "bool"
+          },
+          {
+            "name": "stake",
+            "type": "u64"
+          },
+          {
+            "name": "price",
+            "type": "f64"
+          },
+          {
+            "name": "creationTimestamp",
+            "type": "i64"
+          },
+          {
+            "name": "payer",
+            "type": "publicKey"
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "QueueItem",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "order",
+            "type": "publicKey"
+          },
+          {
+            "name": "delayExpirationTimestamp",
+            "type": "i64"
+          },
+          {
+            "name": "liquidityToAdd",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Cirque",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "front",
+            "type": "u32"
+          },
+          {
+            "name": "len",
+            "type": "u32"
+          },
+          {
+            "name": "items",
+            "type": {
+              "vec": {
+                "defined": "QueueItem"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProductMatchedRiskAndRate",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "product",
+            "type": "publicKey"
+          },
+          {
+            "name": "risk",
+            "type": "u64"
+          },
+          {
+            "name": "rate",
+            "type": "f64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OrderData",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "marketOutcomeIndex",
+            "type": "u16"
+          },
+          {
+            "name": "forOutcome",
+            "type": "bool"
+          },
+          {
+            "name": "stake",
+            "type": "u64"
+          },
+          {
+            "name": "price",
+            "type": "f64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PaymentInfo",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "to",
+            "type": "publicKey"
+          },
+          {
+            "name": "from",
+            "type": "publicKey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PaymentQueue",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "front",
+            "type": "u32"
+          },
+          {
+            "name": "len",
+            "type": "u32"
+          },
+          {
+            "name": "items",
+            "type": {
+              "vec": {
+                "defined": "PaymentInfo"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "MarketStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Initializing"
+          },
+          {
+            "name": "Open"
+          },
+          {
+            "name": "Locked"
+          },
+          {
+            "name": "ReadyForSettlement"
+          },
+          {
+            "name": "Settled"
+          },
+          {
+            "name": "ReadyToClose"
+          },
+          {
+            "name": "ReadyToVoid"
+          },
+          {
+            "name": "Voided"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MarketOrderBehaviour",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "None"
+          },
+          {
+            "name": "CancelUnmatched"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OperatorType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Admin"
+          },
+          {
+            "name": "Crank"
+          },
+          {
+            "name": "Market"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OrderStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Open"
+          },
+          {
+            "name": "Matched"
+          },
+          {
+            "name": "SettledWin"
+          },
+          {
+            "name": "SettledLose"
+          },
+          {
+            "name": "Cancelled"
+          },
+          {
+            "name": "Voided"
+          }
+        ]
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "TradeEvent",
+      "fields": [
+        {
+          "name": "amount",
+          "type": "u64",
+          "index": false
+        },
+        {
+          "name": "price",
+          "type": "f64",
+          "index": false
+        },
+        {
+          "name": "market",
+          "type": "publicKey",
+          "index": false
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "ArithmeticError",
+      "msg": "Generic: math operation has failed"
+    },
+    {
+      "code": 6001,
+      "name": "CreationStakeZeroOrLess",
+      "msg": "Order Creation: stake zero or less"
+    },
+    {
+      "code": 6002,
+      "name": "CreationPriceOneOrLess",
+      "msg": "Order Creation: price cannot be 1.0 or less"
+    },
+    {
+      "code": 6003,
+      "name": "CreationStakePrecisionIsTooHigh",
+      "msg": "Order Creation: decimal limit breached for market"
+    },
+    {
+      "code": 6004,
+      "name": "CreationMarketNotOpen",
+      "msg": "Order Creation: market is not in a state to create Order"
+    },
+    {
+      "code": 6005,
+      "name": "CreationMarketHasWinningOutcome",
+      "msg": "Order Creation: winning outcome already selected for market"
+    },
+    {
+      "code": 6006,
+      "name": "CreationMarketLocked",
+      "msg": "Order Creation: Failed to create Order, market has locked"
+    },
+    {
+      "code": 6007,
+      "name": "CreationMarketSuspended",
+      "msg": "Order Creation: Failed to create Order, market is currently suspended"
+    },
+    {
+      "code": 6008,
+      "name": "CreationInvalidPriceLadder",
+      "msg": "Order Creation: Failed to create Order, provided price ladder is invalid for outcome"
+    },
+    {
+      "code": 6009,
+      "name": "CreationInvalidPrice",
+      "msg": "Order Creation: Failed to create Order, selected price is invalid for outcome"
+    },
+    {
+      "code": 6010,
+      "name": "CreationPaymentAmountError",
+      "msg": "Order Creation: calculating payment/refund amount error"
+    },
+    {
+      "code": 6011,
+      "name": "CreationMarketAlreadyInplay",
+      "msg": "Order Creation: market is already inplay"
+    },
+    {
+      "code": 6012,
+      "name": "CancelOrderNotCancellable",
+      "msg": "Order Cancelation: Order is not cancellable"
+    },
+    {
+      "code": 6013,
+      "name": "CancelationPurchaserMismatch",
+      "msg": "Core Cancelation: purchaser mismatch"
+    },
+    {
+      "code": 6014,
+      "name": "CancelationMarketMismatch",
+      "msg": "Core Cancelation: market mismatch"
+    },
+    {
+      "code": 6015,
+      "name": "CancelationMarketStatusInvalid",
+      "msg": "Order Cancelation: market status invalid"
+    },
+    {
+      "code": 6016,
+      "name": "CancelationMarketNotInplay",
+      "msg": "Order Cancelation: market not inplay"
+    },
+    {
+      "code": 6017,
+      "name": "CancelationMarketOrderBehaviourInvalid",
+      "msg": "Order Cancelation: market behaviour not valid for cancellation"
+    },
+    {
+      "code": 6018,
+      "name": "CancelationOrderStatusInvalid",
+      "msg": "Order Cancelation: order status invalid"
+    },
+    {
+      "code": 6019,
+      "name": "CancelationOrderCreatedAfterMarketEventStarted",
+      "msg": "Order Cancelation: order created after market event started"
+    },
+    {
+      "code": 6020,
+      "name": "SettlementInvalidMarketOutcomeIndex",
+      "msg": "Core Settlement: market outcome index is not valid for market"
+    },
+    {
+      "code": 6021,
+      "name": "SettlementPurchaserMismatch",
+      "msg": "Core Settlement: purchaser mismatch"
+    },
+    {
+      "code": 6022,
+      "name": "SettlementMarketMismatch",
+      "msg": "Core Settlement: market mismatch"
+    },
+    {
+      "code": 6023,
+      "name": "SettlementMarketNotOpen",
+      "msg": "Core Settlement: market not open"
+    },
+    {
+      "code": 6024,
+      "name": "SettlementMarketNotSettled",
+      "msg": "Core Settlement: market not settled"
+    },
+    {
+      "code": 6025,
+      "name": "SettlementMarketNotReadyForSettlement",
+      "msg": "Core Settlement: market not ready for settlement"
+    },
+    {
+      "code": 6026,
+      "name": "SettlementMarketEscrowNonZero",
+      "msg": "Core Settlement: market escrow is non zero"
+    },
+    {
+      "code": 6027,
+      "name": "SettlementPaymentCalculation",
+      "msg": "Core Settlement: error calculating settlement payment."
+    },
+    {
+      "code": 6028,
+      "name": "SettlementPaymentQueueFull",
+      "msg": "Core Settlement: failed to enqueue payment - queue full."
+    },
+    {
+      "code": 6029,
+      "name": "SettlementPaymentAddressMismatch",
+      "msg": "Core Settlement: from/to address incorrect when processing payment."
+    },
+    {
+      "code": 6030,
+      "name": "SettlementPaymentDequeueEmptyQueue",
+      "msg": "Core Settlement: failed to dequeue payment as queue was empty."
+    },
+    {
+      "code": 6031,
+      "name": "SettlementPaymentEscrowProductMismatch",
+      "msg": "Core Settlement: failed to process payment, escrow product mismatch"
+    },
+    {
+      "code": 6032,
+      "name": "VoidPurchaserMismatch",
+      "msg": "Void: purchaser mismatch"
+    },
+    {
+      "code": 6033,
+      "name": "VoidMarketMismatch",
+      "msg": "Void: market mismatch"
+    },
+    {
+      "code": 6034,
+      "name": "VoidMarketNotReadyForVoid",
+      "msg": "Void: market not ready for void"
+    },
+    {
+      "code": 6035,
+      "name": "VoidPaymentCalculation",
+      "msg": "Void: error calculating void payment."
+    },
+    {
+      "code": 6036,
+      "name": "VoidOrderIsVoided",
+      "msg": "Void: order is already voided."
+    },
+    {
+      "code": 6037,
+      "name": "MarketUnsettledAccountsCountNonZero",
+      "msg": "Some accounts are not yet settled/voided for this market"
+    },
+    {
+      "code": 6038,
+      "name": "MarketUnclosedAccountsCountNonZero",
+      "msg": "Some accounts are not yet closed for this market"
+    },
+    {
+      "code": 6039,
+      "name": "AuthorisedOperatorListFull",
+      "msg": "Authorised operator list is full"
+    },
+    {
+      "code": 6040,
+      "name": "InvalidOperatorType",
+      "msg": "Failed to authorise operator, operator type invalid."
+    },
+    {
+      "code": 6041,
+      "name": "UnauthorisedOperator",
+      "msg": "Unauthorised operator"
+    },
+    {
+      "code": 6042,
+      "name": "UnsupportedOperation",
+      "msg": "Unsupported operation"
+    },
+    {
+      "code": 6043,
+      "name": "MatchingPurchaserMismatch",
+      "msg": "Core Settlement: purchaser mismatch"
+    },
+    {
+      "code": 6044,
+      "name": "MatchingMarketMismatch",
+      "msg": "Core Matching: market mismatch"
+    },
+    {
+      "code": 6045,
+      "name": "MatchingMarketOutcomeMismatch",
+      "msg": "Core Matching: market-outcome mismatch"
+    },
+    {
+      "code": 6046,
+      "name": "MatchingExpectedAForOrder",
+      "msg": "Core Matching: expected for order"
+    },
+    {
+      "code": 6047,
+      "name": "MatchingExpectedAnAgainstOrder",
+      "msg": "Core Matching: expected against order"
+    },
+    {
+      "code": 6048,
+      "name": "MatchingOrdersForAndAgainstAreIdentical",
+      "msg": "Core Matching: for and against order should not be identical"
+    },
+    {
+      "code": 6049,
+      "name": "MatchingMarketPriceMismatch",
+      "msg": "Core Matching: market price mismatch"
+    },
+    {
+      "code": 6050,
+      "name": "MatchingStatusClosed",
+      "msg": "Order Matching: status closed"
+    },
+    {
+      "code": 6051,
+      "name": "MatchingRemainingStakeTooSmall",
+      "msg": "Order Matching: remaining stake too small"
+    },
+    {
+      "code": 6052,
+      "name": "MarketDoesNotMatch",
+      "msg": "Failed to update market: invalid arguments provided."
+    },
+    {
+      "code": 6053,
+      "name": "MatchingQueueIsFull",
+      "msg": "There was an attempt to add an item from a matching pool queue, but the queue was full."
+    },
+    {
+      "code": 6054,
+      "name": "MatchingQueueIsEmpty",
+      "msg": "There was an attempt to dequeue an item from a matching pool queue, but the queue was empty."
+    },
+    {
+      "code": 6055,
+      "name": "IncorrectOrderDequeueAttempt",
+      "msg": "There was an attempt to dequeue an item from a matching pool queue, but the item at the front of the queue was incorrect."
+    },
+    {
+      "code": 6056,
+      "name": "OrderNotAtFrontOfQueue",
+      "msg": "The order to be matched is not at the front of the matching pool queue"
+    },
+    {
+      "code": 6057,
+      "name": "LockTimeInvalid",
+      "msg": "Failed to update market: invalid arguments provided."
+    },
+    {
+      "code": 6058,
+      "name": "EventStartTimeInvalid",
+      "msg": "Failed to update market: invalid arguments provided."
+    },
+    {
+      "code": 6059,
+      "name": "MarketNotOpen",
+      "msg": "matching: market is not in a state to match orders"
+    },
+    {
+      "code": 6060,
+      "name": "MarketLocked",
+      "msg": "matching: market locked"
+    },
+    {
+      "code": 6061,
+      "name": "StatusClosed",
+      "msg": "matching: status closed"
+    },
+    {
+      "code": 6062,
+      "name": "MatchingLiquidityAmountUpdateError",
+      "msg": "matching: liquidity amount update failed"
+    },
+    {
+      "code": 6063,
+      "name": "MatchingMatchedAmountUpdateError",
+      "msg": "matching: matched amount update failed"
+    },
+    {
+      "code": 6064,
+      "name": "MatchingRefundAmountError",
+      "msg": "Order Matching: calculating refund amount error"
+    },
+    {
+      "code": 6065,
+      "name": "MatchingPayoutAmountError",
+      "msg": "Order Matching: calculating payout amount error"
+    },
+    {
+      "code": 6066,
+      "name": "MatchingMarketMatchingPoolAlreadyInplay",
+      "msg": "Matching: market matching pool is already inplay"
+    },
+    {
+      "code": 6067,
+      "name": "MatchingMarketInplayNotEnabled",
+      "msg": "Matching: market does not have inplay enabled"
+    },
+    {
+      "code": 6068,
+      "name": "MatchingMarketNotYetInplay",
+      "msg": "Matching: market is not yet inplay"
+    },
+    {
+      "code": 6069,
+      "name": "MatchingMarketInvalidStatus",
+      "msg": "Matching: invalid market status for operation"
+    },
+    {
+      "code": 6070,
+      "name": "Unknown",
+      "msg": "matching: unknown"
+    },
+    {
+      "code": 6071,
+      "name": "InplayDelay",
+      "msg": "The order is currently within the inplay delay period and the operation cannot be completed"
+    },
+    {
+      "code": 6072,
+      "name": "MarketTypeNameTooLong",
+      "msg": "format"
+    },
+    {
+      "code": 6073,
+      "name": "MarketTypeDiscriminatorUsageIncorrect",
+      "msg": "Market type discriminator usage is incorrect for this market type"
+    },
+    {
+      "code": 6074,
+      "name": "MarketTypeValueUsageIncorrect",
+      "msg": "Market type value usage is incorrect for this market type"
+    },
+    {
+      "code": 6075,
+      "name": "MarketTypeDiscriminatorContainsSeedSeparator",
+      "msg": "Market type discriminator contains seed separator character"
+    },
+    {
+      "code": 6076,
+      "name": "PriceLadderSizeCanOnlyBeIncreased",
+      "msg": "PriceLadder can only be increased in size"
+    },
+    {
+      "code": 6077,
+      "name": "PriceLadderIsFull",
+      "msg": "PriceLadder is full"
+    },
+    {
+      "code": 6078,
+      "name": "PriceOneOrLess",
+      "msg": "Price cannot be 1.0 or less"
+    },
+    {
+      "code": 6079,
+      "name": "PricePrecisionTooLarge",
+      "msg": "Price support up to 3 decimal places only"
+    },
+    {
+      "code": 6080,
+      "name": "MarketTitleTooLong",
+      "msg": "format"
+    },
+    {
+      "code": 6081,
+      "name": "MarketTypeInvalid",
+      "msg": "Market: type is invalid"
+    },
+    {
+      "code": 6082,
+      "name": "MarketLockTimeNotInTheFuture",
+      "msg": "Market: lock time must be in the future"
+    },
+    {
+      "code": 6083,
+      "name": "MarketEventStartTimeNotInTheFuture",
+      "msg": "Market: event start time must be in the future"
+    },
+    {
+      "code": 6084,
+      "name": "MarketLockTimeAfterEventStartTime",
+      "msg": "Market: lock time must not be later than the event start time unless inplay is enabled"
+    },
+    {
+      "code": 6085,
+      "name": "MarketInvalidStatus",
+      "msg": "Market: invalid market status for operation"
+    },
+    {
+      "code": 6086,
+      "name": "MarketPriceListIsFull",
+      "msg": "Market: price list is full"
+    },
+    {
+      "code": 6087,
+      "name": "MarketPriceOneOrLess",
+      "msg": "Market: price cannot be 1.0 or less"
+    },
+    {
+      "code": 6088,
+      "name": "MarketPricePrecisionTooLarge",
+      "msg": "Market: price support up to 3 decimal places only"
+    },
+    {
+      "code": 6089,
+      "name": "MintDecimalsUnsupported",
+      "msg": "mint.decimals must be >= PRICE_SCALE (3)"
+    },
+    {
+      "code": 6090,
+      "name": "MaxDecimalsTooLarge",
+      "msg": "max_decimals is too large, must be <= mint.decimals-PRICE_SCALE (3)"
+    },
+    {
+      "code": 6091,
+      "name": "MarketOutcomeInitError",
+      "msg": "MarketOutcome: initialization failed"
+    },
+    {
+      "code": 6092,
+      "name": "MarketOutcomeMarketInvalidStatus",
+      "msg": "MarketOutcome: market status is not Initializing"
+    },
+    {
+      "code": 6093,
+      "name": "OpenMarketNotInitializing",
+      "msg": "Market: cannot open market, market not initializing"
+    },
+    {
+      "code": 6094,
+      "name": "VoidMarketNotInitializingOrOpen",
+      "msg": "Market: cannot void market, market not open or initializing"
+    },
+    {
+      "code": 6095,
+      "name": "OpenMarketNotEnoughOutcomes",
+      "msg": "Market: cannot open market, must have more than 1 outcome"
+    },
+    {
+      "code": 6096,
+      "name": "MarketNotSettledOrVoided",
+      "msg": "Market: market is not settled or voided"
+    },
+    {
+      "code": 6097,
+      "name": "MarketNotReadyToClose",
+      "msg": "Market: market is not ready to close"
+    },
+    {
+      "code": 6098,
+      "name": "MarketAuthorityMismatch",
+      "msg": "Market: market authority does not match operator"
+    },
+    {
+      "code": 6099,
+      "name": "MarketInplayNotEnabled",
+      "msg": "Market: market inplay not enabled"
+    },
+    {
+      "code": 6100,
+      "name": "MarketAlreadyInplay",
+      "msg": "Market: market is already inplay"
+    },
+    {
+      "code": 6101,
+      "name": "MarketEventNotStarted",
+      "msg": "Market: market event not started"
+    },
+    {
+      "code": 6102,
+      "name": "MarketNotOpenForInplay",
+      "msg": "Market: market not open to allow transition to inplay"
+    },
+    {
+      "code": 6103,
+      "name": "MarketEventAccountMismatch",
+      "msg": "Market: cannot recreate market, provided event account does not match existing market"
+    },
+    {
+      "code": 6104,
+      "name": "MarketTypeMismatch",
+      "msg": "Market: cannot recreate market, provided market type account does not match existing market"
+    },
+    {
+      "code": 6105,
+      "name": "MarketTypeDiscriminatorMismatch",
+      "msg": "Market: cannot recreate market, provided market type discriminator does not match existing market"
+    },
+    {
+      "code": 6106,
+      "name": "MarketTypeValueMismatch",
+      "msg": "Market: cannot recreate market, provided market type value does not match existing market"
+    },
+    {
+      "code": 6107,
+      "name": "MarketMintMismatch",
+      "msg": "Market: cannot recreate market, provided mint does not match existing market"
+    },
+    {
+      "code": 6108,
+      "name": "CloseAccountOrderNotComplete",
+      "msg": "CloseAccount: Order not complete"
+    },
+    {
+      "code": 6109,
+      "name": "CloseAccountPurchaserMismatch",
+      "msg": "CloseAccount: Purchaser does not match"
+    },
+    {
+      "code": 6110,
+      "name": "CloseAccountPayerMismatch",
+      "msg": "CloseAccount: Payer does not match"
+    },
+    {
+      "code": 6111,
+      "name": "CloseAccountMarketMismatch",
+      "msg": "CloseAccount: Market does not match"
+    },
+    {
+      "code": 6112,
+      "name": "CloseAccountMarketPaymentQueueNotEmpty",
+      "msg": "CloseAccount: Market payment queue is not empty."
+    }
+  ]
+}
