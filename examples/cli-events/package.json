@@ -1,0 +1,37 @@
+{
+  "name": "@monaco-protocol/event-examples",
+  "version": "1.0.0",
+  "description": "Monaco Protocol Event Examples",
+  "author": "Monaco Protocol",
+  "module": "commonjs",
+  "target": "es5",
+  "scripts": {
+    "getCategories": "ts-node src/category/getCategories.ts",
+    "createCategory": "ts-node src/category/createCategory.ts",
+    "getSubcategories": "ts-node src/subcategory/getSubcategories.ts",
+    "getSubcategoriesForCategory": "ts-node src/subcategory/getSubcategoriesForCategory.ts",
+    "createSubcategory": "ts-node src/subcategory/createSubcategory.ts",
+    "getEventGroups": "ts-node src/eventGroup/getAllEventGroups.ts",
+    "getEvents": "ts-node src/event/getAllEvents.ts",
+    "format": "prettier --config .prettierrc 'src/**/*.(ts|js)' --write",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "~0.29.0",
+    "@monaco-protocol/event-client": "^0.2.1-dev.70920236",
+    "@solana/spl-token": "^0.3.5",
+    "@solana/web3.js": "^1.68.0",
+    "bs58": "^4.0.1",
+    "dotenv": "^16.0.3",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "2.8.2"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
