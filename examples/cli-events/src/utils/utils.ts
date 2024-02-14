@@ -1,5 +1,9 @@
 import dotenv = require("dotenv");
-import { ComputeBudgetProgram, PublicKey, TransactionInstruction } from "@solana/web3.js";
+import {
+  ComputeBudgetProgram,
+  PublicKey,
+  TransactionInstruction
+} from "@solana/web3.js";
 import { AnchorProvider, setProvider, Program, web3 } from "@coral-xyz/anchor";
 
 enum ENVS {
@@ -36,6 +40,7 @@ export async function getProgram() {
   const program = await Program.at(protocolAddress, provider);
 
   log(`Environment: ${process.env.ENVIRONMENT}`);
+  log(`Protocol version: ${program.idl.version}`);
   log(`RPC Node: ${program.provider.connection.rpcEndpoint}`);
   log(`Wallet PublicKey: ${program.provider.publicKey}`);
 
