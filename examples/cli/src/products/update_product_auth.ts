@@ -7,7 +7,7 @@ import NodeWallet from "@coral-xyz/anchor/dist/cjs/nodewallet";
 async function updateAuth() {
   const program = await getProgram(ProtocolTypes.MONACO_PRODUCT);
   const provider = program.provider as AnchorProvider;
-  const productTitle = "MONACO_PROTOCOL_SDK";
+  const productTitle = "SDK_EXAMPLE_PRODUCT";
   const authorityPk = program.provider.publicKey;
   // Setting as the same signer for example purposes
   const newAuthority = (provider.wallet as NodeWallet).payer
