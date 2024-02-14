@@ -4,7 +4,7 @@ import { parseResponseData } from "../parsers/parsers";
 
 async function updateEscrow() {
   const program = await getProgram(ProtocolTypes.MONACO_PRODUCT);
-  const productTitle = "MONACO_PROTOCOL_SDK";
+  const productTitle = "SDK_EXAMPLE_PRODUCT";
   const authorityPk = program.provider.publicKey;
   // Setting as the same Pk as this is just for example purposes
   const newEscrowPk = program.provider.publicKey;
