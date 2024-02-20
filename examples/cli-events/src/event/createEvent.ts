@@ -5,25 +5,28 @@ import {
   findEventGroupPda,
   findEventPda,
   createEvent,
-  signAndSendInstructions
+  signAndSendInstructions,
+  Event
 } from "@monaco-protocol/event-client";
-import { getProcessArgs, getProgram, logJson } from "../utils/utils";
-import { BN, web3 } from "@coral-xyz/anchor";
+import { getProcessArgs, getConnectionAndSigner, logJson } from "../utils/utils";
+import { BN } from "bn.js";
+import { SystemProgram } from "@solana/web3.js";
 
 const createNewEvent = async () => {
-  const program = await getProgram();
+  const { connection, keypair, program } = await getConnectionAndSigner();
 
   const categoryCode = "MOVIES";
-  const subCategoryCode = "UKBOX";
+  const subcategoryCode = "UKBOX";
   const eventGroupCode = "WEEKBOX";
+  const eventName = "Week 1 - 2025";
 
   const expectedStartTimestamp = 2524608000;
-  const eventCode = `${subCategoryCode}-${eventGroupCode}-WEEK-1-2050`;
+  const eventCode = `${subcategoryCode}-${eventGroupCode}-WEEK-1-2050`;
 
   const categoryPda = findCategoryPda(categoryCode, program);
   const subcategoryPda = findSubcategoryPda(
     categoryPda,
-    subCategoryCode,
+    subcategoryCode,
     program
   );
   const eventGroupPda = findEventGroupPda(
@@ -36,7 +39,7 @@ const createNewEvent = async () => {
   const args = {
     eventInfo: {
       code: eventCode,
-      name: "Week 1 - 2025",
+      name: eventName,
       expectedStartTimestamp: new BN(expectedStartTimestamp),
       actualStartTimestamp: null,
       actualEndTimestamp: null
@@ -46,14 +49,14 @@ const createNewEvent = async () => {
     event: eventPda,
     eventGroup: eventGroupPda,
     subcategory: subcategoryPda,
-    authority: program.provider.publicKey,
-    systemProgram: web3.SystemProgram.programId
+    authority: keypair.publicKey,
+    systemProgram: SystemProgram.programId
   };
   const instruction = createEvent(args, accounts);
-  const signature = await signAndSendInstructions(program, [instruction]);
-  await confirmTransaction(program, signature);
+  const signature = await signAndSendInstructions(connection, keypair, [instruction]);
+  await confirmTransaction(connection, signature);
 
-  const event = await program.account.event.fetch(eventPda);
+  const event = await Event.fetch(connection, eventPda);
   logJson(event);
 };
 

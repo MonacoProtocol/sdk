@@ -5,15 +5,15 @@ import {
   createSubcategory,
   signAndSendInstructions
 } from "@monaco-protocol/event-client";
-import { getProcessArgs, getProgram } from "../utils/utils";
-import { web3 } from "@coral-xyz/anchor";
+import { getProcessArgs, getConnectionAndSigner } from "../utils/utils";
+import { SystemProgram } from "@solana/web3.js";
 
 const createNewSubcategory = async (
   categoryCode: string,
   code: string,
   name: string
 ) => {
-  const program = await getProgram();
+  const { connection, keypair, program } = await getConnectionAndSigner();
 
   const categoryPda = findCategoryPda(categoryCode, program);
   const subcategoryPda = findSubcategoryPda(categoryPda, code, program);
@@ -21,15 +21,15 @@ const createNewSubcategory = async (
   const accounts = {
     subcategory: subcategoryPda,
     category: categoryPda,
-    payer: program.provider.publicKey,
-    systemProgram: web3.SystemProgram.programId
+    payer: keypair.publicKey,
+    systemProgram: SystemProgram.programId
   };
 
   const args = { code, name };
 
   const instruction = createSubcategory(args, accounts);
-  const signature = await signAndSendInstructions(program, [instruction]);
-  await confirmTransaction(program, signature);
+  const signature = await signAndSendInstructions(connection, keypair, [instruction]);
+  await confirmTransaction(connection, signature);
 };
 
 const args = getProcessArgs(

@@ -6,8 +6,8 @@ import {
   createEventGroup,
   signAndSendInstructions
 } from "@monaco-protocol/event-client";
-import { getProcessArgs, getProgram } from "../utils/utils";
-import { web3 } from "@coral-xyz/anchor";
+import { getProcessArgs, getConnectionAndSigner } from "../utils/utils";
+import { SystemProgram } from "@solana/web3.js";
 
 const createNewEventGroup = async (
   categoryCode: string,
@@ -15,7 +15,7 @@ const createNewEventGroup = async (
   code: string,
   name: string
 ) => {
-  const program = await getProgram();
+  const { connection, keypair, program } = await getConnectionAndSigner();
 
   const categoryPda = findCategoryPda(categoryCode, program);
   const subcategoryPda = findSubcategoryPda(
@@ -28,14 +28,14 @@ const createNewEventGroup = async (
   const accounts = {
     eventGroup: eventGroupPda,
     subcategory: subcategoryPda,
-    payer: program.provider.publicKey,
-    systemProgram: web3.SystemProgram.programId
+    payer: keypair.publicKey,
+    systemProgram: SystemProgram.programId
   };
 
   const args = { code, name };
   const instruction = createEventGroup(args, accounts);
-  const signature = await signAndSendInstructions(program, [instruction]);
-  await confirmTransaction(program, signature);
+  const signature = await signAndSendInstructions(connection, keypair, [instruction]);
+  await confirmTransaction(connection, signature);
 };
 
 const args = getProcessArgs(

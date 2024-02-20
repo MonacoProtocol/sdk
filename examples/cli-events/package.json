@@ -16,20 +16,26 @@
     "createEventGroup": "ts-node src/eventGroup/createEventGroup.ts",
     "getEvents": "ts-node src/event/getEvents.ts",
     "createEvent": "ts-node src/event/createEvent.ts",
+    "getParticipants": "ts-node src/participant/getParticipants.ts",
+    "getParticipantsForSubcategory": "ts-node src/participant/getParticipantsForSubcategory.ts",
+    "createTeamParticipant": "ts-node src/participant/createTeamParticipant.ts",
+    "createParticipant": "ts-node src/participant/createParticipant.ts",
     "format": "prettier --config .prettierrc 'src/**/*.(ts|js)' --write",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@coral-xyz/anchor": "~0.29.0",
-    "@monaco-protocol/event-client": "^0.2.1-dev.70920237",
+    "@coral-xyz/borsh": "^0.29.0",
+    "@monaco-protocol/event-client": "^0.3.0-dev.4",
     "@solana/spl-token": "^0.3.5",
     "@solana/web3.js": "^1.68.0",
+    "bn.js": "^5.2.1",
     "bs58": "^4.0.1",
     "dotenv": "^16.0.3",
     "ts-node": "^10.7.0",
     "typescript": "^4.5.4"
   },
   "devDependencies": {
+    "@types/bn.js": "^5.1.5",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "prettier": "2.8.2"

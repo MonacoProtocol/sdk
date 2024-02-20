@@ -1,10 +1,10 @@
 import dotenv = require("dotenv");
 import {
-  ComputeBudgetProgram,
+  Connection,
+  Keypair,
   PublicKey,
-  TransactionInstruction
 } from "@solana/web3.js";
-import { AnchorProvider, setProvider, Program, web3 } from "@coral-xyz/anchor";
+import { readFileSync } from "fs";
 
 enum ENVS {
   DEVNET_RELEASE = "devnet-release",
@@ -30,22 +30,16 @@ function getConfig() {
   }
 }
 
-export async function getProgram() {
+export async function getConnectionAndSigner() {
   getConfig();
-  const provider = AnchorProvider.env();
-  setProvider(provider);
-
-  let protocolAddress = new PublicKey(process.env.PROTOCOL_ADDRESS);
-
-  const program = await Program.at(protocolAddress, provider);
-
-  log(`Environment: ${process.env.ENVIRONMENT}`);
-  log(`Protocol version: ${program.idl.version}`);
-  log(`RPC Node: ${program.provider.connection.rpcEndpoint}`);
-  log(`Wallet PublicKey: ${program.provider.publicKey}`);
-
-  return program;
-}
+  const connection = new Connection(process.env.ANCHOR_PROVIDER_URL, "confirmed");
+  const secretKey = readFileSync(process.env.ANCHOR_WALLET, {
+    encoding: "utf-8"
+  });
+  const keypair = Keypair.fromSecretKey(Buffer.from(JSON.parse(secretKey)));
+  const program = new PublicKey(process.env.PROTOCOL_ADDRESS);
+  return {connection, keypair, program}
+};
 
 export function log(log: any) {
   console.log(log);

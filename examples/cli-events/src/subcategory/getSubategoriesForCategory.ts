@@ -1,9 +1,8 @@
 import { Subcategories, findCategoryPda } from "@monaco-protocol/event-client";
-import { getProcessArgs, getProgram, logJson } from "../utils/utils";
+import { getProcessArgs, getConnectionAndSigner, logJson } from "../utils/utils";
 
 const getAllSubCategories = async (categoryCode: string) => {
-  const program = await getProgram();
-  const connection = program.provider.connection;
+  const { connection, program } = await getConnectionAndSigner();
   const categoryPda = findCategoryPda(categoryCode, program);
   const subCategories = await Subcategories.subcategoryQuery(connection)
     .filterByCategory(categoryPda)

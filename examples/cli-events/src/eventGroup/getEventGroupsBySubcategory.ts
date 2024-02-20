@@ -1,22 +1,22 @@
 import {
   EventGroups,
   findSubcategoryPda,
-  findCategoryPda
+  findCategoryPda,
 } from "@monaco-protocol/event-client";
-import { getProcessArgs, getProgram, logJson } from "../utils/utils";
+import { getProcessArgs, getConnectionAndSigner, logJson } from "../utils/utils";
 
 const getAllEventGroups = async (
   categoryCode: string,
   subcategoryCode: string
 ) => {
-  const program = await getProgram();
-  const connection = program.provider.connection;
+  const { connection, program } = await getConnectionAndSigner();
   const categoryPda = findCategoryPda(categoryCode, program);
   const subcategoryPda = findSubcategoryPda(
     categoryPda,
     subcategoryCode,
     program
   );
+  
   const eventGroups = await EventGroups.eventGroupQuery(connection)
     .filterBySubcategory(subcategoryPda)
     .fetch();
