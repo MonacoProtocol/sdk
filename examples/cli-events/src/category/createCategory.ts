@@ -21,7 +21,9 @@ const addCategory = async (code: string, name: string) => {
   const args = { name, code };
 
   const instruction = createCategory(args, accounts);
-  const signature = await signAndSendInstructions(connection, keypair, [instruction]);
+  const signature = await signAndSendInstructions(connection, keypair, [
+    instruction
+  ]);
   await confirmTransaction(connection, signature);
 };
 

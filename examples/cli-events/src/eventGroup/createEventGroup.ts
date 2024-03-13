@@ -15,7 +15,12 @@ const createNewEventGroup = async (
 ) => {
   const { connection, keypair, program } = await getConnectionAndSigner();
 
-  const pdas = findAssociatedPdasForEventGroup(categoryCode, subCategoryCode, code, program)
+  const pdas = findAssociatedPdasForEventGroup(
+    categoryCode,
+    subCategoryCode,
+    code,
+    program
+  );
 
   const accounts = {
     eventGroup: pdas.eventGroupPda,
@@ -26,7 +31,9 @@ const createNewEventGroup = async (
 
   const args = { code, name };
   const instruction = createEventGroup(args, accounts);
-  const signature = await signAndSendInstructions(connection, keypair, [instruction]);
+  const signature = await signAndSendInstructions(connection, keypair, [
+    instruction
+  ]);
   await confirmTransaction(connection, signature);
 };
 

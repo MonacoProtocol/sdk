@@ -1,5 +1,9 @@
 import { EventGroups } from "@monaco-protocol/event-client";
-import { getProcessArgs, getConnectionAndSigner, logJson } from "../utils/utils";
+import {
+  getProcessArgs,
+  getConnectionAndSigner,
+  logJson
+} from "../utils/utils";
 
 const getAllEventGroups = async () => {
   const { connection } = await getConnectionAndSigner();

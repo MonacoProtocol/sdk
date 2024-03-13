@@ -28,7 +28,9 @@ const createNewSubcategory = async (
   const args = { code, name };
 
   const instruction = createSubcategory(args, accounts);
-  const signature = await signAndSendInstructions(connection, keypair, [instruction]);
+  const signature = await signAndSendInstructions(connection, keypair, [
+    instruction
+  ]);
   await confirmTransaction(connection, signature);
 };
 

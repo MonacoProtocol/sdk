@@ -1,9 +1,5 @@
 import dotenv = require("dotenv");
-import {
-  Connection,
-  Keypair,
-  PublicKey,
-} from "@solana/web3.js";
+import { Connection, Keypair, PublicKey } from "@solana/web3.js";
 import { readFileSync } from "fs";
 
 enum ENVS {
@@ -32,14 +28,17 @@ function getConfig() {
 
 export async function getConnectionAndSigner() {
   getConfig();
-  const connection = new Connection(process.env.ANCHOR_PROVIDER_URL, "confirmed");
+  const connection = new Connection(
+    process.env.ANCHOR_PROVIDER_URL,
+    "confirmed"
+  );
   const secretKey = readFileSync(process.env.ANCHOR_WALLET, {
     encoding: "utf-8"
   });
   const keypair = Keypair.fromSecretKey(Buffer.from(JSON.parse(secretKey)));
   const program = new PublicKey(process.env.PROTOCOL_ADDRESS);
-  return {connection, keypair, program}
-};
+  return { connection, keypair, program };
+}
 
 export function log(log: any) {
   console.log(log);
