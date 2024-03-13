@@ -5,6 +5,7 @@ const getAllParticipants = async () => {
     const { connection } = await getConnectionAndSigner();
     const participants = await Participants.participantQuery(connection).fetch();
     logJson(participants);
+    console.log(participants.length)
 }
 
 getProcessArgs([], "npm run getParticipants");

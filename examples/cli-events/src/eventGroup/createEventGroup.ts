@@ -1,10 +1,8 @@
 import {
   confirmTransaction,
-  findSubcategoryPda,
-  findCategoryPda,
-  findEventGroupPda,
   createEventGroup,
-  signAndSendInstructions
+  signAndSendInstructions,
+  findAssociatedPdasForEventGroup
 } from "@monaco-protocol/event-client";
 import { getProcessArgs, getConnectionAndSigner } from "../utils/utils";
 import { SystemProgram } from "@solana/web3.js";
@@ -17,17 +15,11 @@ const createNewEventGroup = async (
 ) => {
   const { connection, keypair, program } = await getConnectionAndSigner();
 
-  const categoryPda = findCategoryPda(categoryCode, program);
-  const subcategoryPda = findSubcategoryPda(
-    categoryPda,
-    subCategoryCode,
-    program
-  );
-  const eventGroupPda = findEventGroupPda(subcategoryPda, code, program);
+  const pdas = findAssociatedPdasForEventGroup(categoryCode, subCategoryCode, code, program)
 
   const accounts = {
-    eventGroup: eventGroupPda,
-    subcategory: subcategoryPda,
+    eventGroup: pdas.eventGroupPda,
+    subcategory: pdas.subcategoryPda,
     payer: keypair.publicKey,
     systemProgram: SystemProgram.programId
   };

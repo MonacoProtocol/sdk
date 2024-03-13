@@ -1,4 +1,4 @@
-import { Participants, Subcategory, confirmTransaction, createTeamParticipant, findCategoryPda, findParticipantPda, findSubcategoryPda, signAndSendInstructions } from "@monaco-protocol/event-client";
+import { Participants, Subcategory, confirmTransaction, createTeamParticipant, findAssociatedPdasForSubcategory, findCategoryPda, findParticipantPda, findSubcategoryPda, signAndSendInstructions } from "@monaco-protocol/event-client";
 import { getProcessArgs, getConnectionAndSigner, logJson } from "../utils/utils"
 import { SystemProgram } from "@solana/web3.js";
 
@@ -10,17 +10,16 @@ const createNewTeamParticipant = async () => {
     const name = "Oppenheimer"
     const code = "OPP"
 
-    const categoryPda = findCategoryPda(categoryCode, program);
-    const subcategoryPda = findSubcategoryPda(categoryPda, subcategoryCode, program);
+    const pdas = findAssociatedPdasForSubcategory(categoryCode, subcategoryCode, program)
 
-    const subcategory = await connection.getAccountInfo(subcategoryPda) as unknown as Subcategory
+    const subcategory = await Subcategory.fetch(connection, pdas.subcategoryPda);
 
-    const participantPda = await findParticipantPda(subcategoryPda, subcategory.participantCount, program)
+    const participantPda = findParticipantPda(pdas.subcategoryPda, subcategory.participantCount, program)
     
     const args = {code, name}
     const accounts = {
         participant: participantPda,
-        subcategory: subcategoryPda,
+        subcategory: pdas.subcategoryPda,
         authority: subcategory.authority,
         systemProgram: SystemProgram.programId
     }
@@ -29,7 +28,7 @@ const createNewTeamParticipant = async () => {
     const signature = await signAndSendInstructions(connection, keypair, [instruction])
     await confirmTransaction(connection, signature)
 
-    const participants = await Participants.participantQuery(connection).filterBySubcategory(subcategoryPda).fetch()
+    const participants = await Participants.participantQuery(connection).filterBySubcategory(pdas.subcategoryPda).fetch()
     logJson(participants)
 }
 

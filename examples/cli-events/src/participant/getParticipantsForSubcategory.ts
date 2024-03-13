@@ -2,7 +2,7 @@ import { Participants, findCategoryPda, findSubcategoryPda } from "@monaco-proto
 import { getProcessArgs, getConnectionAndSigner, logJson } from "../utils/utils";
 
 const getAllParticipants = async (categoryCode: string, subcategoryCode: string) => {
-  const { connection, program } = await getConnectionAndSigner();
+  const { connection, program, keypair } = await getConnectionAndSigner();
 
     const categoryPda = findCategoryPda(categoryCode, program);
     const subcategoryPda = findSubcategoryPda(
@@ -11,7 +11,9 @@ const getAllParticipants = async (categoryCode: string, subcategoryCode: string)
       program
     );
 
-    const participants = await Participants.participantQuery(connection).filterBySubcategory(subcategoryPda).fetch();
+    const participants = await Participants.participantQuery(connection)
+      .filterBySubcategory(subcategoryPda)
+      .fetch();
     logJson(participants);
 }
 
