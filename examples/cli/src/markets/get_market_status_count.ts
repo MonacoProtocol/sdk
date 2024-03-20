@@ -12,15 +12,17 @@ const getStatusCount = async () => {
     MarketStatusFilter.ReadyToVoid,
     MarketStatusFilter.ReadyToClose
   ];
+  const statusPromises = statuses.map((status) => 
+    Markets.marketQuery(program)
+      .filterByStatus(status)
+      .fetch()
+  );
+  const resolvePromises = await Promise.all(statusPromises);
   const allStatuses = [];
   for (const marketStatus of statuses) {
-    const markets = await Markets.marketQuery(program)
-      .filterByStatus(marketStatus)
-      .fetch();
-
     allStatuses.push({
       status: MarketStatusFilter[marketStatus],
-      count: markets.data.markets.length
+      count: resolvePromises[statuses.indexOf(marketStatus)].data.markets.length
     });
   }
   console.table(allStatuses);
