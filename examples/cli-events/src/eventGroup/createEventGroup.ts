@@ -9,7 +9,7 @@ import { SystemProgram } from "@solana/web3.js";
 
 const createNewEventGroup = async (
   categoryCode: string,
-  subCategoryCode: string,
+  subcategoryCode: string,
   code: string,
   name: string
 ) => {
@@ -17,7 +17,7 @@ const createNewEventGroup = async (
 
   const pdas = findAssociatedPdasForEventGroup(
     categoryCode,
-    subCategoryCode,
+    subcategoryCode,
     code,
     program
   );
@@ -38,12 +38,12 @@ const createNewEventGroup = async (
 };
 
 const args = getProcessArgs(
-  ["categoryCode", "subCategoryCode", "code", "name"],
+  ["categoryCode", "subcategoryCode", "code", "name"],
   "npm run createEventGroup"
 );
 createNewEventGroup(
   args.categoryCode,
-  args.subCategoryCode,
+  args.subcategoryCode,
   args.code,
   args.name
 );

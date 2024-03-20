@@ -1,9 +1,8 @@
 import {
   confirmTransaction,
-  findSubcategoryPda,
-  findCategoryPda,
   createSubcategory,
-  signAndSendInstructions
+  signAndSendInstructions,
+  findAssociatedPdasForSubcategory
 } from "@monaco-protocol/event-client";
 import { getProcessArgs, getConnectionAndSigner } from "../utils/utils";
 import { SystemProgram } from "@solana/web3.js";
@@ -15,12 +14,11 @@ const createNewSubcategory = async (
 ) => {
   const { connection, keypair, program } = await getConnectionAndSigner();
 
-  const categoryPda = findCategoryPda(categoryCode, program);
-  const subcategoryPda = findSubcategoryPda(categoryPda, code, program);
+  const pdas = findAssociatedPdasForSubcategory(categoryCode, code, program);
 
   const accounts = {
-    subcategory: subcategoryPda,
-    category: categoryPda,
+    subcategory: pdas.subcategoryPda,
+    category: pdas.categoryPda,
     payer: keypair.publicKey,
     systemProgram: SystemProgram.programId
   };
