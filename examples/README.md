@@ -13,7 +13,7 @@ This repository contains examples for working with the Monaco Protocol Client
 
 # Getting Started - RPC Node
 
-With any of the examples, you will need an RPC node in order to make requests to the protocol. You can read more about the RPC infrastructure on https://solana.com/rpc. There are many services available (listed on the solana RPC page) so pick one that suits your needs.
+With any of the examples, you will need an RPC node in order to make requests to the protocol. You can read more about the RPC infrastructure on https://solana.com/rpc. There are many services available (listed on the solana RPC page) so pick one that suits your needs. Two you may wish to consider:
 
 ## Helius
 
