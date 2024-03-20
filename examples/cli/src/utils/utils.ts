@@ -100,7 +100,9 @@ export function getProcessArgs(
   return values;
 }
 
-export const SDK_PRODUCT = new PublicKey('bwCvZn6Hs4v51tvwFdAtAyJXzLddjgUMnQn2SehXmhF')
+// 0% commission rate product on devnet and mainnet
+// https://explorer.solana.com/address/DVG5jXTzAh7aN6Ekm1cd2dQkEcAP3hJvcibp8eqLwCkz/anchor-account
+export const SDK_PRODUCT = new PublicKey('DVG5jXTzAh7aN6Ekm1cd2dQkEcAP3hJvcibp8eqLwCkz')
 
 export function marketStatusFromString(status: string) {
   switch (status) {

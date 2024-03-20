@@ -4,8 +4,8 @@ import { parseResponseData } from "../parsers/parsers";
 
 async function newProduct() {
   const program = await getProgram(ProtocolTypes.MONACO_PRODUCT);
-  const productTitle = "MONACO_PROTOCOL_SDK";
-  const commissionRate = 1.23;
+  const productTitle = "SDK_EXAMPLE_PRODUCT";
+  const commissionRate = 0;
   const commissionEscrow = program.provider.publicKey;
   const response = await createProduct(program, productTitle, commissionRate, commissionEscrow);
   response.data = parseResponseData(response.data)
