@@ -21,7 +21,7 @@ async function getMarkets(
     marketStatus,
     mintToken
   );
-  response.data = parseResponseData(response.data)
+  response.data = parseResponseData(response.data);
   logResponse(response);
 }
 

@@ -14,17 +14,20 @@ import { parseResponseData } from "../parsers/parsers";
 
 async function getMarketSummary(marketPk: PublicKey) {
   const program = await getProgram();
-  const provider = program.provider as AnchorProvider
-  const escrowPda = await findEscrowPda(program, marketPk)
+  const provider = program.provider as AnchorProvider;
+  const escrowPda = await findEscrowPda(program, marketPk);
   const [marketPrices, escrow] = await Promise.all([
     getMarketPrices(program, marketPk),
     provider.connection.getParsedAccountInfo(escrowPda.data.pda)
-  ])
+  ]);
   const mintDetails = await getMintInfo(
     program,
     marketPrices.data.market.mintAccount
   );
-  const parsedMarketPrices = parseResponseData(marketPrices.data, mintDetails.data.decimals);
+  const parsedMarketPrices = parseResponseData(
+    marketPrices.data,
+    mintDetails.data.decimals
+  );
   const marketOutcomeAccounts = parsedMarketPrices.marketOutcomeAccounts.map(
     (marketOutcomeAccount) => {
       return marketOutcomeAccount.account;
@@ -71,7 +74,8 @@ async function getMarketSummary(marketPk: PublicKey) {
     liquidityTotal: liquidityTotal,
     matchedTotal: matchedTotal,
     totalUnmatchedOrders: parsedMarketPrices.pendingOrders.length,
-    totalInEscrow: escrow.value.data['parsed']['info']['tokenAmount']['uiAmount'],
+    totalInEscrow:
+      escrow.value.data["parsed"]["info"]["tokenAmount"]["uiAmount"]
   });
 }
 

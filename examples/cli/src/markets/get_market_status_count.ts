@@ -12,10 +12,8 @@ const getStatusCount = async () => {
     MarketStatusFilter.ReadyToVoid,
     MarketStatusFilter.ReadyToClose
   ];
-  const statusPromises = statuses.map((status) => 
-    Markets.marketQuery(program)
-      .filterByStatus(status)
-      .fetch()
+  const statusPromises = statuses.map((status) =>
+    Markets.marketQuery(program).filterByStatus(status).fetch()
   );
   const resolvePromises = await Promise.all(statusPromises);
   const allStatuses = [];

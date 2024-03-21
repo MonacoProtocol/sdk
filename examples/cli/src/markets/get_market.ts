@@ -6,7 +6,7 @@ import { parseResponseData } from "../parsers/parsers";
 async function getMarketByPk(marketPk: PublicKey) {
   const program = await getProgram();
   const response = await getMarket(program, marketPk);
-  response.data = parseResponseData(response.data)
+  response.data = parseResponseData(response.data);
   logResponse(response);
 }
 

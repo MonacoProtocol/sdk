@@ -1,5 +1,10 @@
 import { updateProductAuthority } from "@monaco-protocol/client";
-import { getProgram, getProcessArgs, logResponse, ProtocolTypes } from "../utils/utils";
+import {
+  getProgram,
+  getProcessArgs,
+  logResponse,
+  ProtocolTypes
+} from "../utils/utils";
 import { parseResponseData } from "../parsers/parsers";
 import { AnchorProvider } from "@coral-xyz/anchor";
 import NodeWallet from "@coral-xyz/anchor/dist/cjs/nodewallet";
@@ -10,9 +15,14 @@ async function updateAuth() {
   const productTitle = "SDK_EXAMPLE_PRODUCT";
   const authorityPk = program.provider.publicKey;
   // Setting as the same signer for example purposes
-  const newAuthority = (provider.wallet as NodeWallet).payer
-  const response = await updateProductAuthority(program, productTitle, newAuthority, authorityPk);
-  response.data = parseResponseData(response.data)
+  const newAuthority = (provider.wallet as NodeWallet).payer;
+  const response = await updateProductAuthority(
+    program,
+    productTitle,
+    newAuthority,
+    authorityPk
+  );
+  response.data = parseResponseData(response.data);
   logResponse(response);
 }
 

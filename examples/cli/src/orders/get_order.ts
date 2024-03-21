@@ -6,7 +6,7 @@ import { parseResponseData } from "../parsers/parsers";
 async function getBetOrderbyPk(betOrderPk: PublicKey) {
   const program = await getProgram();
   const response = await getOrder(program, betOrderPk);
-  response.data = parseResponseData(response.data)
+  response.data = parseResponseData(response.data);
   logResponse(response);
 }
 

@@ -41,14 +41,17 @@ export enum ProtocolTypes {
   MONACO_PRODUCT = "monaco-product"
 }
 
-export async function getProgram(protocolType: ProtocolTypes = ProtocolTypes.MONACO_PROTOCOL) {
+export async function getProgram(
+  protocolType: ProtocolTypes = ProtocolTypes.MONACO_PROTOCOL
+) {
   getConfig();
   const provider = AnchorProvider.env();
   setProvider(provider);
 
   let protocolAddress = new PublicKey(process.env.PROTOCOL_ADDRESS);
 
-  if (protocolType === ProtocolTypes.MONACO_PRODUCT) protocolAddress = new PublicKey(process.env.PROTOCOL_PRODUCT_ADDRESS);
+  if (protocolType === ProtocolTypes.MONACO_PRODUCT)
+    protocolAddress = new PublicKey(process.env.PROTOCOL_PRODUCT_ADDRESS);
 
   const program = await Program.at(protocolAddress, provider);
 
@@ -102,7 +105,9 @@ export function getProcessArgs(
 
 // 0% commission rate product on devnet and mainnet
 // https://explorer.solana.com/address/DVG5jXTzAh7aN6Ekm1cd2dQkEcAP3hJvcibp8eqLwCkz/anchor-account
-export const SDK_PRODUCT = new PublicKey('DVG5jXTzAh7aN6Ekm1cd2dQkEcAP3hJvcibp8eqLwCkz')
+export const SDK_PRODUCT = new PublicKey(
+  "DVG5jXTzAh7aN6Ekm1cd2dQkEcAP3hJvcibp8eqLwCkz"
+);
 
 export function marketStatusFromString(status: string) {
   switch (status) {
