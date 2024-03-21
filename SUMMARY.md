@@ -13,6 +13,7 @@
   * [Terms of Service](readme/terms-of-service.md)
   * [Privacy Notice](readme/privacy-notice.md)
   * [Points Terms and Conditions](readme/points-terms-and-conditions.md)
+  * [Branding Assets](readme/branding-assets.md)
 * [Deep Dives](deep-dives/deep-dives.md)
   * [Protocol Fees](deep-dives/protocol-fees.md)
   * [Order Management](deep-dives/order-management.md)
