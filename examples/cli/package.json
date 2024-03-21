@@ -19,7 +19,7 @@
     "getMarketPositions": "ts-node src/markets/get_market_positions.ts",
     "getMarketAccounts": "ts-node src/markets/get_market_accounts.ts",
     "getMarketSummary": "ts-node src/markets/get_market_summary.ts",
-    "getMarketStatusCount": "ts-node src/markets/get_market_status_count.ts",
+    "getMarketCount": "ts-node src/markets/get_market_status_count.ts",
     "getMarketOutcomeAccounts": "ts-node src/markets/get_market_outcomes.ts",
     "getMarketPriceLadder": "ts-node src/markets/get_market_price_ladder.ts",
     "getTradesForMarket": "ts-node src/trades/get_trades_for_market.ts",

@@ -13,18 +13,18 @@ const getStatusCount = async () => {
     MarketStatusFilter.ReadyToClose
   ];
   const statusPromises = statuses.map((status) =>
-    Markets.marketQuery(program).filterByStatus(status).fetch()
+    Markets.marketQuery(program).filterByStatus(status).fetchPublicKeys()
   );
   const resolvePromises = await Promise.all(statusPromises);
   const allStatuses = [];
   for (const marketStatus of statuses) {
     allStatuses.push({
       status: MarketStatusFilter[marketStatus],
-      count: resolvePromises[statuses.indexOf(marketStatus)].data.markets.length
+      count: resolvePromises[statuses.indexOf(marketStatus)].data.publicKeys.length
     });
   }
   console.table(allStatuses);
 };
 
-getProcessArgs([], "npm run getMarketStatusCount");
+getProcessArgs([], "npm run getMarketCount");
 getStatusCount();
