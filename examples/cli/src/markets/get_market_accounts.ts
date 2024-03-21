@@ -17,7 +17,7 @@ async function getAllMarketAccounts(
     marketOutcomeIndex,
     price
   );
-  response.data = parseResponseData(response.data)
+  response.data = parseResponseData(response.data);
   logResponse(response);
 }
 

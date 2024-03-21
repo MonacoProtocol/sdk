@@ -12,7 +12,7 @@ async function getMarketPositionForProvider(marketPk: PublicKey) {
     marketPk,
     provider.wallet.publicKey
   );
-  response.data = parseResponseData(response.data)
+  response.data = parseResponseData(response.data);
   logResponse(response);
 }
 

@@ -1,12 +1,15 @@
 import { BN } from "@coral-xyz/anchor";
-import { MarketMatchingPoolsWithSeeds, MarketPrice } from "@monaco-protocol/client";
+import {
+  MarketMatchingPoolsWithSeeds,
+  MarketPrice
+} from "@monaco-protocol/client";
 
 export function parseResponseData(
   responseData: any,
   mintDecimals = 0,
   bnKeys: string[] = bigNumberKeys,
   bnMintKeys: string[] = bigNumberMintKeys,
-  bnMintArrays: string[] = bigNumberMintArrays,
+  bnMintArrays: string[] = bigNumberMintArrays
 ): any {
   if (!responseData) return responseData;
   for (const [key, value] of Object.entries(responseData)) {
@@ -40,26 +43,26 @@ export function parseResponseData(
 }
 
 export function parseEmptyQueueItemsFromMatchingPoolAccounts(
-  marketMatchingPoolAccounts: MarketMatchingPoolsWithSeeds,
+  marketMatchingPoolAccounts: MarketMatchingPoolsWithSeeds
 ): MarketMatchingPoolsWithSeeds {
   marketMatchingPoolAccounts.marketMatchingPoolsWithSeeds.forEach(
     (marketMatchingPool) => {
       marketMatchingPool.account.marketMatchingPool.orders.items =
         marketMatchingPool.account.marketMatchingPool.orders.items.filter(
-          (item) => item.order.toString() != emptyOrderString,
+          (item) => item.order.toString() != emptyOrderString
         );
-    },
+    }
   );
   return marketMatchingPoolAccounts;
 }
 
 export function parseEmptyQueueItemsFromMarketPrices(
-  marketPrices: MarketPrice[],
+  marketPrices: MarketPrice[]
 ): MarketPrice[] {
   marketPrices.forEach((marketPrice) => {
     marketPrice.matchingPool.orders.items =
       marketPrice.matchingPool.orders.items.filter(
-        (item) => item.order.toString() != emptyOrderString,
+        (item) => item.order.toString() != emptyOrderString
       );
   });
   return marketPrices;
@@ -77,7 +80,7 @@ export const bigNumberKeys = [
   "marketSettleTimestamp",
   "eventStartTimestamp",
   "creationTimestamp",
-  "delayExpirationTimestamp",
+  "delayExpirationTimestamp"
 ];
 
 /** All data keys for BNs returning mint values */
@@ -91,7 +94,7 @@ export const bigNumberMintKeys = [
   "matchedAmount",
   "liquidityToAdd",
   "matchedRisk",
-  "risk",
+  "risk"
 ];
 
 /** All data keys for BNs returning mint values in an array */

@@ -29,6 +29,7 @@
     "getOrder": "ts-node src/orders/get_order.ts",
     "placeForOrder": "ts-node src/orders/place_for_order.ts",
     "placeAgainstOrder": "ts-node src/orders/place_against_order.ts",
+    "placeOrderWithFees": "ts-node src/orders/build_and_place_order_with_fees.ts",
     "placeMultipleOrders": "ts-node src/orders/place_multiple_orders.ts",
     "cancelOrder": "ts-node src/orders/cancel_order.ts",
     "cancelOrders": "ts-node src/orders/cancel_orders_for_market.ts",
@@ -44,8 +45,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@monaco-protocol/client": "^9.0.0",
-    "@coral-xyz/anchor": "~0.27.0",
+    "@monaco-protocol/client": "^10.0.1",
+    "@coral-xyz/anchor": "~0.29.0",
     "@solana/spl-token": "^0.3.5",
     "@solana/web3.js": "^1.68.0",
     "bs58": "^4.0.1",
