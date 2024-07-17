@@ -14,7 +14,6 @@
     "getMarketMatchingPools": "ts-node src/markets/get_market_matching_pools.ts",
     "getMarketOutcomes": "ts-node src/markets/get_market_outcomes.ts",
     "getMarketOutcomeTitles": "ts-node src/markets/get_market_outcome_titles.ts",
-    "getMarketPrices": "ts-node src/markets/get_market_prices.ts",
     "getMarketPosition": "ts-node src/markets/get_market_position.ts",
     "getMarketPositions": "ts-node src/markets/get_market_positions.ts",
     "getMarketAccounts": "ts-node src/markets/get_market_accounts.ts",
@@ -45,7 +44,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@monaco-protocol/client": "^10.0.1",
+    "@monaco-protocol/client": "^11.2.1",
     "@coral-xyz/anchor": "~0.29.0",
     "@solana/spl-token": "^0.3.5",
     "@solana/web3.js": "^1.68.0",

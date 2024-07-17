@@ -23,7 +23,7 @@ The thing on which the results of, or stats from, determine the outcome of the m
 
 ![](../media/images/anatomy_of_an_exchange/exchange_3_market.png)
 
-**Endpoint**: [GetMarket](https://github.com/MonacoProtocol/protocol/blob/develop/npm-client/docs/endpoints/markets.md#getmarket) | 
+**Endpoint**: [GetMarket](https://github.com/MonacoProtocol/protocol/blob/develop/npm-client/docs/endpoints/markets.md#getmarket) |
 [GetMarketAccountsByStatus](https://github.com/MonacoProtocol/protocol/blob/develop/npm-client/docs/endpoints/market_query.md#getmarketaccountsbystatus)
 
 An event can have multiple markets (for example, result, first team to score a point, over and under a certain amount of points.
@@ -67,27 +67,15 @@ To help inform the user of the current market condition with matched total and l
 
 ![](../media/images/anatomy_of_an_exchange/exchange_4_matrix.png)
 
-Endpoint: [GetAllMarketMatchingPools](https://github.com/MonacoProtocol/protocol/blob/develop/npm-client/docs/endpoints/market_matching_pools.md#getallmarketmatchingpools)
+Endpoint: [getMarketLiquidities](https://github.com/MonacoProtocol/protocol/blob/main/npm-client/src/market_liquidities.ts#L56)
 
-A price matrix can be constructed with the data returned from the market matching pools. Market matching pools exist for all placed order combinations on the market. Order combinations are made up of:
-
-- Outcome index
-- For/Against the outcome
-- Price
-
-Using these matching pools you can highlight to users what prices are currently the most favourable in terms of liquidity. 
-
-- Market Outcome Index: 2
-- For outcome: false
-- Price: 5.9
-- Liquidity: 815
-- Matched amount: 185
+A price matrix can be constructed with the data in the market liquidities account.
 
 To form a price matrix you need to:
 
-- Get the market matching pools
-- Group based on outcome
-- Group based on for/against the outcome
+- Get the market outcome accounts
+- Get the market liquidities account
+- Group for and against liquidities based on outcome index
 - Order based on price and liquidity available
 
 Industry standard then tends to show:
@@ -97,15 +85,13 @@ Industry standard then tends to show:
 - On the right hand side of the matrix, the top 3 prices (ascending form left to right) backing the outcome
 - This shows the users what prices are available should they wish to place an order against the outcome
 
-This piece of the exchange requires the most mapping but does offer user an enhanced experience as it shows them a truer state of the market to help inform their decision.
-
-The endpoint [GetMarketPrices](https://github.com/MonacoProtocol/protocol/blob/develop/npm-client/docs/endpoints/market_prices.md#getmarketprices) can also provide this information but it also fetched pending orders and as such can be quite an intensive request as a market scales.
+The liquidities account also returns the total traded amount for the market.
 
 # Orders
 
 ![](../media/images/anatomy_of_an_exchange/exchange_5_orders.png)
 
-**Endpoint**: [GetOrdersByMarketForWalletProvider](https://github.com/MonacoProtocol/protocol/blob/develop/npm-client/docs/endpoints/order_query.md#getordersbymarketforproviderwallet) | 
+**Endpoint**: [GetOrdersByMarketForWalletProvider](https://github.com/MonacoProtocol/protocol/blob/develop/npm-client/docs/endpoints/order_query.md#getordersbymarketforproviderwallet) |
 [OrderQuery](https://github.com/MonacoProtocol/protocol/blob/develop/npm-client/docs/endpoints/order_query.md#orders)
 
 Depending on how you set up your exchange you may only wish to show orders for the connected wallet (ForWalletProvider) or all orders on a market (OrderQuery) which can also be filtered by status and purchaser.
@@ -179,7 +165,7 @@ The primary things to note here are:
 
 - You need to pass the index of the outcome not the index title
 - When an against order (forOutcome: false) the stake is not the value that will be taken from the user, the value would be the calculated risk:
-  - Stake * Odds - Stake = Risk 
+  - Stake * Odds - Stake = Risk
   - Stake 10, Odds 1.5, Risk = 5
   - Stake 10, Odds 7.0, Risk = 60
 
@@ -190,7 +176,7 @@ The return value of the request contains:
 
 ## Cancel Order(s)
 
-**Endpoint**: [CancelOrder](https://github.com/MonacoProtocol/protocol/blob/develop/npm-client/docs/endpoints/cancel_order.md#cancelorder) | 
+**Endpoint**: [CancelOrder](https://github.com/MonacoProtocol/protocol/blob/develop/npm-client/docs/endpoints/cancel_order.md#cancelorder) |
 [CancelOrdersForMarket](https://github.com/MonacoProtocol/protocol/blob/develop/npm-client/docs/endpoints/cancel_order.md#cancelordersformarket)
 
 This allows the user (the connected wallet) to either cancel a specific order based on the order account publicKey, or cancel all the orders they can cancel for the provided market publicKey.

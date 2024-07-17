@@ -1,8 +1,4 @@
 import { BN } from "@coral-xyz/anchor";
-import {
-  MarketMatchingPoolsWithSeeds,
-  MarketPrice
-} from "@monaco-protocol/client";
 
 export function parseResponseData(
   responseData: any,
@@ -42,33 +38,7 @@ export function parseResponseData(
   return responseData;
 }
 
-export function parseEmptyQueueItemsFromMatchingPoolAccounts(
-  marketMatchingPoolAccounts: MarketMatchingPoolsWithSeeds
-): MarketMatchingPoolsWithSeeds {
-  marketMatchingPoolAccounts.marketMatchingPoolsWithSeeds.forEach(
-    (marketMatchingPool) => {
-      marketMatchingPool.account.marketMatchingPool.orders.items =
-        marketMatchingPool.account.marketMatchingPool.orders.items.filter(
-          (item) => item.order.toString() != emptyOrderString
-        );
-    }
-  );
-  return marketMatchingPoolAccounts;
-}
-
-export function parseEmptyQueueItemsFromMarketPrices(
-  marketPrices: MarketPrice[]
-): MarketPrice[] {
-  marketPrices.forEach((marketPrice) => {
-    marketPrice.matchingPool.orders.items =
-      marketPrice.matchingPool.orders.items.filter(
-        (item) => item.order.toString() != emptyOrderString
-      );
-  });
-  return marketPrices;
-}
-
-function integerToUiValue(integerValue: BN, mintDecimals: number) {
+export function integerToUiValue(integerValue: BN, mintDecimals: number) {
   return integerValue.toNumber() / 10 ** mintDecimals;
 }
 
