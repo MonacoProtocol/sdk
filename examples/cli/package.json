@@ -14,7 +14,6 @@
     "getMarketMatchingPools": "ts-node src/markets/get_market_matching_pools.ts",
     "getMarketOutcomes": "ts-node src/markets/get_market_outcomes.ts",
     "getMarketOutcomeTitles": "ts-node src/markets/get_market_outcome_titles.ts",
-    "getMarketPrices": "ts-node src/markets/get_market_prices.ts",
     "getMarketPosition": "ts-node src/markets/get_market_position.ts",
     "getMarketPositions": "ts-node src/markets/get_market_positions.ts",
     "getMarketAccounts": "ts-node src/markets/get_market_accounts.ts",
