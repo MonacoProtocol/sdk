@@ -16,6 +16,7 @@
     "getMarketOutcomeTitles": "ts-node src/markets/get_market_outcome_titles.ts",
     "getMarketPosition": "ts-node src/markets/get_market_position.ts",
     "getMarketPositions": "ts-node src/markets/get_market_positions.ts",
+    "getMarketPositionsForWallet": "ts-node src/markets/get_market_positions_for_wallet.ts",
     "getMarketAccounts": "ts-node src/markets/get_market_accounts.ts",
     "getMarketSummary": "ts-node src/markets/get_market_summary.ts",
     "getMarketCount": "ts-node src/markets/get_market_status_count.ts",
