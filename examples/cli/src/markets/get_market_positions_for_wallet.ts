@@ -1,10 +1,10 @@
 import { MarketPositions, getMarketOutcomeTitlesByMarket } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
-import { getProgram, getProcessArgs, logResponse } from "../utils/utils";
+import { getProgram, getProcessArgs } from "../utils/utils";
 import { AnchorProvider } from "@coral-xyz/anchor";
 import { parseResponseData } from "../parsers/parsers";
 
-async function getMarketPositionForProvider(walletPk: PublicKey) {
+async function getMarketPositionForWallet(walletPk: PublicKey) {
   const program = await getProgram();
   const provider = program.provider as AnchorProvider;
   const response = await MarketPositions.marketPositionQuery(program)
@@ -37,4 +37,4 @@ const args = getProcessArgs(
   ["walletPk"],
   "npm run getMarketPositionsForWallet"
 );
-getMarketPositionForProvider(new PublicKey(args.walletPk));
+getMarketPositionForWallet(new PublicKey(args.walletPk));
