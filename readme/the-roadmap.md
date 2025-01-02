@@ -2,7 +2,7 @@
 
 ## Coming Up ⚒️
 
-* **Monaco Protocol API:** industry-standard API for integrating with the protocol, making it faster, and easier, to tap into global liqduitiy
+* **Monaco Protocol API:** industry-standard API for integrating with the protocol; making it faster, and easier, to tap into global liqduitiy
 
 ## 2024 - Done ✅
 
