@@ -1,10 +1,13 @@
-# Monaco Protocol SDK
+# ARCHIVED 📦 #
+
+This repo is related to `v1` of the Monaco Protocol.
+
+# Monaco Protocol v1 SDK
 
 ## Monaco Protocol
 
-Everything you need know about the Monaco Protocol can be found here. This is also the home of the developer community where you can find information about the latest updates, showcase what you've been building, and, most importantly, ask any questions if you're looking for some help.
+Everything you need know about v1 of the Monaco Protocol can be found here. This is also the home of the developer community where you can find information about the latest updates, showcase what you've been building, and, most importantly, ask any questions if you're looking for some help.
 
-* [Documentation](https://monacoprotocol.gitbook.io/the-monaco-protocol/)
 * [DevHub](https://github.com/MonacoProtocol/sdk/discussions/6)
 * [Client Examples](examples/)
 * [Q\&A](https://github.com/MonacoProtocol/sdk/discussions/categories/q-a)
